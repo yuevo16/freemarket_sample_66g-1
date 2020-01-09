@@ -70,10 +70,8 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'haml-rails' 
 gem 'carrierwave'
-
 gem "font-awesome-sass"
 
-gem "font-awesome-sass"
 
-gem "font-awesome-sass"
+
 
