@@ -58,24 +58,22 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
 group :production do
   gem 'unicorn', '5.4.1'
 end
-=======
-=======
->>>>>>> 5527213ee7945d8670c650acfc1c054a4efaf9e2
+
 gem 'pry-rails'
 gem 'kaminari'
 gem 'devise'
 gem 'jquery-rails'
 gem 'haml-rails' 
 gem 'carrierwave'
-<<<<<<< HEAD
+
 gem "font-awesome-sass"
->>>>>>> 5527213ee7945d8670c650acfc1c054a4efaf9e2
-=======
+
 gem "font-awesome-sass"
->>>>>>> 5527213ee7945d8670c650acfc1c054a4efaf9e2
+
+gem "font-awesome-sass"
+
