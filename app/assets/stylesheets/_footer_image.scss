@@ -1,0 +1,54 @@
+.footer__bar{
+  font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  height: 260px;
+  width: 100vw;
+  background-image: url("653a11825b09240a0504a431f26dc061_s-1.jpg");
+  background-size: cover;
+  background-position: center center;
+  padding:0 25%;
+  color: white;
+
+  &__middle{
+    display: flex;
+
+    &__image {
+      width: 60%;
+      padding-top: 40px;
+      // display: flex;
+      // // flex-direction: column;
+      // // -webkit-box-pack: center;
+      // justify-content: center;
+
+      &__top {
+        font-size: 24px;
+        font-weight: 600;
+              }
+      &__middle {
+        font-size: 35px;
+        padding-bottom: 20px;
+            }
+
+      &__three {
+        display: flex;
+        &__image1 {
+          height: 68px;
+          width: 60px;
+          }
+        &__image2 {
+          height: 40px;
+          width: 144px;
+        }
+        &__image3 {
+          height: 40px;
+          width: 144px;
+        }
+      }
+    }
+    &__image2{;
+      width: 40%;
+      height: 260px;
+      background-image: url("iPhonexIMGL6443_TP_V-770x513.jpg");
+      background-size: cover;
+    }
+  }
+}

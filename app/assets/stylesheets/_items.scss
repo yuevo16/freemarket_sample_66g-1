@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+.popular{
+  background-color: rgb(255, 255, 255);
+  width: 100vw;
+  &__top4{
+    font-family: Arial,æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“,YuGothic,ãƒ¡ã‚¤ãƒªã‚ª,Meiryo,sans-serif;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    padding:56px 202.5px 30px;
+    &__title{
+      padding-bottom: 16px;
+      &__text{
+      }
+    }
+    &__item{
+      display: flex;
+      justify-content: space-between;
+      padding:0 225px;
+      &__box{
+        background-color: rgb(239, 239, 239);
+        border-radius: 15px;
+        &__text{
+          margin: -5px 0;
+          padding: 8px 16px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+.top__category{
+  height: 630px;
+  width:100vw;
+  background-color:#f5f5f5;
+  &__1{
+    padding:42px 202.5px 100px;
+    &__new{
+      font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+      display: flex;
+      justify-content: space-between;
+      &__title{
+        font-size: 24px;
+        font-weight: 600;
+      }
+      &__detail{
+        font-weight: 600;
+        font-size: 12px;
+        color: rgb(0, 149, 238);
+      }
+    }
+    &__main{
+      height: 275px;
+      flex-wrap: wrap;
+      display: flex;
+      &__item{
+        padding: 10px;
+        width: 20%;
+        height: 100%;
+        box-sizing: border-box;
+        border: 1px solid transparent;
+        &__box{
+          width:100%;
+          height: 100%;
+          background-color: #fff;
+          box-shadow: 0 2px 4px rgba(0,0,0,.18);
+          &__image{
+            height: 75%;
+            background-color: red;
+            position: relative;
+            &__price{
+              font-size: 17px;
+              position: absolute;
+              color:white;
+              padding: 0 12px;
+              line-height: 27.5px;
+              bottom: 10px;
+              border-radius: 0 14px 14px 0;
+              height:15%;
+              width: 40%;
+              background: rgba(0,0,0,.4);
+            }
+          }
+          &__text{
+            padding:8px 12px;
+            height: 25%;
+            background-color: #fff;
+            position: relative;
+            &__content{
+              height: 2.8em;
+              overflow: hidden;
+            }
+            &__hidden{
+              background: linear-gradient(90deg,hsla(0,0%,100%,0),#fff 72%);
+              height: 50%;
+              width: 50%;
+              position: absolute;
+              bottom: 0;
+              right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.popular__footer{
+  width: 100vw;
+  height: 100px;
+  background-color: #f5f5f5;
+}

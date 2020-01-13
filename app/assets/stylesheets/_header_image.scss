@@ -1,0 +1,139 @@
+.sc{
+  &__clNaTc{
+  box-sizing: border-box;
+  display: block;
+  height: auto;
+  position: relative;
+  visibility: inherit;
+  width: 100;
+  user-select: auto;
+  }
+
+  &__hzNEM {
+    background-repeat: no-repeat;  
+    height: 290px;
+    width: 100%;
+    // background-image: url(images/top_background1.jpg);
+    background-position: center center;
+    background-size: cover;
+    /* background-size: 300% 200%; */
+  
+    /* background-image: url(https://web-jp-assets.mercdn.net/_next/static/images/top-banner-main-892151c….jpg); */
+  }
+
+  &__cooIXK {
+    height: 290px;
+  .jIxIFl{
+    position: relative;
+    width: 100%;
+    padding: 20px 40px;
+  }
+  }
+
+}
+.slider-frame {
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  // margin: 0px;
+  overflow: hidden;
+  padding: 0px;
+  position: relative;
+  touch-action: pan-y pinch-zoom;
+  transform: translate3d(0px, 0px, 0px);
+  user-select: auto;
+}
+
+.slider-list {
+  transform: translate3d(0px, 0px, 0px);
+  position: relative;
+  display: block;
+  // margin: 0px;
+  padding: 0px;
+  height: 0px;
+  width: 793px;
+  cursor: pointer;
+  box-sizing: border-box;
+  touch-action: pan-y pinch-zoom;
+  user-select: auto;
+}
+
+.slider-slide {
+  box-sizing: border-box;
+  display: inline-block;
+  height: auto;
+  left: 0px;
+  list-style-type: none;
+  margin: auto 0px;
+  position: absolute;
+  top: 0px;
+  vertical-align: top;
+  /* transform: scale(1); */
+  width: 793px;
+  user-select: auto;
+}
+// .sc__hzNEM {
+//   background-repeat: no-repeat;  
+//   height: 290px;
+//   width: 100%;
+//   background-image: url(images/top_background1.jpg);
+//   background-position: center center;
+//   background-size: cover;
+//   /* background-size: 300% 200%; */
+
+//   /* background-image: url(https://web-jp-assets.mercdn.net/_next/static/images/top-banner-main-892151c….jpg); */
+// }
+.hkJJjj{
+  height: inherit;
+  position: relative;
+  width: 100%;
+  padding: 20px 40px;
+}
+// .sc__cooIXK {
+//   height: 290px;
+// }
+.jIxIFl{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.bHaZlw {
+  height: 290px;
+  background-position: center center;
+}
+
+.llSQNq {
+  -webkit-box-align: center;
+  align-items: center;
+  max-width: 860px;
+}
+.fQQKVr {
+  height: 290px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+img{
+  vertical-align: middle;
+}
+.hjMsAb {
+  font-size: 40px;
+  white-space: normal;
+  padding: 0px;
+}
+.eVkBIo {
+  font-size: 40px;
+  white-space: normal;
+  padding: 0px;
+
+}
+br {
+  box-sizing: border-box;
+}
+
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
