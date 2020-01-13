@@ -45,14 +45,14 @@
         }
         &__box {
           position: absolute;
-          right: 37px;
+          right: 60px;
           top:10px;
           
           &__icon{
             font-size: 14px;
           }
           &__button{
-            // display: none;
+            display: none;
             // -webkit-writing-mode: horizontal-tb !important;
             // text-rendering: auto;
             // color: buttontext;
@@ -65,6 +65,7 @@
             // text-align: center;
             // align-items: flex-start;
             // cursor: default;
+               
               }
             }
           }

@@ -1,0 +1,32 @@
+.sell-camera{
+  bottom: 32px;
+  font-size: 22px;
+  height: 160px;
+  right: 32px;
+  width: 160px;
+  position: fixed;
+  
+  
+ &__box{
+  text-decoration: none;
+  background:red;
+  color: #FFF;
+  width: 160px;
+  height: 160px;
+  line-height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  transition: .4s;
+  padding-top:10px;
+    
+   &__name{
+    padding:32px;
+   }
+
+   .fa-camera{
+    font-size:60px;
+   }
+  
+ }
+}
