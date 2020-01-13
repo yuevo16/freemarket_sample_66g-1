@@ -71,7 +71,8 @@ gem 'jquery-rails'
 gem 'haml-rails' 
 gem 'carrierwave'
 gem "font-awesome-sass"
-
+gem 'erb2haml' 
+gem 'fog-aws'
 
 
 
