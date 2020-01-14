@@ -4,7 +4,8 @@
       .header-main__search-bar1__logo-button
         = link_to image_tag("/assets/fmarket_logo_red.svg", class: 'header-main__search-bar1__logo-button__image')
       .header-main__search-bar1__text
-        = text_field :content, class: 'header-main__search-bar1__text__form', placeholder: '何かお探しですか？'
+        = form_for "#" do |f|
+          = f.text_field :text, class: 'header-main__search-bar1__text__form', placeholder: '何かお探しですか？'
         .header-main__search-bar1__text__box
           %label{class: "input-box__image"}
             = icon('fas', 'search', class: 'header-main__search-bar1__text__box__icon')
