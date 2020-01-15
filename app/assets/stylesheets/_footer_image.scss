@@ -2,7 +2,7 @@
   font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   height: 260px;
   width: 100vw;
-  background-image: url("653a11825b09240a0504a431f26dc061_s-1.jpg");
+  background-image: image-url("653a11825b09240a0504a431f26dc061_s-1.jpg");
   background-size: cover;
   background-position: center center;
   padding:0 25%;
@@ -43,7 +43,7 @@
     &__image2{;
       width: 40%;
       height: 260px;
-      background-image: url("iPhonexIMGL6443_TP_V-770x513.jpg");
+      background-image: image-url("iPhonexIMGL6443_TP_V-770x513.jpg");
       background-size: cover;
     }
   }
