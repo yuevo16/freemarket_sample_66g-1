@@ -12,6 +12,7 @@
 |last_name|string|null: false|
 |first_name_kana|string|null: false|
 |last_name_kana|string|null: false|
+|phone_number|integer|null: false|
 |pay_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :items, dependent: :destroy
@@ -31,7 +32,6 @@
 |city|string|null: false|
 |address_number|string|null: false|
 |building|string|null: false|
-|phone_number|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user

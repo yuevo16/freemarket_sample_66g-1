@@ -1,7 +1,7 @@
 .body-register {
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   background-color: rgb(245, 245, 245);
-  height: 200vh;
+  height: 1500px;
   .header {
     background-color: rgb(245, 245, 245);
     height: 8%;
@@ -123,7 +123,7 @@
   }
   .main {
     background-color: rgb(245, 245, 245);
-    height: 80%;
+    height: 90%;
     &__container {
       background-color: white;
       height: 100%;
@@ -167,7 +167,7 @@
               vertical-align: top;
             }
             &__text {
-              height: 25px;
+              height: 50px;
               width: 300px;
               margin: 8px 0 0;
               padding: 10px 16px 8px;
@@ -197,7 +197,7 @@
               vertical-align: top;
             }
             &__text {
-              height: 25px;
+              height: 50px;
               width: 300px;
               margin: 8px 0 0;
               padding: 10px 16px 8px;
@@ -227,7 +227,7 @@
               vertical-align: top;
             }
             &__text {
-              height: 25px;
+              height: 50px;
               width: 300px;
               margin: 8px 0 0;
               padding: 10px 16px 8px;
@@ -281,7 +281,7 @@
             height: 100px;
             width: 50%;
             margin: auto;
-            padding-top: 70px;
+            padding-top: 40px;
             &__head {
               font-size: 16px;
               font-weight: 550;
@@ -295,7 +295,7 @@
             height: 100px;
             width: 50%;
             margin: auto;
-            padding-top: 10px;
+            padding-top: 60px;
             &__label {
               font-weight: 550;
               display: inline-block;
@@ -311,7 +311,7 @@
               vertical-align: top;
             }
             &__family-name {
-              height: 25px;
+              height: 50px;
               width: 140px;
               margin: 8px 0 0;
               padding: 10px 16px 8px;
@@ -335,9 +335,10 @@
             }
           }
           &__name-kana {
-            height: 100px;
+            height: 90px;
             width: 50%;
             margin: auto;
+            padding-top: 60px;
             &__label {
               font-weight: 550;
               display: inline-block;
@@ -353,7 +354,7 @@
               vertical-align: top;
             }
             &__family-name {
-              height: 25px;
+              height: 50px;
               width: 140px;
               margin: 8px 0 0;
               padding: 10px 16px 8px;
@@ -379,6 +380,7 @@
           &__birthday {
             width: 50%;
             margin: auto;
+            padding-top: 80px;
             &__label {
               font-weight: 550;
               display: inline-block;
@@ -394,10 +396,16 @@
               vertical-align: top;
             }
             &__select-wrap {
+              position: relative;
+              .fa.fa-chevron-down{
+                position: absolute;
+                top: 25px;
+                left: 50px;
+              }
               &__year {
                 display: inline-block;
-                height: 45px;
-                width: 80px;
+                height: 50px;
+                width: 70px;
                 margin: 8px 3px 3px;
                 padding: 10px 16px 8px;
                 border-radius: 4px;
@@ -408,8 +416,8 @@
               }
               &__month {
                 display: inline-block;
-                height: 45px;
-                width: 80px;
+                height: 50px;
+                width: 70px;
                 margin: 8px 3px 3px;
                 padding: 10px 16px 8px;
                 border-radius: 4px;
@@ -420,8 +428,8 @@
               }
               &__day {
                 display: inline-block;
-                height: 45px;
-                width: 80px;
+                height: 50px;
+                width: 70px;
                 margin: 8px 3px 3px;
                 padding: 10px 16px 8px;
                 border-radius: 4px;
@@ -454,7 +462,7 @@
                 background: #ea352d;
                 display: block;
                 height: 48px;
-                width :360px;
+                width :100%;
                 margin:30px auto 20px;
                 font-size:14px;
                 color:#fff;
@@ -472,14 +480,18 @@
                 color: #0099e8;
                 text-decoration: none;
               }
+              .icon{
+                color:#0099e8 ;
+                font-size: 20px;
+              }
             }
             &__label {
               background-color: rgb(245, 245, 245);
               color: #888888;
               font-size: 12px;
               display: block;
-              height: 32px;
-              width :340px;
+              height: 50px;
+              width :100%;
               margin: auto;
               padding: 10px;
               &__policy {
@@ -503,9 +515,10 @@
   background-color: rgb(245, 245, 245);
   &__center{
   width: 450px;
-  height: 180px;
+  height: 200px;
   margin: 0 auto;
   text-align: center;
+  padding:30px 0 ;
     .menu{
       display: flex;
       justify-content: space-around;
