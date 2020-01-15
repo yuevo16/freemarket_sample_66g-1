@@ -1,7 +1,7 @@
 .body-address
   .header
     .header__icon
-      = link_to image_tag(src= "/assets/fmarket_logo_red.svg", class: "header__icon__image")
+      = link_to image_tag(src= "/assets/fmarket_logo_red.svg", class: "header__icon__image"), "/"
     .header__status
       .header__status__line
         .header__status__line__menber
@@ -133,7 +133,7 @@
             %form{:action => ""}
               %input{:type => "text", placeholder:"例)09012345678", class: "main__container__form__phone__detail"}
           .main__container__form__btn
-            = link_to "#", class: "main__container__form__btn__red" do
+            = link_to "/signup/step6", class: "main__container__form__btn__red" do
               次へ進む
   .footer
     .footer__center
@@ -146,7 +146,7 @@
           %li
             = link_to "特定商取引に関する表記","#"
       .footer__center__logo
-        =link_to image_tag("/assets/logo_gray.svg", width:"80", height:"65",class:"footer__center__logo--red"),"#"
+        =link_to image_tag("/assets/logo_gray.svg", width:"80", height:"65",class:"footer__center__logo--red"),"/"
       %p.inc
         ©︎Mercari,Inc.
         

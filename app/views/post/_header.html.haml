@@ -2,7 +2,7 @@
   .header-main
     .header-main__search-bar1
       .header-main__search-bar1__logo-button
-        = link_to image_tag("fmarket_logo_red.svg", class: 'header-main__search-bar1__logo-button__image')
+        = link_to image_tag("fmarket_logo_red.svg", class: 'header-main__search-bar1__logo-button__image'), "/"
       .header-main__search-bar1__text
         = text_field :content, class: 'header-main__search-bar1__text__form', placeholder: '何かお探しですか？'
         .header-main__search-bar1__text__box
@@ -21,7 +21,7 @@
             %font{:size => "2"} ブランドから探す
       .header-main__search-bar2__new
         .header-main__search-bar2__new__singin
-          = link_to "新規会員登録", "/users/sign_up", class: "header-main__search-bar2__new__signin__btn" 
+          = link_to "新規会員登録", "/signup/step1", class: "header-main__search-bar2__new__signin__btn" 
         .header-main__search-bar2__new__login
           = link_to "ログイン", "/users/sign_in", class: "header-main__search-bar2__new__login__btn" 
 

@@ -1,7 +1,7 @@
 .body-phone2
   .header
     .header__icon
-      = link_to image_tag(src= "/assets/fmarket_logo_red.svg", class: "header__icon__image")
+      = link_to image_tag(src= "/assets/fmarket_logo_red.svg", class: "header__icon__image"), "/"
     .header__status
       .header__status__line
         .header__status__line__menber
@@ -34,7 +34,7 @@
         .main__container__form__info
           SMSで届いた認証番号を入力してください
         .main__container__form__btn
-          = link_to "#", class: "main__container__form__btn__red" do
+          = link_to "/signup/step5", class: "main__container__form__btn__red" do
             認証して完了
       .main__container__next
         .main__container__next__box
@@ -65,6 +65,6 @@
           %li
             = link_to "特定商取引に関する表記","#"
       .footer__center__logo
-        =link_to image_tag("/assets/logo_gray.svg", width:"80", height:"65",class:"footer__center__logo--red"),"#"
+        =link_to image_tag("/assets/logo_gray.svg", width:"80", height:"65",class:"footer__center__logo--red"),"/"
       %p.inc
         ©︎Mercari,Inc.

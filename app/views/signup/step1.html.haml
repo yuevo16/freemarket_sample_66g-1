@@ -1,12 +1,12 @@
 .main-signup
   .header
     .header__icon
-      = link_to image_tag(src= "/assets/fmarket_logo_red.svg", class: "header__icon__image")
+      = link_to image_tag(src= "/assets/fmarket_logo_red.svg", class: "header__icon__image"), "/"
   .main
     .main__header 新規会員登録
     .main__content
       .main__content__line
-        = link_to "#", class: "main__content__line__btn main__content__line__btn--mail" do
+        = link_to "/signup/step2", class: "main__content__line__btn main__content__line__btn--mail" do
           = icon('far', 'envelope', class: "main__content__line__btn--mail")
           メールアドレスで登録する
         = link_to "https://www.facebook.com/", class: "main__content__line__btn main__content__line__btn--facebook" do
@@ -26,6 +26,6 @@
         %li
           = link_to "特定商取引に関する表記","#"
     .footer__center__logo
-      =link_to image_tag("/assets/logo_gray.svg", width:"80", height:"65",class:"footer__center__logo--red"),"#"
+      =link_to image_tag("/assets/logo_gray.svg", width:"80", height:"65",class:"footer__center__logo--red"),"/"
     %p.inc
       ©︎Mercari,Inc.
