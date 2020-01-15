@@ -1,0 +1,70 @@
+.body-phone2
+  .header
+    .header__icon
+      = link_to image_tag(src= "/assets/fmarket_logo_red.svg", class: "header__icon__image")
+    .header__status
+      .header__status__line
+        .header__status__line__menber
+          会員情報
+          .header__status__line__menber__box
+        .header__status__line__number
+          電話番号認証
+          .header__status__line__number__box
+        .header__status__line__address
+          お届け先住所入力
+          .header__status__line__address__box
+        .header__status__line__pay
+          支払い方法
+          .header__status__line__pay__box
+        .header__status__line__done
+          完了
+          .header__status__line__done__box
+  .main
+    .main__container
+      .main__container__header
+        電話番号認証
+      .main__container__form
+        .main__container__form__input
+          .main__container__form__input__label
+            認証番号
+          .main__container__form__input__require
+            必須
+          %form{:action => ""}
+            %input{:type => "text", placeholder:"認証番号を入力", class: "main__container__form__input__text"}
+        .main__container__form__info
+          SMSで届いた認証番号を入力してください
+        .main__container__form__btn
+          = link_to "#", class: "main__container__form__btn__red" do
+            認証して完了
+      .main__container__next
+        .main__container__next__box
+          .main__container__next__box__label
+            30秒たっても認証番号が届かない方へ
+          .main__container__next__box__info
+            電話で認証番号を聞くこともできます。
+        .main__container__next__btn
+          = link_to "#", class: "main__container__next__btn__red" do
+            電話で認証番号を聞く（通話無料）
+      .main__container__bottom
+        .main__container__bottom__label
+          認証番号を再送することもできます。もう一度電話番号を入力して下さい。
+        .main__container__bottom__again
+          = link_to "電話番号を再度入力する", "#", class: "main__container__bottom__again__label"
+        .main__container__bottom__info
+          ※SMSが届かない場合は
+          = link_to "SMS受信設定", "#", class: "main__container__bottom__info__label"
+          を確認して、もう一度電話番号を入力してください。
+  .footer
+    .footer__center
+      %nav
+        %ul.menu
+          %li
+            = link_to "プライバシーポリシー","#"
+          %li
+            = link_to "メルカリ利用規約","#"
+          %li
+            = link_to "特定商取引に関する表記","#"
+      .footer__center__logo
+        =link_to image_tag("/assets/logo_gray.svg", width:"80", height:"65",class:"footer__center__logo--red"),"#"
+      %p.inc
+        ©︎Mercari,Inc.

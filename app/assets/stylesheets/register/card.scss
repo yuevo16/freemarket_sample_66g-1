@@ -1,0 +1,326 @@
+.body-card {
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  background-color: rgb(245, 245, 245);
+  height: 150vh;
+  .header {
+    background-color: rgb(245, 245, 245);
+    height: 120px;
+    text-align: center;
+    display: flex;
+    &__icon {
+      height: 30%;
+      width: 15%;
+      margin-left: 250px;
+      display: inline-block;
+      &__image {
+        margin: 40px auto;
+      }
+    }
+    &__status {
+      width: 50%;
+      padding-top: 40px;
+      &__line {
+        font-size: 12px;
+        &__menber {
+          font-weight: 600;
+          color: #ccc;
+          display: inline-block;
+          margin-right: 30px;
+          position: relative;
+          &__box {
+            background: #ea352d;
+            height: 12px;
+            width: 12px;
+            margin: 8px auto 0;
+            border-radius: 50%;
+          }
+          &::after {
+            position: absolute;
+            bottom: 5px;
+            content: '';
+            width: 200%;
+            height: 2px;
+            background: #ea352d;
+          }
+        }
+        &__number {
+          color: #ccc;
+          display: inline-block;
+          margin-right: 30px;
+          position: relative;
+          &__box {
+            background: #ea352d;
+            height: 12px;
+            width: 12px;
+            margin: 8px auto 0;
+            border-radius: 50%;
+          }
+          &::after {
+            position: absolute;
+            bottom: 5px;
+            content: '';
+            width: 160%;
+            height: 2px;
+            background: #ea352d;
+          }
+        }
+        &__address {
+          color: #ccc;
+          display: inline-block;
+          margin-right: 30px;
+          position: relative;
+          &__box {
+            background: #ea352d;
+            height: 12px;
+            width: 12px;
+            margin: 8px auto 0;
+            border-radius: 50%;
+          }
+          &::after {
+            position: absolute;
+            bottom: 5px;
+            content: '';
+            width: 120%;
+            height: 2px;
+            background: #ea352d;
+          }
+        }
+        &__pay {
+          font-weight: 600;
+          color: #ea352d;
+          display: inline-block;
+          margin-right: 30px;
+          position: relative;
+          &__box {
+            background: #ea352d;
+            height: 12px;
+            width: 12px;
+            margin: 8px auto 0;
+            border-radius: 50%;
+          }
+          &::after {
+            position: absolute;
+            bottom: 5px;
+            content: '';
+            width: 120%;
+            height: 2px;
+            background: #ccc;
+          }
+        }
+        &__done {
+          color: #929191;
+          display: inline-block;
+          margin-right: 30px;
+          &__box {
+            background: #ccc;
+            height: 12px;
+            width: 12px;
+            margin: 8px auto 0;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+  .main {
+    background-color: rgb(245, 245, 245);
+    height: 50%;
+    &__container {
+      background-color: white;
+      height: 100%;
+      width: 50%;
+      margin: auto;
+      &__header {
+        background-color: white;
+        height: 100px;
+        font-size: 22px;
+        font-weight: bold;
+        margin: auto;
+        text-align: center;
+        line-height: 100px;
+        border-bottom: #f5f5f5 solid 1px;
+      }
+      &__form {
+        height: 30%;
+        width: 100%;
+        margin: auto;
+        &__card {
+          width: 340px;
+          font-weight: 550;
+          margin: 10px auto 0;
+          &__title {
+            font-weight: 550;
+            display: inline-block;
+          }
+          &__require {
+            background: #ea352d;
+            display: inline-block;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+          }
+          &__number {
+            height: 25px;
+            width: 300px;
+            margin: 8px auto 0;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+          &__image {
+            margin-top: 10px;
+            &__icon {
+              display: inline-block;
+              height: 30px;
+              width: 40px;
+            }
+          }          
+        }
+        &__limit {
+          width: 340px;
+          margin: 10px auto 0;
+          &__title {
+            font-weight: 550;
+            display: inline-block;
+          }
+          &__require {
+            font-weight: 550;
+            background: #ea352d;
+            display: inline-block;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+          }
+          &__wrap {
+            &__month {
+            display: inline-block;
+            height: 45px;
+            width: 120px;
+            margin: 8px 10px 3px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            }
+            &__day {
+              display: inline-block;
+              height: 45px;
+              width: 120px;
+              margin: 8px 10px 3px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+            }
+          }
+        }
+        &__security {
+          width: 340px;
+          font-weight: 550;
+          margin: 10px auto 0;
+          &__title {
+            font-weight: 550;
+            display: inline-block;
+          }
+          &__require {
+            background: #ea352d;
+            display: inline-block;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+          }
+          &__number {
+            height: 25px;
+            width: 300px;
+            margin: 8px auto 0;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+         }
+         &__question {
+           position: relative;
+           margin: 8px 0 0;
+          &__mark {
+            text-align: right;
+            margin-right: 190px;
+            color: #0099e8;
+            span{
+              display: inline-block;
+              width: 14px;
+              height: 14px;
+              border-radius: 50%;
+              background: #0099e8;
+              color: #fff;
+              line-height: 14px;
+              font-size: 12px;
+              text-align: center;
+            }
+          }
+         }
+         &__btn {
+           margin-top: 20px;;
+           &__red {
+            background: #ea352d;
+            display: block;
+            height: 48px;
+            width :335px;
+            margin:0 auto 5px;
+            font-size:14px;
+            color:#fff;
+            text-decoration: none;
+            text-align: center;
+            line-height: 3.3;
+          }
+        }
+       }
+      }
+    }
+    .footer{
+    background-color: rgb(245, 245, 245);
+    width: 100%;
+    &__center{
+      width: 450px;
+      height: 200px;
+      padding-top: 20px;
+      margin: auto;
+      text-align: center;
+      .menu{
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        padding: 0;
+        a{
+          font-size: 12px;
+          color:black;
+          text-decoration: none;
+        }
+      }
+      &__logo{
+        margin: 40px auto 0
+      }
+      .inc{
+        font-size: 13px;
+      }
+    }
+  }  
+}
