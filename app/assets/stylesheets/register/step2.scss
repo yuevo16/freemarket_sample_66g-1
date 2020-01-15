@@ -381,7 +381,11 @@
           &__birthday {
             width: 50%;
             margin: auto;
+
             padding-top:80px ;
+
+            padding-top: 80px;
+
             &__label {
               font-weight: 550;
               display: inline-block;
@@ -486,7 +490,12 @@
                 color: #0099e8;
                 font-size: 20px;
               }
-              
+
+              .icon{
+                color:#0099e8 ;
+                font-size: 20px;
+              }
+
             }
             &__label {
               background-color: rgb(245, 245, 245);
@@ -521,7 +530,10 @@
   height: 200px;
   margin: 0 auto;
   text-align: center;
+
   padding: 30px 0;
+
+  padding:30px 0 ;
     .menu{
       display: flex;
       justify-content: space-around;
