@@ -1,7 +1,7 @@
 .body-register
   .header
     .header__icon
-      = link_to image_tag(src= "/assets/fmarket_logo_red.svg", class: "header__icon__image"), "/"
+      = link_to image_tag("fmarket_logo_red.svg", class: "header__icon__image"), "/"
     .header__status
       .header__status__line
         .header__status__line__menber
@@ -53,7 +53,7 @@
               ※英字と数字の両方を含めて設定してください
             .main__container__form__content-top__password__check
               %input#chkbox{:type => "checkbox", class: "main__container__form__content-top__password__check__box"}
-              %label{:for => "chkbox", class: "main__container__form__content-top__password__check__label"} チェックボックス
+              %label{:for => "chkbox", class: "main__container__form__content-top__password__check__label"} パスワードを表示する
           .main__container__form__content-top__identity
             .main__container__form__content-top__identity__head
               本人確認
@@ -78,10 +78,12 @@
           .main__container__form__content-top__birthday
             .main__container__form__content-top__birthday__label
               生年月日
+              
             .main__container__form__content-top__birthday__require
               必須
             .main__container__form__content-top__birthday__select-wrap
-              %select{:name => "year", class: "main__container__form__content-top__birthday__select-wrap__year"}>
+              %i.fa.fa-chevron-down
+              %select{:name => "year", class: "main__container__form__content-top__birthday__select-wrap__year"}
                 %option{:value => ""} --
                 %option{:value => "2020"} 2020
                 %option{:value => "2019"} 2019
@@ -155,6 +157,7 @@
                 %option{:value => "1951"} 1951
                 %option{:value => "1950"} 1950
               年
+              
               %select{:name => "month", class: "main__container__form__content-top__birthday__select-wrap__month"}>
                 %option{:value => ""} --
                 %option{:value => "1"} 1
@@ -215,7 +218,10 @@
               = link_to "/signup/step3", class: "main__container__form__content-top__info__btn__red" do
                 次へ進む
             .main__container__form__content-top__info__text
-              = link_to "本人情報の登録について", "#", class: "main__container__form__content-top__info__text__right"
+              = link_to "#", class: "main__container__form__content-top__info__text__right" do
+                本人情報の登録について
+                %i.fa.fa-angle-right
+        
             .main__container__form__content-top__info__label
               This site is protected by reCAPTCHA and the Google
               = link_to " Privacy Policy ", "#", class: "main__container__form__content-top__info__label__policy"
@@ -223,16 +229,16 @@
               = link_to " Terms of Service ", "#", class: "main__container__form__content-top__info__label__service"
               apply.
   .footer
-  .footer__center
-    %nav
-      %ul.menu
-        %li
-          = link_to "プライバシーポリシー","#"
-        %li
-          = link_to "メルカリ利用規約","#"
-        %li
-          = link_to "特定商取引に関する表記","#"
-    .footer__center__logo
-      =link_to image_tag("/assets/logo_gray.svg", width:"80", height:"65",class:"footer__center__logo--red"),"/"
-    %p.inc
-      ©︎Mercari,Inc.
+    .footer__center
+      %nav
+        %ul.menu
+          %li
+            = link_to "プライバシーポリシー","#"
+          %li
+            = link_to "メルカリ利用規約","#"
+          %li
+            = link_to "特定商取引に関する表記","#"
+      .footer__center__logo
+        =link_to image_tag("logo_gray.svg", width:"80", height:"65",class:"footer__center__logo--red"),"/"
+      %p.inc
+        ©︎Mercari,Inc.
