@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :values
   has_many :addresses
   belongs_to :pay_id
+  belongs_to :card
 end
