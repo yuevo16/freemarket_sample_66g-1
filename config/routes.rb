@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'mypage#mypage'
+  # root 'mypage#mypage'
 
 
   devise_for :users, controllers: {
