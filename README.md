@@ -18,7 +18,7 @@
 - has_many :items, dependent: :destroy
 - has_many :likes, dependent: :destroy
 - has_many :values, dependent: :destroy
-- has_many :addresses, dependent: :destroy
+- belongs_to :address, dependent: :destroy
 - belongs_to :pay, dependent: :destroy
 ## addressテーブル
 |Column|Type|Options|
@@ -32,6 +32,7 @@
 |city|string|null: false|
 |address_number|string|null: false|
 |building|string|null: false|
+|phone_number|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
@@ -81,7 +82,6 @@
 |limit_year|integer|null: false|
 |security_code|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
-|address_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :address

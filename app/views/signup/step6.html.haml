@@ -1,7 +1,7 @@
 .body-card
   .header
     .header__icon
-      = link_to image_tag(src= "/assets/fmarket_logo_red.svg", class: "header__icon__image"), "/"
+      = link_to image_tag("fmarket_logo_red.svg", class: "header__icon__image"), "/"
     .header__status
       .header__status__line
         .header__status__line__menber
@@ -20,31 +20,31 @@
           完了
           .header__status__line__done__box
   .main
-    .main__container
+    = form_for @user, url: "/signup", method: :post, html: {class: 'main__container'} do |f|
       .main__container__header
         支払い方法
-      .main__container__form
+      = f.fields_for :card, html: {class: 'main__container__form'} do |i|
         .main__container__form__card
           .main__container__form__card__title
             カード番号
           .main__container__form__card__require
             必須
-          %input{:type => "tel", placeholder:"半角数字のみ", class: "main__container__form__card__number"}
+          = i.text_field :card_number, :type => "text", placeholder:"半角数字のみ", class: "main__container__form__card__number"
           .main__container__form__card__image
-            = link_to image_tag(src= "/assets/credit-card_22@0.5.png", class: "main__container__form__card__image__icon")
-            = link_to image_tag(src= "/assets/credit-card_9@0.5.png", class: "main__container__form__card__image__icon")
-            = link_to image_tag(src= "/assets/credit-card_26@0.5.png", class: "main__container__form__card__image__icon")
-            = link_to image_tag(src= "/assets/jcb-logomark-img-01.gif", class: "main__container__form__card__image__icon")
-            = link_to image_tag(src= "/assets/amex-logomark-img-04.gif", class: "main__container__form__card__image__icon")
-            = link_to image_tag(src= "/assets/diners-logomark-img-01.gif", class: "main__container__form__card__image__icon")
-            = link_to image_tag(src= "/assets/discover-logomark-img-08.gif", class: "main__container__form__card__image__icon")
+            = image_tag("credit-card_22@0.5.png", class: "main__container__form__card__image__icon")
+            = image_tag("credit-card_9@0.5.png", class: "main__container__form__card__image__icon")
+            = image_tag("credit-card_26@0.5.png", class: "main__container__form__card__image__icon")
+            = image_tag("jcb-logomark-img-01.gif", class: "main__container__form__card__image__icon")
+            = image_tag("amex-logomark-img-04.gif", class: "main__container__form__card__image__icon")
+            = image_tag("diners-logomark-img-01.gif", class: "main__container__form__card__image__icon")
+            = image_tag("discover-logomark-img-08.gif", class: "main__container__form__card__image__icon")
         .main__container__form__limit
           .main__container__form__limit__title
             有効期限
           .main__container__form__limit__require
             必須
           .main__container__form__limit__wrap
-            %select{:name => "month", class: "main__container__form__limit__wrap__month"}>
+            = i.select :limit_month, :type => "text", placeholder:"", class: "main__container__form__limit__wrap__month" do
               %option{:value => ""} -
               %option{:value => "1"} 1
               %option{:value => "2"} 2
@@ -59,7 +59,7 @@
               %option{:value => "11"} 11
               %option{:value => "12"} 12
             月
-            %select{:name => "day", class: "main__container__form__limit__wrap__day"}>
+            = i.select :limit_year, :type => "text", placeholder:"", class: "main__container__form__limit__wrap__year" do
               %option{:value => ""} -
               %option{:value => "1"} 1
               %option{:value => "2"} 2
@@ -79,15 +79,13 @@
             セキュリティーコード
           .main__container__form__security__require
             必須
-          %form{:action => ""}
-            %input{:type => "tel", placeholder:"カードの背面4桁もしくは3桁の番号", class: "main__container__form__security__number"}
+          = i.text_field :security_code, :type => "text", placeholder:"カードの背面4桁もしくは3桁の番号", class: "main__container__form__security__number"
         .main__container__form__question
           .main__container__form__question__mark
             %span ?
             カードの裏面の番号とは？
         .main__container__form__btn
-          = link_to "/signup/done", class: "main__container__form__btn__red" do
-            次へ進む
+          = f.submit "次へ進む" ,class: "main__container__form__btn__red" 
   .footer
     .footer__center
       %nav
@@ -99,7 +97,7 @@
           %li
             = link_to "特定商取引に関する表記","#"
       .footer__center__logo
-        =link_to image_tag("/assets/logo_gray.svg", width:"80", height:"65",class:"footer__center__logo--red"),"/"
+        =link_to image_tag("logo_gray.svg", width:"80", height:"65",class:"footer__center__logo--red"),"/"
       %p.inc
         ©︎Mercari,Inc.
         

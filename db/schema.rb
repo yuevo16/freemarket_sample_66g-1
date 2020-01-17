@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200115080203) do
+ActiveRecord::Schema.define(version: 20200115053609) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "first_name",      null: false
@@ -22,20 +22,18 @@ ActiveRecord::Schema.define(version: 20200115080203) do
     t.string   "city",            null: false
     t.string   "address_number",  null: false
     t.string   "building",        null: false
-    t.integer  "phone_number",    null: false
+    t.string   "phone_number",    null: false
     t.integer  "user_id",         null: false
-    t.string   "birth_year",      null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
 
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "card_number",   null: false
+    t.string   "card_number",   null: false
     t.integer  "limit_month",   null: false
     t.integer  "limit_year",    null: false
     t.integer  "security_code", null: false
     t.integer  "user_id",       null: false
-    t.integer  "address_id",    null: false
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -51,14 +49,12 @@ ActiveRecord::Schema.define(version: 20200115080203) do
     t.string   "last_name",                           null: false
     t.string   "first_name_kana",                     null: false
     t.string   "last_name_kana",                      null: false
-    t.integer  "pay_id",                              null: false
-    t.string   "icon_image",                          null: false
+    t.string   "phone_number",                        null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.integer  "phone_number"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["nickname"], name: "index_users_on_nickname", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
