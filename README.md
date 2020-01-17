@@ -3,17 +3,22 @@
 |------|----|-------|
 |icon_image|string|null: false|
 |nickname|string|null: false|
-|mail_address|string|null: false|
+|email|string|null: false|
 |password|string|null: false|
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|
 |birth_day|integer|null: false|
+|first_name|string|null: false|
+|last_name|string|null: false|
+|first_name_kana|string|null: false|
+|last_name_kana|string|null: false|
+|phone_number|integer|null: false|
 |pay_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :items, dependent: :destroy
 - has_many :likes, dependent: :destroy
 - has_many :values, dependent: :destroy
-- has_many :addresses, dependent: :destroy
+- belongs_to :address, dependent: :destroy
 - belongs_to :pay, dependent: :destroy
 ## addressテーブル
 |Column|Type|Options|
@@ -77,7 +82,6 @@
 |limit_year|integer|null: false|
 |security_code|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
-|address_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :address
