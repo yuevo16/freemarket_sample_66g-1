@@ -74,9 +74,8 @@
       height: 60px;
       border-radius: 50%;
       vertical-align: middle;
-      img {
-        vertical-align: middle;
-        left: 30px;
+      .img-tag {
+        text-align: center;
       }
     }
         textarea {
