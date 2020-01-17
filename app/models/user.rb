@@ -9,7 +9,6 @@ class User < ApplicationRecord
   has_many :values
   has_one :address
   accepts_nested_attributes_for :address
-  # belongs_to :pay_id
   has_one :card
   accepts_nested_attributes_for :card
 end
