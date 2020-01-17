@@ -19,7 +19,6 @@
         .header__status__line__done
           完了
           .header__status__line__done__box
-
   .main
     .main__container
       .main__container__header
@@ -71,19 +70,10 @@
           .main__container__form__content-top__birthday
             .main__container__form__content-top__birthday__label
               生年月日
-              
             .main__container__form__content-top__birthday__require
               必須
             .main__container__form__content-top__birthday__select-wrap
-
               = f.select :birth_year, :type => "text", placeholder:"", class: "main__container__form__content-top__birthday__select-wrap__year" do
-
-              %i.fa.fa-chevron-down
-              %select{:name => "year", class: "main__container__form__content-top__birthday__select-wrap__year"}
-
-              
-              = f.select :birth_year, :type => "text", placeholder:"", class: "main__container__form__content-top__birthday__select-wrap__year"
-
                 %option{:value => ""} --
                 %option{:value => "2020"} 2020
                 %option{:value => "2019"} 2019
@@ -156,16 +146,8 @@
                 %option{:value => "1952"} 1952
                 %option{:value => "1951"} 1951
                 %option{:value => "1950"} 1950
-
               年
-              
-              %select{:name => "month", class: "main__container__form__content-top__birthday__select-wrap__month"}>
-                年
-
               = f.select :birth_month, :type => "text", placeholder:"", class: "main__container__form__content-top__birthday__select-wrap__month" do
-
-              = f.select :birth_month, :type => "text", placeholder:"", class: "main__container__form__content-top__birthday__select-wrap__month"
-
                 %option{:value => ""} --
                 %option{:value => "1"} 1
                 %option{:value => "2"} 2
@@ -179,7 +161,7 @@
                 %option{:value => "10"} 10
                 %option{:value => "11"} 11
                 %option{:value => "12"} 12
-                月
+              月
               = f.select :birth_day, :type => "text", placeholder:"", class: "main__container__form__content-top__birthday__select-wrap__day" do
                 %option{:value => ""} --
                 %option{:value => "1"} 1
@@ -213,7 +195,7 @@
                 %option{:value => "29"} 29
                 %option{:value => "30"} 30
                 %option{:value => "31"} 31
-                日
+              日
             .main__container__form__content-top__birthday__text
               ※本人情報は正しく入力してください。会員登録後、修正するにはお時間をいただく場合がございます。
           .main__container__form__content-top__info
