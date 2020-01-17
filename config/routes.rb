@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  root 'mypage#mypage'
+
+
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
