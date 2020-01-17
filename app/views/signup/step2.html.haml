@@ -71,10 +71,19 @@
           .main__container__form__content-top__birthday
             .main__container__form__content-top__birthday__label
               生年月日
+              
             .main__container__form__content-top__birthday__require
               必須
             .main__container__form__content-top__birthday__select-wrap
+
               = f.select :birth_year, :type => "text", placeholder:"", class: "main__container__form__content-top__birthday__select-wrap__year" do
+
+              %i.fa.fa-chevron-down
+              %select{:name => "year", class: "main__container__form__content-top__birthday__select-wrap__year"}
+
+              
+              = f.select :birth_year, :type => "text", placeholder:"", class: "main__container__form__content-top__birthday__select-wrap__year"
+
                 %option{:value => ""} --
                 %option{:value => "2020"} 2020
                 %option{:value => "2019"} 2019
@@ -147,8 +156,16 @@
                 %option{:value => "1952"} 1952
                 %option{:value => "1951"} 1951
                 %option{:value => "1950"} 1950
+
+              年
+              
+              %select{:name => "month", class: "main__container__form__content-top__birthday__select-wrap__month"}>
                 年
+
               = f.select :birth_month, :type => "text", placeholder:"", class: "main__container__form__content-top__birthday__select-wrap__month" do
+
+              = f.select :birth_month, :type => "text", placeholder:"", class: "main__container__form__content-top__birthday__select-wrap__month"
+
                 %option{:value => ""} --
                 %option{:value => "1"} 1
                 %option{:value => "2"} 2
