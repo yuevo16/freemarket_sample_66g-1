@@ -1,0 +1,14 @@
+.user-profile
+  .p-chapter__container
+    %h2.p-chapter__head プロフィール
+    %form{action: "#", method: "POST"}
+      %input{name: "__csrf_value", type: "hidden", value: "b5f1850bb6ea956b2637b161e6491023d706e6b512897e56b9b2ee71c6859b67c4856bc82c9c9604a7da6f4847cae46ff50b5e53a4ce21011284707b7a56cd669"}/
+      .setting-profile
+      .setting-profile__icon
+        %figure
+          = image_tag src="/assets/icon3.jpeg",size: "60x60", class: "img-tag"
+        %input.input-default{name: "nickname", placeholder: "例)AYA☆セール中", type: "text", value: "a"}/
+      .setting-profile__content
+        %textarea.textarea-default{name: "introduction", placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
+        %input{name: "after_save_callback", type: "hidden", value: "https://www.mercari.com/jp/mypage/profile/"}/
+        %button.btn-default.btn-red{type: "submit"} 変更する
