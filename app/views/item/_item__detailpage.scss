@@ -1,0 +1,356 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.item__detailpage{
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  background-color: #f5f5f5;
+  padding: 40px 26.5%;
+  width: 100vw;
+  &__box{
+    background-color: #ffffff;
+    a{
+      color: #0099e8;
+    }
+    &__title{
+      padding: 24px 40px 0px;
+      font-size: 24px;
+      text-align: center;
+      word-wrap: break-word;
+      line-height: 1.1;
+      font-weight: 600;
+    }
+    &__main{
+      padding: 16px 30px 0;
+      height: 410px;
+      display: flex;
+      justify-content: space-between;
+      &__image{
+        height: 375px;
+        width: 300px;
+        background-color: #f5f5f5f5;
+        padding: 0 30px;
+
+        &__top{
+          background-color: red;
+          height: 300px;
+          
+        }
+        &__bottom{
+          display: fle;
+          &__column{
+            height: 60px;
+            width: 60px;
+            background-color: green;
+          }
+        }
+      }
+      &__text{
+        width: 300px;
+        height: 300px;
+        background-color:pink;
+        font-weight: 400;
+        font-size: 14px;
+        &__box{
+          display: flex;
+          &__column{
+            width: 40%;
+            background-color: #f5f5f5f5;
+            border: solid 0.1px #f0f0f0;
+            &__seller{
+              padding: 20px 8px;
+            }
+            &__category{
+              padding: 23.5px 8px;
+            }
+            &__box{
+              padding: 8px;
+            }
+          }
+          &__content{
+            width: 60%;
+            background-color: #ffffff;
+            padding: 8px;
+            border: solid 0.1px #f0f0f0;
+            &__assessment{
+              padding-bottom: 5px;
+            }
+            &__icons{
+              display: flex;
+              &__text{                
+                font-weight: 300;
+                font-size: 13px;
+                padding-right: 13px;
+              }
+              &__1{
+                font-size: 16px;
+                color: #ef5185;
+                padding-right: 3px;
+              }
+              &__2{
+                color: #fba933;
+                font-size: 16px;
+                padding-right: 3px;
+              }
+              &__3{
+                color: #6ab5d8;
+                font-size: 16px;
+                padding-right: 3px;
+              }
+            }
+            &__genre{
+
+            }
+            &__text{
+            }
+          }
+        }
+      }
+    }
+    &__price{
+      padding-top: 24px;
+      display: flex;
+      justify-content: center;
+      &__main{
+        font-size: 50px;
+        font-weight: 500;
+        padding-right: 16px;
+        line-height: 50px;
+      }
+      &__tax{
+        font-size: 10px;
+        line-height: 75px;
+      }
+      &__pastage{
+        line-height: 75px;
+      }
+    }
+    &__purchase{
+      height: 60px;
+      text-align: center;
+      background-color: #ea352d;
+      line-height: 60px;
+      a{
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 600;
+      }
+    }
+    &__caution{
+      color: #ea352d;
+      font-size: 14px;
+      padding-top: 16px;
+      text-align: center;
+    }
+    &__matter{
+      padding:32px 40px 40px;
+      font-size: 18px;
+      &__content{
+
+      }
+      &__icons{
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        &__report{
+          display: flex;
+          &__1{
+            background-color: #f5f5f5;
+            display: flex;
+            padding: 5px 16px;
+            border-radius: 40px;
+            &__mark{
+              color: #ccc;
+            }
+            &__text{
+              padding:1px 0 0 8px;
+            }
+            &__value{
+              padding: 3px 0 0 8px;
+            }
+          }
+          &__2{
+            background-color: #f5f5f5;
+            display: flex;
+            padding: 5px 16px;
+            margin-left: 16px;
+            border-radius: 40px;
+            &__icon{
+              color: #ccc;
+              padding-top: 3px;
+            }
+            &__text{
+              padding: 1px 0 0 8px;
+            }
+          }
+        }
+        &__safety{
+          color: #0099e8;
+          display: flex;
+          padding-top: 5px;
+          &__icon{
+            padding-top: 3px;
+          }
+          &__text{
+            padding:1px 0 0 8px;
+          }
+        }
+      }
+    }
+  }
+  &__comment{
+    font-size: 14px;
+    margin-top: 10px;;
+    background-color: #ffffff;
+    &__box{
+      padding: 24px;
+      &__1{
+        padding: 8px;
+        background-color: #fff6de;
+        margin-bottom: 10px;
+      }
+      textarea{
+        height: 104px;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      &__3{
+        width: 100%;
+        background-color: #aaaaaa;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+      }
+    }
+  }
+  &__next{
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    a{
+      color: #0099e8;
+      font-size: 14px;
+    }
+    &__1{
+
+    }
+    &__{
+
+    }
+  }
+  &__app{
+    background-color: #ffffff;
+    &__icons{
+      display: flex;
+      justify-content: center;
+      padding:62px 0 24px;
+      &__1{
+        font-size: 44px;
+        padding-right: 10px;
+        color:#385185;
+      }
+      &__2{
+        font-size: 44px;
+        padding-right: 10px;
+        color: #5d9dc9;
+      }
+      &__3{
+        font-size: 44px;
+        color: #aa262a;
+      }
+    }
+  }
+  &__other{
+    width: 100%;
+    padding: 24px 0 8px;
+    &__brand{
+      font-size: 22px;
+      a{
+        color: #0099e8;
+      }
+    }
+    &__seller{
+      font-size: 22px;
+      a{
+        color: #0099e8;
+      }
+    }
+    &__items{
+      display: flex;
+      flex-wrap: wrap;
+      &__box{
+        width: 220px;
+        height: 330px;
+        padding:10px;
+        &__image{
+          height: 220px;
+          background-color: red;
+        }
+        &__content{
+          background-color: #ffffff;
+          padding: 16px;
+          &__text{
+            height: 44px;
+            width: 188px;
+            overflow: hidden;
+            font-size: 16px;
+            position: relative;
+            &__hidden{
+              position: absolute;
+              bottom: 0;
+              right: 3.2px;
+              width: 50%;
+              height: 1.5em;
+              background: linear-gradient(to right, rgba(255,255,255,0), #fff 72%)
+            }
+          }
+          &__sub{
+            padding-top: 8px;
+            display: flex;
+            justify-content: space-between;
+            &__price{
+            
+            }
+            &__like{
+              display: flex;
+              line-height: 16px;
+              &__icon{
+                padding-right: 2px;
+                color: #aaaaaa;
+              }
+              &__value{
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__category{
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    height: 49px;
+    border-top: solid 0.1px #e0e0e0;
+    background-color: #f5f5f5;
+    padding:0 20%;
+    &__box{
+      font-size: 14px;
+      display: flex;
+      padding: 16px 0;
+      &__1{
+        display: flex;
+        &__text{
+          padding-right: 10px;
+        }
+        &__icon{
+          color: #aaaaaa;
+        }
+      }
+      &__2{
+        font-weight: 600;
+      }
+    }
+  }
+}
