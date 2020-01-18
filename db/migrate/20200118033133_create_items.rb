@@ -12,7 +12,6 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.string :brand, null: false
       t.string :deal
       t.references :user, foreign_key: true
-      t.references :pay, foreign_key: true
       t.timestamps
     end
   end
