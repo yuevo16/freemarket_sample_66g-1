@@ -35,8 +35,8 @@
               %i.fas.fa-check
               %font{:size => "2"} やることリスト
           %li.header-main__search-bar2__auth-box__mypage
-            %a.mypage-image{:href => "/jp/"}
-              %i.far.fa-smile
+            = link_to mypage_index_path,class: "mypage-image" do
+              =icon('fas','smile')
               %font{:size => "2"} マイページ
       - else
         .header-main__search-bar2__new

@@ -5,7 +5,7 @@ class MypageController < ApplicationController
   def user_profile
   end
 
-  def Identification
+  def identification
   end
 
   def credit_card
