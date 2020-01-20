@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   #   post 'addresses', to: 'users/registrations#create_register'
   # end
   root 'post#index'
+  resources :items, only: [:new, :create]
   resources :signup do
     collection do
       get 'step1'
