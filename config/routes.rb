@@ -3,7 +3,20 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
   }
   root 'post#index'
+
   resources :items, only: [:new, :create]
+
+
+  
+  resources :sell do
+    resources :purchase do
+      collection do
+        get 'show'
+      end
+    end
+  end
+
+
   resources :signup do
     collection do
       get 'step1'
