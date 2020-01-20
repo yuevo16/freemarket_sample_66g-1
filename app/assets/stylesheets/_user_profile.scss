@@ -41,7 +41,7 @@
       .setting-profile{
         &__icon {
           padding: 72px 16px 24px;
-          background: url(/assets/background4.png);
+          background-image: image-url("background4.png");
           background-repeat: no-repeat;
           background-size: cover;
           text-align: center;
@@ -103,6 +103,7 @@
           transition: all ease-out .3s;
           cursor: pointer;
           text-align: center;
+          
         }
         .btn-red {
           background: #ea352d;

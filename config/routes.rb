@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  # root 'mypage#mypage'
 
 
   devise_for :users, controllers: {
@@ -11,6 +10,7 @@ Rails.application.routes.draw do
   #   post 'addresses', to: 'users/registrations#create_register'
   # end
   root 'post#index'
+  resources :items, only: [:new, :create]
   resources :signup do
     collection do
       get 'step1'
@@ -22,7 +22,14 @@ Rails.application.routes.draw do
       get 'done'
     end
   end
-  
-  root 'mypage#index'
+  resources :mypage do
+    collection  do
+      get 'index'
+      get 'identification'
+      get 'credit_card'
+      get 'user_profile'
+      get 'logout'
+    end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

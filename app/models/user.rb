@@ -11,4 +11,5 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :address
   has_one :card
   accepts_nested_attributes_for :card
+  belongs_to :pay
 end
