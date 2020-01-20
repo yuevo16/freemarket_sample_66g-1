@@ -73,6 +73,6 @@ gem 'carrierwave'
 gem "font-awesome-sass"
 gem 'erb2haml' 
 gem 'fog-aws'
-
+gem 'active_hash'
 
 

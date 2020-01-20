@@ -80,6 +80,7 @@
           &::after {
             position: absolute;
             bottom: 5px;
+            left: 54px;
             content: '';
             width: 120%;
             height: 2px;
@@ -124,7 +125,7 @@
   }
   .main {
     background-color: rgb(245, 245, 245);
-    height: 85%;
+    height: 100%;
     &__container {
       background-color: white;
       height: 100%;
@@ -147,7 +148,7 @@
         &__kanji {
           width: 340px;
           font-weight: 550;
-          margin: 10px auto 0;
+          margin: 20px auto 30px;
           &__title {
             font-weight: 550;
             display: inline-block;
@@ -163,8 +164,8 @@
             vertical-align: top;
           }
           &__family-name {
-            height: 25px;
-            width: 300px;
+            height: 48px;
+            width: 100%;
             margin: 8px auto 0;
             padding: 10px 16px 8px;
             border-radius: 4px;
@@ -174,8 +175,8 @@
             font-size: 16px;
           }
           &__first-name {
-            height: 25px;
-            width: 300px;
+            height: 48px;
+            width: 100%;
             margin: 8px auto 0;
             padding: 10px 16px 8px;
             border-radius: 4px;
@@ -188,7 +189,7 @@
         &__kana {
           width: 340px;
           font-weight: 550;
-          margin: 10px auto 0;
+          margin: 20px auto 30px;
           &__title {
             font-weight: 550;
             display: inline-block;
@@ -204,8 +205,8 @@
             vertical-align: top;
           }
           &__family-name {
-            height: 25px;
-            width: 300px;
+            height: 48px;
+            width: 100%;
             margin: 8px auto 0;
             padding: 10px 16px 8px;
             border-radius: 4px;
@@ -215,8 +216,8 @@
             font-size: 16px;
           }
           &__first-name {
-            height: 25px;
-            width: 300px;
+            height: 48px;
+            width: 100%;
             margin: 8px auto 0;
             padding: 10px 16px 8px;
             border-radius: 4px;
@@ -229,7 +230,7 @@
          &__post {
           width: 340px;
           font-weight: 550;
-          margin: 10px auto 0;
+          margin: 20px auto 30px;
           &__title {
             font-weight: 550;
             display: inline-block;
@@ -245,8 +246,8 @@
             vertical-align: top;
           }
           &__number {
-            height: 25px;
-            width: 300px;
+            height: 48px;
+            width: 100%;
             margin: 8px auto 0;
             padding: 10px 16px 8px;
             border-radius: 4px;
@@ -259,7 +260,7 @@
         &__pref {
           width: 340px;
           font-weight: 550;
-          margin: 10px auto 0;
+          margin: 20px auto 30px;
           &__title {
             font-weight: 550;
             display: inline-block;
@@ -274,9 +275,10 @@
             font-size: 12px;
             vertical-align: top;
           }
-          &__detail {
-            height: 45px;
-            width: 334px;
+          select {
+            height: 48px;
+            width: 100%;
+            -webkit-appearance: none;
             margin: 8px auto 0;
             padding: 10px 16px 8px;
             border-radius: 4px;
@@ -285,11 +287,28 @@
             line-height: 1.5;
             font-size: 16px;
           }
+          &__detail {
+            position: relative;
+            &::after {
+              content: '';
+              width: 6px;
+              height: 6px;
+              border: 0px;
+              border-bottom: solid 2px #b4b3b3;
+              border-right: solid 2px #b4b3b3;
+              -ms-transform: rotate(45deg);
+              -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+              position: absolute;
+              top: 50%;
+              right: 20px;
+            }
+          }
         }
         &__city {
           width: 340px;
           font-weight: 550;
-          margin: 10px auto 0;
+          margin: 20px auto 30px;
           &__title {
             font-weight: 550;
             display: inline-block;
@@ -305,8 +324,8 @@
             vertical-align: top;
           }
           &__detail {
-            height: 25px;
-            width: 300px;
+            height: 48px;
+            width: 100%;
             margin: 8px auto 0;
             padding: 10px 16px 8px;
             border-radius: 4px;
@@ -319,7 +338,7 @@
         &__addnumber {
           width: 340px;
           font-weight: 550;
-          margin: 10px auto 0;
+          margin: 20px auto 30px;
           &__title {
             font-weight: 550;
             display: inline-block;
@@ -335,8 +354,8 @@
             vertical-align: top;
           }
           &__detail {
-            height: 25px;
-            width: 300px;
+            height: 48px;
+            width: 100%;
             margin: 8px auto 0;
             padding: 10px 16px 8px;
             border-radius: 4px;
@@ -349,7 +368,7 @@
         &__build {
           width: 340px;
           font-weight: 550;
-          margin: 10px auto 0;
+          margin: 20px auto 30px;
           &__title {
             font-weight: 550;
             display: inline-block;
@@ -365,8 +384,8 @@
             vertical-align: top;
           }
           &__detail {
-            height: 25px;
-            width: 300px;
+            height: 48px;
+            width: 100%;
             margin: 8px auto 0;
             padding: 10px 16px 8px;
             border-radius: 4px;
@@ -379,7 +398,7 @@
         &__phone {
           width: 340px;
           font-weight: 550;
-          margin: 10px auto 0;
+          margin: 20px auto 30px;
           &__title {
             font-weight: 550;
             display: inline-block;
@@ -395,8 +414,8 @@
             vertical-align: top;
           }
           &__detail {
-            height: 25px;
-            width: 300px;
+            height: 48px;
+            width: 100%;
             margin: 8px auto 0;
             padding: 10px 16px 8px;
             border-radius: 4px;
@@ -407,7 +426,7 @@
           }
         }
         &__btn {
-          margin-top: 20px;;
+          margin: 20px auto 30px;
           &__red {
             background: #ea352d;
             display: block;
