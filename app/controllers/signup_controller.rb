@@ -80,7 +80,7 @@ class SignupController < ApplicationController
         city: session[:city],
         address_number: session[:address_number],
         building: session[:building],
-      )      
+      )
       @address.save
       @card = @user.build_card(
         card_number: params[:user][:card_attributes][:card_number],

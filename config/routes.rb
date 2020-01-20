@@ -1,14 +1,7 @@
 Rails.application.routes.draw do
-
-
-
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
-  # devise_scope :user do
-  #   get 'addresses', to: 'users/registrations#new_register'
-  #   post 'addresses', to: 'users/registrations#create_register'
-  # end
   root 'post#index'
   resources :items, only: [:new, :create]
   resources :signup do
