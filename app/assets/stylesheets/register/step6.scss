@@ -101,6 +101,7 @@
           &::after {
             position: absolute;
             bottom: 5px;
+            left: 36px;
             content: '';
             width: 120%;
             height: 2px;
@@ -124,7 +125,7 @@
   }
   .main {
     background-color: rgb(245, 245, 245);
-    height: 50%;
+    height: 55%;
     &__container {
       background-color: white;
       height: 100%;
@@ -163,8 +164,8 @@
             vertical-align: top;
           }
           &__number {
-            height: 25px;
-            width: 300px;
+            height: 48px;
+            width: 100%;
             margin: 8px auto 0;
             padding: 10px 16px 8px;
             border-radius: 4px;
@@ -183,8 +184,23 @@
           }          
         }
         &__limit {
+          height: 150px;
           width: 340px;
           margin: 10px auto 0;
+          select {
+            display: inline-block;
+            -webkit-appearance: none;
+            position: relative;
+            height: 48px;
+            width: 100px;
+            margin: 8px 3px 3px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            }
           &__title {
             font-weight: 550;
             display: inline-block;
@@ -200,30 +216,40 @@
             font-size: 12px;
             vertical-align: top;
           }
-          &__wrap {
-            &__month {
-            display: inline-block;
-            height: 45px;
-            width: 120px;
-            margin: 8px 10px 3px;
-            padding: 10px 16px 8px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            background: #fff;
-            line-height: 1.5;
-            font-size: 16px;
+          &__month {
+            position: relative;
+            &::after {
+              content: '';
+              width: 6px;
+              height: 6px;
+              border: 0px;
+              border-bottom: solid 2px #b4b3b3;
+              border-right: solid 2px #b4b3b3;
+              -ms-transform: rotate(45deg);
+              -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+              position: absolute;
+              top: 50%;
+              left: 85px;
+              margin-top: -3px;
             }
-            &__day {
-              display: inline-block;
-              height: 45px;
-              width: 120px;
-              margin: 8px 10px 3px;
-              padding: 10px 16px 8px;
-              border-radius: 4px;
-              border: 1px solid #ccc;
-              background: #fff;
-              line-height: 1.5;
-              font-size: 16px;
+          }
+          &__year {
+            position: relative;
+            &::after {
+              content: '';
+              width: 6px;
+              height: 6px;
+              border: 0px;
+              border-bottom: solid 2px #b4b3b3;
+              border-right: solid 2px #b4b3b3;
+              -ms-transform: rotate(45deg);
+              -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+              position: absolute;
+              top: 50%;
+              left: 85px;
+              margin-top: -3px;
             }
           }
         }
@@ -246,8 +272,8 @@
             vertical-align: top;
           }
           &__number {
-            height: 25px;
-            width: 300px;
+            height: 48px;
+            width: 100%;
             margin: 8px auto 0;
             padding: 10px 16px 8px;
             border-radius: 4px;
@@ -258,11 +284,11 @@
           }
          }
          &__question {
+           width: 340px;
            position: relative;
-           margin: 8px 0 0;
+           margin: 8px auto 0;
           &__mark {
             text-align: right;
-            margin-right: 190px;
             color: #0099e8;
             span{
               display: inline-block;
