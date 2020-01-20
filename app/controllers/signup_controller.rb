@@ -44,7 +44,7 @@ class SignupController < ApplicationController
     session[:address_first_name_kana] = user_params[:address_attributes][:first_name_kana]
     session[:address_last_name_kana] = user_params[:address_attributes][:last_name_kana]
     session[:post_number] = user_params[:address_attributes][:post_number]
-    session[:prefecture] = user_params[:address_attributes][:prefecture]
+    session[:prefecture_id] = user_params[:address_attributes][:prefecture_id]
     session[:city] = user_params[:address_attributes][:city]
     session[:address_number] = user_params[:address_attributes][:address_number]
     session[:building] = user_params[:address_attributes][:building]
@@ -76,7 +76,7 @@ class SignupController < ApplicationController
         last_name_kana: session[:address_last_name_kana],
         phone_number: session[:address_phone_number],
         post_number: session[:post_number],
-        prefecture: session[:prefecture],
+        prefecture_id: session[:prefecture_id],
         city: session[:city],
         address_number: session[:address_number],
         building: session[:building],
@@ -127,7 +127,7 @@ class SignupController < ApplicationController
       :first_name_kana,
       :last_name_kana,
       :post_number,
-      :prefecture,
+      :prefecture_id,
       :city,
       :address_number,
       :building,
