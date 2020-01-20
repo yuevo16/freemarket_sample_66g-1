@@ -43,9 +43,8 @@
             有効期限
           .main__container__form__limit__require
             必須
-          .main__container__form__limit__wrap
-            = i.select :limit_month, :type => "text", placeholder:"", class: "main__container__form__limit__wrap__month" do
-              %option{:value => ""} -
+          .main__container__form__limit__month
+            = i.select :limit_month, :type => "text", placeholder:"" do
               %option{:value => "1"} 1
               %option{:value => "2"} 2
               %option{:value => "3"} 3
@@ -59,20 +58,15 @@
               %option{:value => "11"} 11
               %option{:value => "12"} 12
             月
-            = i.select :limit_year, :type => "text", placeholder:"", class: "main__container__form__limit__wrap__year" do
-              %option{:value => ""} -
-              %option{:value => "1"} 1
-              %option{:value => "2"} 2
-              %option{:value => "3"} 3
-              %option{:value => "4"} 4
-              %option{:value => "5"} 5
-              %option{:value => "6"} 6
-              %option{:value => "7"} 7
-              %option{:value => "8"} 8
-              %option{:value => "9"} 9
-              %option{:value => "10"} 10
-              %option{:value => "11"} 11
-              %option{:value => "12"} 12
+          .main__container__form__limit__year
+            = i.select :limit_year, :type => "text", placeholder:"" do
+              %option{:value => "20"} 20
+              %option{:value => "21"} 21
+              %option{:value => "22"} 22
+              %option{:value => "23"} 23
+              %option{:value => "24"} 24
+              %option{:value => "25"} 25
+              %option{:value => "26"} 26            
             年
         .main__container__form__security
           .main__container__form__security__title

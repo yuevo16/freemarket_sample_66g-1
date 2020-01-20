@@ -37,6 +37,7 @@
           &::after {
             position: absolute;
             bottom: 5px;
+            left: 30px;
             content: '';
             width: 200%;
             height: 2px;
@@ -123,13 +124,12 @@
   }
   .main {
     background-color: rgb(245, 245, 245);
-    height: 90%;
+    height: 85%;
     &__container {
       background-color: white;
       height: 100%;
       width: 50%;
       margin: auto;
-      
       &__header {
         background-color: white;
         height: 100px;
@@ -146,13 +146,12 @@
         margin: auto;
         &__content-top {
           height: 90%;
-          width: 100%;
-          margin: auto;
+          max-width: 343px;
+          margin: 0 auto;
           padding-top: 30px;
           &__nickname {
             height: 100px;
-            width: 50%;
-            margin: auto;
+            width: 100%;
             &__label {
               font-weight: 550;
               display: inline-block;
@@ -169,7 +168,7 @@
             }
             &__text {
               height: 50px;
-              width: 300px;
+              width: 100%;
               margin: 8px 0 0;
               padding: 10px 16px 8px;
               border-radius: 4px;
@@ -181,7 +180,7 @@
           }
           &__mail {
             height: 100px;
-            width: 50%;
+            width: 100%;
             margin: auto;
             &__label {
               font-weight: 550;
@@ -199,7 +198,7 @@
             }
             &__text {
               height: 50px;
-              width: 300px;
+              width: 100%;
               margin: 8px 0 0;
               padding: 10px 16px 8px;
               border-radius: 4px;
@@ -210,8 +209,8 @@
             }
           }
           &__password {
-            height: 140px;
-            width: 50%;
+            height: 180px;
+            width: 100%;
             margin: auto;
             &__label {
               font-weight: 550;
@@ -229,7 +228,7 @@
             }
             &__text {
               height: 50px;
-              width: 300px;
+              width: 100%;
               margin: 8px 0 0;
               padding: 10px 16px 8px;
               border-radius: 4px;
@@ -243,46 +242,35 @@
               font-size: 15px;
               margin-top: 10px;
             }
-          }
-          &__check {
-            margin-top: 16px;
-            &__box {
-              position: relative;
-              z-index: 2;
-              padding: 0 0 0 28px;
-              font-size: 14px;
-              font-weight: 400;
-              vertical-align: middle;
-              cursor: pointer;
-            }
-            &::before {
-              content:'';
-              width:32px;
-              height:32px;
-              display:inline-block;
-              position:absolute;
-              left:0;
-              background-color: #fff;
-              box-shadow:	inset 1px 2px 3px 0px #000;
-              border-radius:6px 6px 6px 6px;
-            }
-            &__box nput[type=checkbox] {
-                display:		none;
+            &__check {
+              margin-top: 16px;
+              &__box {
+                position: relative;
+                z-index: 2;
+                padding: 0 0 0 28px;
+                font-size: 14px;
+                font-weight: 400;
+                vertical-align: middle;
+                cursor: pointer;
+                width: 24px;
+                height: 24px;
+                -moz-transform: scale(1.4);
+                -webkit-transform: scale(1.4);
+                transform: scale(1.4);
               }
-            &__label {
-              z-index: 2;
-              padding: 0 0 0 28px;
-              font-size: 14px;
-              font-weight: 400;
-              vertical-align: middle;
-              cursor: pointer;
+              &__label {
+                z-index: 2;
+                font-size: 14px;
+                font-weight: 400;
+                vertical-align: middle;
+                cursor: pointer;
+              }
             }
           }
           &__identity {
             height: 100px;
-            width: 50%;
+            width: 100%;
             margin: auto;
-            padding-top: 40px;
             &__head {
               font-size: 16px;
               font-weight: 550;
@@ -294,27 +282,30 @@
           }
           &__name-kanji {
             height: 100px;
-            width: 50%;
+            width: 100%;
             margin: auto;
-            padding-top: 60px;
-            &__label {
-              font-weight: 550;
-              display: inline-block;
-            }
-            &__require {
-              background: #ea352d;
-              display: inline-block;
-              margin: 0 0 0 8px;
-              padding: 2px 4px;
-              border-radius: 2px;
-              color: #fff;
-              font-size: 12px;
-              vertical-align: top;
+            &__header {
+              display: block;
+              &__label {
+                font-weight: 550;
+                display: inline-block;
+              }
+              &__require {
+                background: #ea352d;
+                display: inline-block;
+                margin: 0 0 0 8px;
+                padding: 2px 4px;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 12px;
+                vertical-align: top;
+              }
             }
             &__family-name {
+              display: inline;
               height: 50px;
-              width: 140px;
-              margin: 8px 0 0;
+              width: calc(50% - 6px);
+              margin: 8px 0 0 0;
               padding: 10px 16px 8px;
               border-radius: 4px;
               border: 1px solid #ccc;
@@ -323,8 +314,9 @@
               font-size: 16px;
             }
             &__first-name {
+              display: inline;
               height: 50px;
-              width: 140px;
+              width: calc(50% - 6px);
               margin: 8px 0 0;
               padding: 10px 16px 8px;
               border-radius: 4px;
@@ -336,28 +328,31 @@
             }
           }
           &__name-kana {
-            height: 90px;
-            width: 50%;
+            height: 100px;
+            width: 100%;
             margin: auto;
-            padding-top: 60px;
-            &__label {
-              font-weight: 550;
-              display: inline-block;
-            }
-            &__require {
-              background: #ea352d;
-              display: inline-block;
-              margin: 0 0 0 8px;
-              padding: 2px 4px;
-              border-radius: 2px;
-              color: #fff;
-              font-size: 12px;
-              vertical-align: top;
+            &__header {
+              display: block;
+              &__label {
+                font-weight: 550;
+                display: inline-block;
+              }
+              &__require {
+                background: #ea352d;
+                display: inline-block;
+                margin: 0 0 0 8px;
+                padding: 2px 4px;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 12px;
+                vertical-align: top;
+              }
             }
             &__family-name {
+              display: inline;
               height: 50px;
-              width: 140px;
-              margin: 8px 0 0;
+              width: calc(50% - 6px);
+              margin: 8px 0 0 0;
               padding: 10px 16px 8px;
               border-radius: 4px;
               border: 1px solid #ccc;
@@ -366,8 +361,9 @@
               font-size: 16px;
             }
             &__first-name {
+              display: inline;
               height: 50px;
-              width: 140px;
+              width: calc(50% - 6px);
               margin: 8px 0 0;
               padding: 10px 16px 8px;
               border-radius: 4px;
@@ -379,13 +375,8 @@
             }
           }
           &__birthday {
-            width: 50%;
+            width: 100%;
             margin: auto;
-
-            padding-top:80px ;
-
-            padding-top: 80px;
-
             &__label {
               font-weight: 550;
               display: inline-block;
@@ -402,15 +393,12 @@
             }
             &__select-wrap {
               position: relative;
-              .fa.fa-chevron-down{
-                position: absolute;
-                top: 25px;
-                left: 50px;
-              }
-              &__year {
+              select {
                 display: inline-block;
-                height: 50px;
-                width: 70px;
+                -webkit-appearance: none;
+                position: relative;
+                height: 48px;
+                width: 76px;
                 margin: 8px 3px 3px;
                 padding: 10px 16px 8px;
                 border-radius: 4px;
@@ -418,30 +406,63 @@
                 background: #fff;
                 line-height: 1.5;
                 font-size: 16px;
+                }
+              &__year {
+                display: inline;
+                position: relative;
+                &::after {
+                content: '';
+                width: 6px;
+                height: 6px;
+                border: 0px;
+                border-bottom: solid 2px #b4b3b3;
+                border-right: solid 2px #b4b3b3;
+                -ms-transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+                position: absolute;
+                top: 50%;
+                right: 30px;
+                margin-top: -6px;
+                }
               }
               &__month {
-                display: inline-block;
-                height: 50px;
-                width: 70px;
-                margin: 8px 3px 3px;
-                padding: 10px 16px 8px;
-                border-radius: 4px;
-                border: 1px solid #ccc;
-                background: #fff;
-                line-height: 1.5;
-                font-size: 16px;
+                display: inline;
+                position: relative;
+                &::after {
+                content: '';
+                width: 6px;
+                height: 6px;
+                border: 0px;
+                border-bottom: solid 2px #b4b3b3;
+                border-right: solid 2px #b4b3b3;
+                -ms-transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+                position: absolute;
+                top: 50%;
+                right: 30px;
+                margin-top: -6px;
+                }
               }
               &__day {
-                display: inline-block;
-                height: 50px;
-                width: 70px;
-                margin: 8px 3px 3px;
-                padding: 10px 16px 8px;
-                border-radius: 4px;
-                border: 1px solid #ccc;
-                background: #fff;
-                line-height: 1.5;
-                font-size: 16px;
+                display: inline;
+                position: relative;
+                &::after {
+                content: '';
+                width: 6px;
+                height: 6px;
+                border: 0px;
+                border-bottom: solid 2px #b4b3b3;
+                border-right: solid 2px #b4b3b3;
+                -ms-transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+                position: absolute;
+                top: 50%;
+                right: 30px;
+                margin-top: -6px;
+                }
               }
             }
             &__text {
@@ -452,11 +473,12 @@
           }
           &__info {
             height: 25%;
-            width: 50%;
+            width: 100%;
             margin: auto;
             &__text {
               font-size: 14.5px;
               margin-top: 30px;
+              text-align: center;
               a{
                 color: #0099e8;
                 text-decoration: none;
@@ -476,26 +498,20 @@
                 line-height: 3.3;
               }
             }
-            &__text {
-              margin-bottom: 20px;
-              text-align: right;
+            &__about {
               font-size: 14.5px;
+              margin: 30px 0 30px 0;
+              text-align: right;
               &__right {
                 display: inline;
                 color: #0099e8;
                 text-decoration: none;
-                
               }
               .icon{
+                display: inline;
                 color: #0099e8;
                 font-size: 20px;
               }
-
-              .icon{
-                color:#0099e8 ;
-                font-size: 20px;
-              }
-
             }
             &__label {
               background-color: rgb(245, 245, 245);

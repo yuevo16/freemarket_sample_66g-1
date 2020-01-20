@@ -91,10 +91,15 @@ class SignupController < ApplicationController
       @card.save
         # ログインするための情報を保管
         session[:id] = @user.id
-        redirect_to '/signup/done'
+        redirect_to done_signup_index_path
     else
       render '/signup/step1'
     end
+
+    def done
+      sign_in User.find(session[:id]) unless user_signed_in?
+    end
+
   end
 
 

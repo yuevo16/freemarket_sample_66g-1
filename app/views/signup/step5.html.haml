@@ -1,7 +1,7 @@
 .body-address
   .header
     .header__icon
-      = link_to image_tag(src= "/assets/fmarket_logo_red.svg", class: "header__icon__image"), "/"
+      = link_to image_tag("fmarket_logo_red.svg", class: "header__icon__image"), "/"
     .header__status
       .header__status__line
         .header__status__line__menber
@@ -29,15 +29,15 @@
             お名前
           .main__container__form__kanji__require
             必須
-            = i.text_field :last_name, :type => "text", placeholder:"例)田中", class: "main__container__form__kanji__require__family-name"
-            = i.text_field :first_name, :type => "text", placeholder:"例)太郎", class: "main__container__form__kanji__require__first-name"
+          = i.text_field :last_name, :type => "text", placeholder:"例)田中", class: "main__container__form__kanji__family-name"
+          = i.text_field :first_name, :type => "text", placeholder:"例)太郎", class: "main__container__form__kanji__first-name"
         .main__container__form__kana
           .main__container__form__kana__title
             お名前カナ
           .main__container__form__kana__require
             必須
-            = i.text_field :last_name_kana, :type => "text", placeholder:"例)タナカ", class: "main__container__form__kana__require__family-name"
-            = i.text_field :first_name_kana, :type => "text", placeholder:"例)タロウ", class: "main__container__form__kana__require__first-name"
+          = i.text_field :last_name_kana, :type => "text", placeholder:"例)タナカ", class: "main__container__form__kana__family-name"
+          = i.text_field :first_name_kana, :type => "text", placeholder:"例)タロウ", class: "main__container__form__kana__first-name"
         .main__container__form__post
           .main__container__form__post__title
             郵便番号
@@ -49,7 +49,8 @@
             都道府県
           .main__container__form__pref__require
             必須
-            = i.select :prefecture, :type => "text", placeholder:"", class: "main__container__form__pref__detail" do
+          .main__container__form__pref__detail
+            = i.select :prefecture, :type => "text", placeholder:"" do
               %option{:selected => "selected", :value => "北海道"} 北海道
               %option{:value => "青森県"} 青森県
               %option{:value => "岩手県"} 岩手県
@@ -98,32 +99,32 @@
               %option{:value => "鹿児島県"} 鹿児島県
               %option{:value => "沖縄県"} 沖縄県
               %option{:value => "未定"} 未定
-          .main__container__form__city
-            .main__container__form__city__title
-              市区町村
-            .main__container__form__city__require
-              必須
-            = i.text_field :city, :type => "text", placeholder:"例)横浜市緑区", class: "main__container__form__city__detail"
-          .main__container__form__addnumber
-            .main__container__form__addnumber__title
-              番地
-            .main__container__form__addnumber__require
-              必須
-            = i.text_field :address_number, :type => "text", placeholder:"例)青山1-1-1", class: "main__container__form__addnumber__detail"
-          .main__container__form__build
-            .main__container__form__build__title
-              建物名
-            .main__container__form__build__require
-              任意
-            = i.text_field :building, :type => "text", placeholder:"例)柳ビル103", class: "main__container__form__build__detail"
-          .main__container__form__phone
-            .main__container__form__phone__title
-              電話
-            .main__container__form__phone__require
-              任意
-            = i.text_field :phone_number, :type => "text", placeholder:"例)09012345678", class: "main__container__form__phone__detail"
-          .main__container__form__btn
-            = f.submit "次へ進む" ,class: "main__container__form__btn__red" 
+        .main__container__form__city
+          .main__container__form__city__title
+            市区町村
+          .main__container__form__city__require
+            必須
+          = i.text_field :city, :type => "text", placeholder:"例)横浜市緑区", class: "main__container__form__city__detail"
+        .main__container__form__addnumber
+          .main__container__form__addnumber__title
+            番地
+          .main__container__form__addnumber__require
+            必須
+          = i.text_field :address_number, :type => "text", placeholder:"例)青山1-1-1", class: "main__container__form__addnumber__detail"
+        .main__container__form__build
+          .main__container__form__build__title
+            建物名
+          .main__container__form__build__require
+            任意
+          = i.text_field :building, :type => "text", placeholder:"例)柳ビル103", class: "main__container__form__build__detail"
+        .main__container__form__phone
+          .main__container__form__phone__title
+            電話
+          .main__container__form__phone__require
+            任意
+          = i.text_field :phone_number, :type => "text", placeholder:"例)09012345678", class: "main__container__form__phone__detail"
+        .main__container__form__btn
+          = f.submit "次へ進む" ,class: "main__container__form__btn__red" 
   .footer
     .footer__center
       %nav
@@ -135,7 +136,7 @@
           %li
             = link_to "特定商取引に関する表記","#"
       .footer__center__logo
-        =link_to image_tag("/assets/logo_gray.svg", width:"80", height:"65",class:"footer__center__logo--red"),"/"
+        =link_to image_tag("logo_gray.svg", width:"80", height:"65",class:"footer__center__logo--red"),"/"
       %p.inc
         ©︎Mercari,Inc.
         
