@@ -17,13 +17,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   private
 
   def authorization
-    sns_info = User.from_omniauth(request.env["omniauth.auth"])
-    @user = sns_info[:user]
+    @user = User.from_omniauth(request.env["omniauth.auth"])
 
     if @user.persisted?
       sign_in_and_redirect @user, event: :authentication #this will throw if @user is not activated
     else
-      @sns_id = sns_info[:sns].id
       render template: 'signup/step1.html.haml'
     end
   end
