@@ -14,6 +14,10 @@
 |last_name_kana|string|null: false|
 |phone_number|integer|null: false|
 |pay_id|integer|null: false, foreign_key: true|
+|first_name|string|null: false|
+|last_name|string|null: false|
+|first_name_kana|string|null: false|
+|last_name_kana|string|null: false|
 ### Association
 - has_many :items, dependent: :destroy
 - has_many :likes, dependent: :destroy

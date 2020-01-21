@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20200118062002) do
     t.string   "first_name_kana", null: false
     t.string   "last_name_kana",  null: false
     t.integer  "post_number",     null: false
-    t.string   "prefecture",      null: false
+    t.string   "prefecture_id",      null: false
     t.string   "city",            null: false
     t.string   "address_number",  null: false
     t.string   "building",        null: false
@@ -37,6 +37,43 @@ ActiveRecord::Schema.define(version: 20200118062002) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
+
+
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "image",      null: false
+    t.integer  "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_images_on_item_id", using: :btree
+  end
+
+  create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",                         null: false
+    t.text     "info",           limit: 65535, null: false
+    t.string   "category",                     null: false
+    t.string   "status",                       null: false
+    t.integer  "delivery_chage",               null: false
+    t.string   "delivery_area",                null: false
+    t.string   "delivery_date",                null: false
+    t.integer  "price",                        null: false
+    t.string   "brand",                        null: false
+    t.string   "deal"
+    t.integer  "user_id"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["user_id"], name: "index_items_on_user_id", using: :btree
+  end
+
+  create_table "pays", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "item_id"
+    t.integer  "money"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_pays_on_item_id", using: :btree
+    t.index ["user_id"], name: "index_pays_on_user_id", using: :btree
+  end
+
 
   create_table "sns_credentials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "provider"
@@ -68,6 +105,12 @@ ActiveRecord::Schema.define(version: 20200118062002) do
     t.index ["nickname"], name: "index_users_on_nickname", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
+
+
+  add_foreign_key "images", "items"
+  add_foreign_key "items", "users"
+  add_foreign_key "pays", "items"
+  add_foreign_key "pays", "users"
 
   add_foreign_key "sns_credentials", "users"
 end

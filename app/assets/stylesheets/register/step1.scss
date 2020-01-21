@@ -54,33 +54,61 @@
           &--mail{
             background-color: #ea352d;
             position: relative;
+
             &__icon{
               font-size: 20px;
               position: absolute;
               left: 10px;
               top: 14px;
+
+            .icon {
+              position: absolute;
+              float: left;
+              font-size: 25px;
+              left: 15px;
+              top: 10px;
+
             }
           }
           &--facebook{
             background-color: #385185;
             position: relative;
+
             &__icon{
               font-size: 25px;
               position: absolute;
               left: 10px;
               top: 11px;
+
+            .icon {
+              position: absolute;
+              float: left;
+              font-size: 25px;
+              left: 15px;
+              top: 10px;
+
             }
           }
           &--google{
             background-color: #ffffff;
+            position: relative;
             color: black;
             border: #979797 solid 1px;
+
             position: relative;
             &__icon{
               font-size: 20px;
               position: absolute;
               left: 10px;
               top: 14px;
+
+            .icon {
+              position: absolute;
+              float: left;
+              font-size: 25px;
+              left: 15px;
+              top: 10px;
+
             }
           }
         }

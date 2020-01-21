@@ -25,13 +25,20 @@
         もっと見る ＞
     .top__category__1__main
       .top__category__1__main__item
-        .top__category__1__main__item__box
+        .top__category__1__main__item__box   
           .top__category__1__main__item__box__image
+            - @images.each do |image| 
+              = image_tag image.image,size:"185x189",class:"index-image"
+            %end
             .top__category__1__main__item__box__image__price
-              ¥1,980
+              - @items.each do |item|
+                = item.price
+              %end
           .top__category__1__main__item__box__text
             .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
+              - @items.each do |item|
+                = item.name
+              %end
             .top__category__1__main__item__box__text__hidden
       .top__category__1__main__item
         .top__category__1__main__item__box
