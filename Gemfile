@@ -77,6 +77,6 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
 gem 'active_hash'
-
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 
