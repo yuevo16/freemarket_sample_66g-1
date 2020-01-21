@@ -70,6 +70,7 @@
 
             }
           }
+        }
           &--facebook{
             background-color: #385185;
             position: relative;
@@ -89,6 +90,8 @@
 
             }
           }
+        }
+      
           &--google{
             background-color: #ffffff;
             position: relative;
@@ -114,7 +117,9 @@
         }
       }
     }
+   }
   }
+  
   .footer{
     background-color: #EEEEEE;
     &__center{
