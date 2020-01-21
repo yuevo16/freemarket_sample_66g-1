@@ -28,7 +28,7 @@
         .top__category__1__main__item__box   
           .top__category__1__main__item__box__image
             - @images.each do |image| 
-              = image_tag image.image,size:"185x189",class:"index-image"
+              = link_to image_tag(image.image,size:"185x189",class:"index-image"),items_path
             %end
             .top__category__1__main__item__box__image__price
               - @items.each do |item|

@@ -1,22 +1,17 @@
 Rails.application.routes.draw do
 
+  
+
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations',
   }
   root 'post#index'
 
-  resources :items, only: [:new, :create]
-
 
   
-  resources :sell do
-    resources :purchase do
-      collection do
-        get 'show'
-      end
-    end
-  end
+  resources :items ,only:[:index]
+    
 
 
   resources :signup do
