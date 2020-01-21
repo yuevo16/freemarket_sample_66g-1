@@ -133,6 +133,7 @@ class SignupController < ApplicationController
       :building,
       :phone_number
       ],
+      
       card_attributes:[
       :id,
       :card_number,
