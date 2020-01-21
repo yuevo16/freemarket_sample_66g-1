@@ -42,7 +42,7 @@
         &__btn {
           display: block;
           height: 48px;
-          width :360px;
+          width :300px;
           margin:1px auto 20px;
           border-radius: 5px;
           font-size:14px;
@@ -50,26 +50,43 @@
           text-decoration: none;
           text-align: center;
           line-height: 3.3;
+          
           &--mail{
             background-color: #ea352d;
             position: relative;
+
+            &__icon{
+              font-size: 20px;
+              position: absolute;
+              left: 10px;
+              top: 14px;
+
             .icon {
               position: absolute;
               float: left;
               font-size: 25px;
               left: 15px;
               top: 10px;
+
             }
           }
           &--facebook{
             background-color: #385185;
             position: relative;
+
+            &__icon{
+              font-size: 25px;
+              position: absolute;
+              left: 10px;
+              top: 11px;
+
             .icon {
               position: absolute;
               float: left;
               font-size: 25px;
               left: 15px;
               top: 10px;
+
             }
           }
           &--google{
@@ -77,12 +94,21 @@
             position: relative;
             color: black;
             border: #979797 solid 1px;
+
+            position: relative;
+            &__icon{
+              font-size: 20px;
+              position: absolute;
+              left: 10px;
+              top: 14px;
+
             .icon {
               position: absolute;
               float: left;
               font-size: 25px;
               left: 15px;
               top: 10px;
+
             }
           }
         }

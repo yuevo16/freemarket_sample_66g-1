@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20200118062002) do
     t.datetime "updated_at",    null: false
   end
 
+
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "image",      null: false
     t.integer  "item_id"
@@ -73,6 +74,7 @@ ActiveRecord::Schema.define(version: 20200118062002) do
     t.index ["user_id"], name: "index_pays_on_user_id", using: :btree
   end
 
+
   create_table "sns_credentials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "provider"
     t.string   "uid"
@@ -104,9 +106,11 @@ ActiveRecord::Schema.define(version: 20200118062002) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+
   add_foreign_key "images", "items"
   add_foreign_key "items", "users"
   add_foreign_key "pays", "items"
   add_foreign_key "pays", "users"
+
   add_foreign_key "sns_credentials", "users"
 end
