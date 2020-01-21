@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+
   devise_for :users, controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations',
   }
   root 'post#index'
@@ -28,6 +30,7 @@ Rails.application.routes.draw do
       get 'done'
     end
   end
+
   resources :mypage do
     collection  do
       get 'index'
@@ -37,5 +40,6 @@ Rails.application.routes.draw do
       get 'logout'
     end
   end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

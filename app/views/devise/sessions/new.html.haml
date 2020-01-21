@@ -11,12 +11,14 @@
           新規会員登録
       
       .main__login__inner
-        = link_to "#", class: "main__login__inner__btn main__login__inner__btn--facebook" do
+        = link_to  user_facebook_omniauth_authorize_path, method: :post, class: "main__login__inner__btn main__login__inner__btn--facebook" do
           = icon('fab', 'facebook-square',class:'icon')
           Facebookでログイン
-        = link_to "#", class: "main__login__inner__btn main__login__inner__btn--google" do
+          
+        = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "main__login__inner__btn main__login__inner__btn--google" do
           = icon('fab', 'google',class:'icon')
           Googleでログイン
+         
       .main__login__bottom
         = form_for @user, url: "/users/sign_in" do |f|
           = f.email_field :email, placeholder:'メールアドレス',class: 'main__login__bottom__form'
