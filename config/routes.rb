@@ -38,6 +38,7 @@ Rails.application.routes.draw do
       get 'credit_card'
       get 'user_profile'
       get 'logout'
+      get 'item_detail'
     end
   end
 
