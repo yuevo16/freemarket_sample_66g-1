@@ -1,0 +1,171 @@
+= form_for @item do |f|
+  .product
+    .product-header
+      = link_to image_tag src="fmarket_logo_red.svg",size:"185x49",class:"product-header__img"
+    %main.product-main
+      %section.product-main__single-container
+        #product-main__sell-container
+          %div{"data-reactroot": ""}
+            .product-main__sell-container-inner
+              .product-single
+                %h2.product-single__head 商品の情報を入力
+                %form.product-single__sell-form
+                  .product-single__sell-upload-box
+                    %h3.product-single__sell-upload-head
+                      出品画像
+                      %span.product-single__form-require 必須
+                    %p.product-single__max-upload 最大10枚までアップロードできます
+                    .product-single__sell-dropbox-container.clearfix.state-image-number-10
+                      .product-single__sell-upload-items-container
+                        .product-single__sell-upload-items.product-single__have-item-0
+                          %ul.product-single__ul
+                      .product-single__sell-upload-drop-box.product-single__have-item-0
+                        = f.fields_for :images do |i|
+                          = i.file_field :image, class: 'product-single__sell-upload-drop-file'
+                          -# .{multiple: "multiple", name: "image1", type: "file"}
+                          %pre.product-single__visible-pc
+                            :preserve
+                              ドラッグアンドドロップ
+                                またはクリックしてファイルをアップロード
+                        end
+
+                  .product-name
+                    .product-name__sell-content
+                      .product-name__form-group
+                        %label.product-name__label
+                          商品名
+                          %span.product-name__form-require 必須
+                        %div
+                          = f.text_area :name, class:"product-name__input-default",placeholder: "商品名（必須 40文字まで)", value: ""
+                          -# %input.product-name__input-default{placeholder: "商品名（必須 40文字まで)", value: ""}/
+                      .product-name__form-group
+                        %label
+                          商品の説明
+                          %span.product-name__form-require 必須
+                        = f.text_area :info, class: "product-name__textarea-default", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"
+                        -# .product-name__textarea-default{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
+
+
+
+                    .detaile
+                      .detaile__sell-content.clearfix
+                        %h3.detaile__sell-sub-head 商品の詳細
+                        .detaile__sell-form-box
+                          .detaile__form-group
+                            %label.detaile__label
+                              カテゴリー
+                              %span.detaile__form-require 必須
+                            %div
+                              .detaile__select-wrap
+                                %i.detaile__icon-arrow-bottom
+                                  = icon('fas','chevron-down')
+                                = f.collection_select :category, Category.all, :id, :name
+
+                          .detaile__form-group
+                            %label.detaile__label
+                              商品の状態
+                              %span.detaile__form-require 必須
+                            .detaile__select-wrap
+                              %i.detaile__icon-arrow-bottom
+                                = icon('fas','chevron-down')
+                              = f.collection_select :status, Status.all, :id, :name
+
+                    .delivery
+                      .delivery__sell-content.clearfix
+                        .delivery__infobox
+                          %h3.delivery__sell-sub-head 配送について
+                          %a.delivery__form-question{href: "/jp/help_center/article/68/", target: "_blank"} ?
+                        .delivery__sell-form-box
+                          .delivery__form-group
+                            %label.delivery__label
+                              配送料の負担
+                              %span.delivery__form-require 必須
+                            .delivery__select-wrap
+                              %i.delivery__icon-arrow-bottom
+                                = icon('fas','chevron-down')
+                              = f.collection_select :delivery_chage, Delivery_chage.all, :id, :name
+                          .delivery__form-group
+                            %label.delivery__label
+                              発送元の地域
+                              %span.delivery__form-require 必須
+                            .delivery__select-wrap
+                              %i.delivery__icon-arrow-bottom
+                                = icon('fas','chevron-down')
+                              = f.collection_select :delivery_area, Prefecture.all, :id, :name
+
+                          .delivery__form-group
+                            %label
+                              発送までの日数
+                              %span.delivery__form-require 必須
+                            .delivery__select-wrap
+                              %i.delivery__icon-arrow-bottom
+                                = icon('fas','chevron-down')
+                              = f.collection_select :delivery_date, Delivery_date.all, :id, :name
+                              
+                    .price              
+                      .price__sell-content.clearfix
+                        .price__box
+                          %h3.price__sell-sub-head 販売価格(300〜9,999,999)
+                          %a.price__form-question{href:"/jp/help_center/article/64/",  arget:"_blank"} ?
+                        .price__sell-form-box
+                          %ul.price__sell-price
+                            %li.price__form-group
+                              .clearfix
+                                %label.price__l-left
+                                  価格
+                                  %span.price__form-require 必須
+                                .price__l-right.price__sell-price-input
+                                  ¥
+                                  %div.price__div
+                                    = f.text_area :price, class:"price__input-default",placeholder: "例）300"
+
+                            %li.price__clearfix
+                              .price__l-left
+                                販売手数料 (10%)
+                              .price__l-right -
+                            %li.price__clearfix.price__bold
+                              .price__l-left 販売利益
+                              .price__l-right -
+                      .modal{role: "dialog", tabindex: "-1"}
+                        .modal__inner
+
+                    .caution
+                      .caution__sell-content.caution__sell-btn-box
+                        %div.caution__div
+                          %p.caution__p
+                            %a.caution__a{href: "/jp/help_center/getting_started/prohibited_items/", target: "_blank"} 禁止されている出品
+                            、
+                            %a.caution__a{href: "/jp/help_center/getting_started/prohibited_conduct/", target: "_blank"} 行為
+                            を必ずご確認ください。
+                          %p.caution__p
+                            またブランド品でシリアルナンバー等がある場合はご記載ください。
+                            %a.caution__a{href: "/jp/help_center/getting_started/counterfeit_goods/", target: "_blank"} 偽ブランドの販売
+                            は犯罪であり処罰される可能性があります。
+                          %p.caution__p
+                            また、出品をもちまして
+                            %a.caution__a{href: "/jp/seller_terms/"} 加盟店規約
+                            に同意したことになります。
+                        = f.submit '出品する', class: 'price__btn-default.price__btn-red'
+                        -# %button.price__btn-default.price__btn-red{type: "submit"}
+                        -#   出品する
+                        .price__btn 
+                          = link_to 'もどる','#',class:"price__btn-gray"
+              .overlay
+
+
+
+
+        .product-footer
+          .product-footer__center
+            %nav
+              %ul.menu
+                %li
+                  = link_to "プライバシーポリシー","#"
+                %li
+                  = link_to "メルカリ利用規約","#"
+                %li
+                  = link_to "特定商取引に関する表記","#"
+            .product-footer__center__logo
+              =link_to image_tag("/assets/logo_gray.svg", width:"80", height:"65",class:"footer__center__logo--red"),"#"
+            %p.inc
+              ©︎Mercari,Inc.
