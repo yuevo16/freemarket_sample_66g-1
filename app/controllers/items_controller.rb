@@ -6,9 +6,11 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new(item_params)
-    binding.pry
-    @item.save
-    redirect_to new_item_path, notice: '商品を出品しました'
+    if @item.save
+      redirect_to new_item_path
+    else
+      root_path
+    end
   end
 
   private
