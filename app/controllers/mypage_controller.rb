@@ -14,6 +14,9 @@ class MypageController < ApplicationController
   end
 
   def item_detail
+    @users = User.all
+    @items = Item.all
+    @images = Image.all 
   end
   
 
