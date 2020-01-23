@@ -1,0 +1,82 @@
+.purchase__confirmation
+  .purchase__confirmation__icon
+    = image_tag src="fmarket_logo_red.svg",size:"185x49",class:"purchase__confirmation__icon__1"
+  .purchase__confirmation__main
+    .purchase__confirmation__main__top
+      購入内容の確認
+    .purchase__confirmation__main__item
+      .purchase__confirmation__main__item__image
+      .purchase__confirmation__main__item__content
+        .purchase__confirmation__main__item__content__text
+          スナイデルバックリボンニットワンピースバーガンディブラウン
+        .purchase__confirmation__main__item__content__price
+          .purchase__confirmation__main__item__content__price__money
+            ¥8,700
+          .purchase__confirmation__main__item__content__price__tax
+            (税込み) 送料込み
+    .purchase__confirmation__main__payment
+      .purchase__confirmation__main__payment__price
+        .purchase__confirmation__main__payment__price__box
+          .purchase__confirmation__main__payment__price__box__text
+            支払い金額
+          .purchase__confirmation__main__payment__price__box__money
+            ¥8,700
+        .purchase__confirmation__main__payment__price__point
+          .purchase__confirmation__main__payment__price__point__box
+            .purchase__confirmation__main__payment__price__point__box__text
+              ■ ポイントを使用
+            .purchase__confirmation__main__payment__price__point__box__value
+              (所持ポイント:P0)
+      .purchase__confirmation__main__payment__card
+        .purchase__confirmation__main__payment__card__method
+          .purchase__confirmation__main__payment__card__method__text
+            支払い方法
+          .purchase__confirmation__main__payment__card__method__change
+            = link_to '変更する','#'
+        .purchase__confirmation__main__payment__card__info
+          .purchase__confirmation__main__payment__card__info__name
+            クレジットカード
+          .purchase__confirmation__main__payment__card__info__number
+            ************8888
+          .purchase__confirmation__main__payment__card__info__limit
+            .purchase__confirmation__main__payment__card__info__limit__text
+              有効期限
+            .purchase__confirmation__main__payment__card__info__limit__value
+              06/25
+          = icon('fab','cc-jcb',class: 'purchase__confirmation__main__payment__card__info__icon')
+      .purchase__confirmation__main__payment__address
+        .purchase__confirmation__main__payment__address__method
+          .purchase__confirmation__main__payment__address__method__text
+            配送先
+          .purchase__confirmation__main__payment__address__method__change
+            = link_to '変更する','#'
+        .purchase__confirmation__main__payment__address__number
+          〒111-1111
+        .purchase__confirmation__main__payment__address__text
+          住所だよおおおおおおおおおおおおおおおおおおおおおおおおおおおおおお
+        .purchase__confirmation__main__payment__address__name
+          田中二郎
+    .purchase__confirmation__main__bottom
+      .purchase__confirmation__main__bottom__caution
+        この商品はゆうゆうカリメル便を利用しているため、アプリからのみ購入できます。
+      .purchase__confirmation__main__bottom__button
+        = link_to '購入する','#'
+      .purchase__confirmation__main__bottom__app
+        .purchase__confirmation__main__bottom__app__text
+          アプリをお持ちでない方はかよりインストールしてご利用いただけます。
+        .purchase__confirmation__main__bottom__app__icon
+          = image_tag src="//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?2091621301",size:"135x40",class:"purchase__confirmation__main__bottom__app__icon__1"
+          = image_tag src="https://www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2091621301",size:"135x40",class:"purchase__confirmation__main__bottom__app__icon__2"
+.purchase__confirmation__bottom
+  .purchase__confirmation__bottom__terms
+    .purchase__confirmation__bottom__terms__1
+      = link_to 'プライバシーポリシー','#'
+    .purchase__confirmation__bottom__terms__2
+      = link_to 'カリメル利用規約','#'
+    .purchase__confirmation__bottom__terms__3
+      = link_to '特定取引に関する表記'
+  .purchase__confirmation__bottom__icon
+    .purchase__confirmation__bottom__icon__1
+      = image_tag src="logo_white.svg",size:"80x65",class:"purchase__confirmation__bottom__icon__1__image"
+      .purchase__confirmation__bottom__icon__1__text
+        ©︎ Mercari,inc.
