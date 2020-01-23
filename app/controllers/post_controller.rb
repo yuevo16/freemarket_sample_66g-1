@@ -3,8 +3,4 @@ class PostController < ApplicationController
     @items = Item.all
     @images = Image.all 
   end
-
-  
-
-
 end
