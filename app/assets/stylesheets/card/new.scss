@@ -1,10 +1,17 @@
 .main {
-  background-color: rgb(245, 245, 245);
-  height: 55%;
+  height: 100vh;
+  width: calc(100vw - 280px);
+  position: absolute;
+  top:100px;
+  left: 300px;  
+  margin-top:16px;
+  margin-left: 80px;
+  padding-top: 35px;
+  width:700px;
   &__container {
     background-color: white;
-    height: 100%;
-    width: 50%;
+    height: 110%;
+    width: 90%;
     margin: auto;
     &__header {
       background-color: white;
@@ -59,9 +66,9 @@
         }          
       }
       &__limit {
-        height: 150px;
+        height: 120px;
         width: 340px;
-        margin: 10px auto 0;
+        margin: 30px auto 0;
         select {
           display: inline-block;
           -webkit-appearance: none;
@@ -91,6 +98,8 @@
           font-size: 12px;
           vertical-align: top;
         }
+        &__form{
+          display: flex;
         &__month {
           position: relative;
           &::after {
@@ -127,6 +136,7 @@
             margin-top: -3px;
           }
         }
+       }
       }
       &__security {
         width: 340px;

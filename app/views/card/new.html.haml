@@ -1,42 +1,50 @@
-.main
-  = form_for pay_card_index_path, method: :post, html: {class: 'main__container'} do |f|
-    .main__container__header
-      クレジットカード情報入力
-    .main__container__form
-      .main__container__form__card
-        .main__container__form__card__title
-          カード番号
-        .main__container__form__card__require
-          必須
-        =f.text_field :card_number, maxlength: "16",type: "text", placeholder:"半角数字のみ", class: "main__container__form__card__number"
-        .main__container__form__card__image
-          = image_tag("credit-card_22@0.5.png", class: "main__container__form__card__image__icon")
-          = image_tag("credit-card_9@0.5.png", class: "main__container__form__card__image__icon")
-          = image_tag("credit-card_26@0.5.png", class: "main__container__form__card__image__icon")
-          = image_tag("jcb-logomark-img-01.gif", class: "main__container__form__card__image__icon")
-          = image_tag("amex-logomark-img-04.gif", class: "main__container__form__card__image__icon")
-          = image_tag("diners-logomark-img-01.gif", class: "main__container__form__card__image__icon")
-          = image_tag("discover-logomark-img-08.gif", class: "main__container__form__card__image__icon")
-      .main__container__form__limit
-        .main__container__form__limit__title
-          有効期限
-        .main__container__form__limit__require
-          必須
-        .main__container__form__limit__month
-          = f.collection_select :limit_month, Limit_month.all, :id, :name
-          月
-        .main__container__form__limit__year
-          = f.collection_select :limit_year, Limit_year.all, :id, :name
-          年
-      .main__container__form__security
-        .main__container__form__security__title
-          セキュリティーコード
-        .main__container__form__security__require
-          必須
-        = f.text_field :security_code,  maxlength: "4",type: "text", placeholder:"カードの背面4桁もしくは3桁の番号", class: "main__container__form__security__number"
-      .main__container__form__question
-        .main__container__form__question__mark
-          %span ?
-          カードの裏面の番号とは？
-      .main__container__form__btn
-        = f.submit "追加する" ,class: "main__container__form__btn__red" 
+.wrapper
+  =render "post/header"
+  = render 'mypage/side_bar'
+  .main
+    = form_for pay_card_index_path, method: :post, html: {class: 'main__container'} do |f|
+      .main__container__header
+        クレジットカード情報入力
+      .main__container__form
+        .main__container__form__card
+          .main__container__form__card__title
+            カード番号
+          .main__container__form__card__require
+            必須
+          =f.text_field :card_number, maxlength: "16",type: "text", placeholder:"半角数字のみ", class: "main__container__form__card__number"
+          .main__container__form__card__image
+            = image_tag("credit-card_22@0.5.png", class: "main__container__form__card__image__icon")
+            = image_tag("credit-card_9@0.5.png", class: "main__container__form__card__image__icon")
+            = image_tag("credit-card_26@0.5.png", class: "main__container__form__card__image__icon")
+            = image_tag("jcb-logomark-img-01.gif", class: "main__container__form__card__image__icon")
+            = image_tag("amex-logomark-img-04.gif", class: "main__container__form__card__image__icon")
+            = image_tag("diners-logomark-img-01.gif", class: "main__container__form__card__image__icon")
+            = image_tag("discover-logomark-img-08.gif", class: "main__container__form__card__image__icon")
+        .main__container__form__limit
+          .main__container__form__limit__title
+            有効期限
+          .main__container__form__limit__require
+            必須
+          .main__container__form__limit__form
+            .main__container__form__limit__month
+              = f.collection_select :limit_month, Limit_month.all, :id, :name
+              月
+            .main__container__form__limit__year
+              = f.collection_select :limit_year, Limit_year.all, :id, :name
+              年
+        .main__container__form__security
+          .main__container__form__security__title
+            セキュリティーコード
+          .main__container__form__security__require
+            必須
+          = f.text_field :security_code,  maxlength: "4",type: "text", placeholder:"カードの背面4桁もしくは3桁の番号", class: "main__container__form__security__number"
+        .main__container__form__question
+          .main__container__form__question__mark
+            %span ?
+            カードの裏面の番号とは？
+        .main__container__form__btn
+          = f.submit "追加する" ,class: "main__container__form__btn__red" 
+  
+  = render 'post/footer_image'
+  = render 'post/footer'
+  = render 'post/sell-camera'
