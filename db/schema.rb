@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20200122074936) do
     t.string   "prefecture_id",   null: false
     t.string   "city",            null: false
     t.string   "address_number",  null: false
-    t.string   "building",        null: false
-    t.string   "phone_number",    null: false
+    t.string   "building"
+    t.string   "phone_number"
     t.integer  "user_id",         null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
@@ -45,19 +45,23 @@ ActiveRecord::Schema.define(version: 20200122074936) do
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                         null: false
-    t.text     "info",           limit: 65535, null: false
-    t.string   "category",                     null: false
-    t.string   "status",                       null: false
-    t.integer  "delivery_chage",               null: false
-    t.string   "delivery_area",                null: false
-    t.string   "delivery_date",                null: false
-    t.integer  "price",                        null: false
-    t.string   "brand",                        null: false
-    t.string   "deal"
+    t.string   "name",                          null: false
+    t.text     "info",            limit: 65535, null: false
+    t.string   "category",                      null: false
+    t.string   "category1"
+    t.string   "category2"
+    t.string   "brand"
+    t.string   "status",                        null: false
+    t.string   "delivery_chage",                null: false
+    t.string   "delivery_area",                 null: false
+    t.string   "delivery_method"
+    t.string   "delivery_date",                 null: false
+    t.integer  "price",                         null: false
+    t.string   "saler"
+    t.string   "buyer"
     t.integer  "user_id"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
 

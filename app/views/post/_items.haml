@@ -24,6 +24,7 @@
       .top__category__1__new__detail
         もっと見る ＞
     .top__category__1__main
+
       .top__category__1__main__item
         .top__category__1__main__item__box   
           .top__category__1__main__item__box__image
@@ -37,9 +38,21 @@
           .top__category__1__main__item__box__text
             .top__category__1__main__item__box__text__content
               = @items.each do |item|
+
+      - @items.each do |item|
+        .top__category__1__main__item
+          .top__category__1__main__item__box   
+            .top__category__1__main__item__box__image
+              = image_tag item.images,size:"185x189"
+              .top__category__1__main__item__box__image__price
+                ¥ 
+                = item.price
+            .top__category__1__main__item__box__text
+              .top__category__1__main__item__box__text__content
+
                 = item.name
-              %end
-            .top__category__1__main__item__box__text__hidden
+                
+              .top__category__1__main__item__box__text__hidden
       .top__category__1__main__item
         .top__category__1__main__item__box
           .top__category__1__main__item__box__image

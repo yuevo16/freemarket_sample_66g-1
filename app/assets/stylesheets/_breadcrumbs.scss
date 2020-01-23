@@ -1,0 +1,15 @@
+.breadcrumbs {
+  background-color: white;
+  height: 45px;
+  width: 100%;
+  border-top: 1px solid #eee;
+  &__items {
+    background-color: white;
+    height: 30px;
+    width: 1020px;
+    margin: 10px auto 0;
+    .current {
+      font-weight: 600;
+    }
+  }
+}
