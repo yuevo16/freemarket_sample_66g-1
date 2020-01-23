@@ -1,27 +1,27 @@
 .item__detailpage
   .item__detailpage__box
     .item__detailpage__box__title
-      スナイデル バックリボンニットワンピース バーガンディ ブラウン
+      - @items.each do |item|
+        = item.name
+      %end
     .item__detailpage__box__main
       .item__detailpage__box__main__image
         .item__detailpage__box__main__image__top
-
-          商品
-
+          - @images.each do |image| 
+            = image_tag image.image,size:"250x300",class:"syousai-image"
+          %end
         .item__detailpage__box__main__image__bottom
           .item__detailpage__box__main__image__bottom__column
-          .item__detailpage__box__main__image__bottom__column
-          .item__detailpage__box__main__image__bottom__column
-          .item__detailpage__box__main__image__bottom__column
-          .item__detailpage__box__main__image__bottom__column
       .item__detailpage__box__main__text
-        .item__detailpage__box__main__text__box
+        .item__detailpage__box__main__text__box 
           .item__detailpage__box__main__text__box__column
             .item__detailpage__box__main__text__box__column__seller
               出品者
           .item__detailpage__box__main__text__box__content
             .item__detailpage__box__main__text__box__content__assessment
-              = link_to '♡(出品者)','#'
+              - @users.each do |user|
+                = link_to user.nickname
+              %end
             .item__detailpage__box__main__text__box__content__icons
               = icon('fas', 'smile', class: 'item__detailpage__box__main__text__box__content__icons__1')
               .item__detailpage__box__main__text__box__content__icons__text
@@ -38,30 +38,27 @@
               カテゴリー
           .item__detailpage__box__main__text__box__content
             .item__detailpage__box__main__text__box__content__genre
-
+              - @items.each do |item|
+                = item.category
+              %end
         .item__detailpage__box__main__text__box
           .item__detailpage__box__main__text__box__column
             .item__detailpage__box__main__text__box__column__box
-           
-              ブランド  
-
+              ブランド
           .item__detailpage__box__main__text__box__content
             .item__detailpage__box__main__text__box__content__text
-              = link_to 'スナイデル','#'
-        .item__detailpage__box__main__text__box
-          .item__detailpage__box__main__text__box__column
-            .item__detailpage__box__main__text__box__column__box
-              商品のサイズ
-          .item__detailpage__box__main__text__box__content
-            .item__detailpage__box__main__text__box__content__text
-              FREE SIZE
+              - @items.each do |item|
+                = item.brand
+              %end
         .item__detailpage__box__main__text__box
           .item__detailpage__box__main__text__box__column
             .item__detailpage__box__main__text__box__column__box
               商品の状態
           .item__detailpage__box__main__text__box__content
             .item__detailpage__box__main__text__box__content__text
-              目立った傷や汚れなし
+              - @items.each do |item|
+                = item.status
+              %end
         .item__detailpage__box__main__text__box
           .item__detailpage__box__main__text__box__column
             .item__detailpage__box__main__text__box__column__box
@@ -75,254 +72,57 @@
               配送の方法
           .item__detailpage__box__main__text__box__content
             .item__detailpage__box__main__text__box__content__text
-              ゆうゆうカリメル便
+              - @items.each do |item|
+                = item.deal
+              %end
         .item__detailpage__box__main__text__box
           .item__detailpage__box__main__text__box__column
             .item__detailpage__box__main__text__box__column__box
               配送元地域
           .item__detailpage__box__main__text__box__content
             .item__detailpage__box__main__text__box__content__text
-              = link_to '神奈川県','#'
+              - @items.each do |item|
+                = link_to item.delivery_area
+              %end
         .item__detailpage__box__main__text__box
           .item__detailpage__box__main__text__box__column
             .item__detailpage__box__main__text__box__column__box
               配送日の目安
           .item__detailpage__box__main__text__box__content
             .item__detailpage__box__main__text__box__content__text
-              1~2日で発送
+              - @items.each do |item|
+                = item.delivery_date
+              %end
     .item__detailpage__box__price
       .item__detailpage__box__price__main
-        ¥8,700
+        - @items.each do |item|
+          = item.price
+        %end
       .item__detailpage__box__price__tax
         (税込)
       .item__detailpage__box__price__pastage
         送料込み
     .item__detailpage__box__purchase
-      = link_to '購入画面に進む', purchase_index_path
-       
-    .item__detailpage__box__caution
-      この商品はゆうゆうカリメル便を利用しているため、アプリからのみ購入できます。
-    .item__detailpage__box__matter
-      .item__detailpage__box__matter__content
-        商品説明が入ります。
-      .item__detailpage__box__matter__icons
-        .item__detailpage__box__matter__icons__report
-          .item__detailpage__box__matter__icons__report__1
-            .item__detailpage__box__matter__icons__report__1__mark
-              ♡
-            .item__detailpage__box__matter__icons__report__1__text
-              いいね!
-            .item__detailpage__box__matter__icons__report__1__value
-              15
-          .item__detailpage__box__matter__icons__report__2
-            = icon('far', 'flag', class: 'item__detailpage__box__matter__icons__report__2__icon')
-            .item__detailpage__box__matter__icons__report__2__text
-              不適切な商品の報告
-        .item__detailpage__box__matter__icons__safety
-          = icon('fas', 'lock', class: 'item__detailpage__box__matter__icons__safety__icon')
-          .item__detailpage__box__matter__icons__safety__text
-            あんしん・あんぜんへの取り組み
+      - @items.each do |item|
+        = item.info
+        %end
+  .item__detailpage__comment
+    .item__detailpage__comment__bot
+      .item__detailpage__comment__bot__5
+        = link_to '#', class: 'edit-btn' do
+          商品の編集
+      .item__detailpage__comment__bot__7
+        or
+      .item_dess
+        = link_to '#', class: 'item-stop' do
+          出品を一旦停止
+      .item_desk
+        = link_to '#', class: 'item-stop' do
+          この商品を削除する
+        
   .item__detailpage__comment
     .item__detailpage__comment__box
       .item__detailpage__comment__box__1
         相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となる事があります。
       = text_area :content, class: 'item__detailpage__comment__box__2'
       = submit_tag 'コメントする', class: 'item__detailpage__comment__box__3'
-  .item__detailpage__next
-    .item__detailpage__next__1
-      = link_to '〈 前のページ','#'
-    .item__detailpage__next__2
-      = link_to '次のページ 〉','#'
-  .item__detailpage__app
-    .item__detailpage__app__icons
-      = link_to '#' do
-        = icon('fab', 'facebook-square', class: 'item__detailpage__app__icons__1')
-      = link_to '#' do
-        = icon('fab', 'twitter-square', class: 'item__detailpage__app__icons__2')
-      = link_to '#' do
-        = icon('fab', 'pinterest-square', class: 'item__detailpage__app__icons__3')
-  .item__detailpage__other
-    .item__detailpage__other__seller
-      = link_to '♡さんのその他の出品','#'
-    .item__detailpage__other__items
-      .item__detailpage__other__items__box
-        .item__detailpage__other__items__box__image
-        .item__detailpage__other__items__box__content
-          .item__detailpage__other__items__box__content__text
-            商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-            .item__detailpage__other__items__box__content__text__hidden
-          .item__detailpage__other__items__box__content__sub
-            .item__detailpage__other__items__box__content__sub__price
-              ¥3,800
-            .item__detailpage__other__items__box__content__sub__like
-              .item__detailpage__other__items__box__content__sub__like__icon
-                ♡
-              .item__detailpage__other__items__box__content__sub__like__value
-                11
-      .item__detailpage__other__items__box
-        .item__detailpage__other__items__box__image
-        .item__detailpage__other__items__box__content
-          .item__detailpage__other__items__box__content__text
-            商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-            .item__detailpage__other__items__box__content__text__hidden
-          .item__detailpage__other__items__box__content__sub
-            .item__detailpage__other__items__box__content__sub__price
-              ¥3,800
-            .item__detailpage__other__items__box__content__sub__like
-              .item__detailpage__other__items__box__content__sub__like__icon
-                ♡
-              .item__detailpage__other__items__box__content__sub__like__value
-                11
-      .item__detailpage__other__items__box
-        .item__detailpage__other__items__box__image
-        .item__detailpage__other__items__box__content
-          .item__detailpage__other__items__box__content__text
-            商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-            .item__detailpage__other__items__box__content__text__hidden
-          .item__detailpage__other__items__box__content__sub
-            .item__detailpage__other__items__box__content__sub__price
-              ¥3,800
-            .item__detailpage__other__items__box__content__sub__like
-              .item__detailpage__other__items__box__content__sub__like__icon
-                ♡
-              .item__detailpage__other__items__box__content__sub__like__value
-                11
-      .item__detailpage__other__items__box
-        .item__detailpage__other__items__box__image
-        .item__detailpage__other__items__box__content
-          .item__detailpage__other__items__box__content__text
-            商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-            .item__detailpage__other__items__box__content__text__hidden
-          .item__detailpage__other__items__box__content__sub
-            .item__detailpage__other__items__box__content__sub__price
-              ¥3,800
-            .item__detailpage__other__items__box__content__sub__like
-              .item__detailpage__other__items__box__content__sub__like__icon
-                ♡
-              .item__detailpage__other__items__box__content__sub__like__value
-                11
-      .item__detailpage__other__items__box
-        .item__detailpage__other__items__box__image
-        .item__detailpage__other__items__box__content
-          .item__detailpage__other__items__box__content__text
-            商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-            .item__detailpage__other__items__box__content__text__hidden
-          .item__detailpage__other__items__box__content__sub
-            .item__detailpage__other__items__box__content__sub__price
-              ¥3,800
-            .item__detailpage__other__items__box__content__sub__like
-              .item__detailpage__other__items__box__content__sub__like__icon
-                ♡
-              .item__detailpage__other__items__box__content__sub__like__value
-                11
-      .item__detailpage__other__items__box
-        .item__detailpage__other__items__box__image
-        .item__detailpage__other__items__box__content
-          .item__detailpage__other__items__box__content__text
-            商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-            .item__detailpage__other__items__box__content__text__hidden
-          .item__detailpage__other__items__box__content__sub
-            .item__detailpage__other__items__box__content__sub__price
-              ¥3,800
-            .item__detailpage__other__items__box__content__sub__like
-              .item__detailpage__other__items__box__content__sub__like__icon
-                ♡
-              .item__detailpage__other__items__box__content__sub__like__value
-                11
-  .item__detailpage__other
-    .item__detailpage__other__brand
-      = link_to 'スナイデルのロングワンピース その他の商品'
-    .item__detailpage__other__items
-      .item__detailpage__other__items__box
-        .item__detailpage__other__items__box__image
-        .item__detailpage__other__items__box__content
-          .item__detailpage__other__items__box__content__text
-            商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-            .item__detailpage__other__items__box__content__text__hidden
-          .item__detailpage__other__items__box__content__sub
-            .item__detailpage__other__items__box__content__sub__price
-              ¥3,800
-            .item__detailpage__other__items__box__content__sub__like
-              .item__detailpage__other__items__box__content__sub__like__icon
-                ♡
-              .item__detailpage__other__items__box__content__sub__like__value
-                11
-      .item__detailpage__other__items__box
-        .item__detailpage__other__items__box__image
-        .item__detailpage__other__items__box__content
-          .item__detailpage__other__items__box__content__text
-            商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-            .item__detailpage__other__items__box__content__text__hidden
-          .item__detailpage__other__items__box__content__sub
-            .item__detailpage__other__items__box__content__sub__price
-              ¥3,800
-            .item__detailpage__other__items__box__content__sub__like
-              .item__detailpage__other__items__box__content__sub__like__icon
-                ♡
-              .item__detailpage__other__items__box__content__sub__like__value
-                11
-      .item__detailpage__other__items__box
-        .item__detailpage__other__items__box__image
-        .item__detailpage__other__items__box__content
-          .item__detailpage__other__items__box__content__text
-            商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-            .item__detailpage__other__items__box__content__text__hidden
-          .item__detailpage__other__items__box__content__sub
-            .item__detailpage__other__items__box__content__sub__price
-              ¥3,800
-            .item__detailpage__other__items__box__content__sub__like
-              .item__detailpage__other__items__box__content__sub__like__icon
-                ♡
-              .item__detailpage__other__items__box__content__sub__like__value
-                11
-      .item__detailpage__other__items__box
-        .item__detailpage__other__items__box__image
-        .item__detailpage__other__items__box__content
-          .item__detailpage__other__items__box__content__text
-            商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-            .item__detailpage__other__items__box__content__text__hidden
-          .item__detailpage__other__items__box__content__sub
-            .item__detailpage__other__items__box__content__sub__price
-              ¥3,800
-            .item__detailpage__other__items__box__content__sub__like
-              .item__detailpage__other__items__box__content__sub__like__icon
-                ♡
-              .item__detailpage__other__items__box__content__sub__like__value
-                11
-      .item__detailpage__other__items__box
-        .item__detailpage__other__items__box__image
-        .item__detailpage__other__items__box__content
-          .item__detailpage__other__items__box__content__text
-            商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-            .item__detailpage__other__items__box__content__text__hidden
-          .item__detailpage__other__items__box__content__sub
-            .item__detailpage__other__items__box__content__sub__price
-              ¥3,800
-            .item__detailpage__other__items__box__content__sub__like
-              .item__detailpage__other__items__box__content__sub__like__icon
-                ♡
-              .item__detailpage__other__items__box__content__sub__like__value
-                11
-      .item__detailpage__other__items__box
-        .item__detailpage__other__items__box__image
-        .item__detailpage__other__items__box__content
-          .item__detailpage__other__items__box__content__text
-            商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-            .item__detailpage__other__items__box__content__text__hidden
-          .item__detailpage__other__items__box__content__sub
-            .item__detailpage__other__items__box__content__sub__price
-              ¥3,800
-            .item__detailpage__other__items__box__content__sub__like
-              .item__detailpage__other__items__box__content__sub__like__icon
-                ♡
-              .item__detailpage__other__items__box__content__sub__like__value
-                11
-.item__detailpage__category
-  .item__detailpage__category__box
-    .item__detailpage__category__box__1
-      .item__detailpage__category__box__1__text
-        メルカリ
-      .item__detailpage__category__box__1__icon
-        〉
-    .item__detailpage__category__box__2
-      スナイデルバックリボンニットワンピースニットワンピースバーガンディブラウン
