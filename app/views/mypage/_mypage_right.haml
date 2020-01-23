@@ -15,7 +15,7 @@
     #all_content.tab_content
       %li.tab_content_description
         %section.image-middle
-          = image_tag src="/assets/logo_red.svg",size: "48x48", class:"icon-image" 
+          = image_tag("logo_red.svg",size: "48x48", class:"icon-image")
           %section.tab_content_middle 
             今ならやることキャンペーン
             %section.tab_content_middle_middle
@@ -25,7 +25,7 @@
     #all_content.tab_content
       %li.tab_content_description
         %section.image-middle
-          = image_tag src="/assets/logo_red.svg",size: "48x48", class:"icon-image" 
+          = image_tag("logo_red.svg",size: "48x48", class:"icon-image")
           %section.tab_content_middle 
             今だとすぐ売れるキャンペーン
             %section.tab_content_middle_middle
@@ -35,7 +35,7 @@
     #all_content.tab_content
       %li.tab_content_description
         %section.image-middle
-          = image_tag src="/assets/logo_red.svg",size: "48x48", class:"icon-image" 
+          = image_tag("logo_red.svg",size: "48x48", class:"icon-image")
           %section.tab_content_middle 
             100000Pプレゼント
             %section.tab_content_middle_middle
@@ -45,7 +45,7 @@
     #all_content.tab_content
       %li.tab_content_description
         %section.image-middle
-          = image_tag src="/assets/logo_red.svg",size: "48x48", class:"icon-image" 
+          = image_tag("logo_red.svg",size: "48x48", class:"icon-image")
           %section.tab_content_middle 
             ちょっとちょっと
             %section.tab_content_middle_middle
@@ -55,7 +55,7 @@
     #all_content.tab_content
       %li.tab_content_description
         %section.image-middle
-          = image_tag src="/assets/logo_red.svg",size: "48x48", class:"icon-image" 
+          = image_tag("logo_red.svg",size: "48x48", class:"icon-image")
           %section.tab_content_middle 
             さすがにやばい
             %section.tab_content_middle_middle
@@ -70,21 +70,21 @@
     
     #programming_content.tab_content
       .tab_content_description
-      = image_tag src="/assets/logo_gray.svg",size: "200x200", class:"all-image" 
+      = image_tag("logo_gray.svg",size: "200x200", class:"all-image")
       %p.c-txtsp 現在やることリストはありません   
     
   .under-tab-content
     .tab__head 
       購入した商品
     .tab_footer
-      %input#tab-1{checked:"checked", name: "tab-radio", type: "radio"}/
+      %input#tab-1{checked:"checked", name: "tab-radio", type: "radio"}
       %label.tab-label{for:"tab-1"} 取引中
-      %input#tab-2{name: "tab-radio", type: "radio"}/
+      %input#tab-2{name: "tab-radio", type: "radio"}
       %label.tab-label{for: "tab-2"} 過去の取引
       .tab-content.tab-1-content
-        = image_tag src="logo_gray.svg",size: "200x200", class:"all-image" 
+        = image_tag("logo_gray.svg",size: "200x200", class:"all-image")
         %p.c-txtsp 取引中の商品はありません
       .tab-content.tab-2-content
-        = image_tag src="logo_gray.svg",size: "200x200", class:"all-image" 
+        = image_tag("logo_gray.svg",size: "200x200", class:"all-image")
         %p.c-txtsp 取引中の商品はありま--ん
   

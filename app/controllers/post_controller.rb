@@ -1,6 +1,5 @@
 class PostController < ApplicationController
   def index
-    @items = Item.all
-    @images = Image.all 
+    @items = Item.includes(:images).order("created_at DESC").limit(10)
   end
 end
