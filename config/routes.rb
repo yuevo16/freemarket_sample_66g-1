@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   }
   root 'post#index'
 
-  resources :items, only: [:new, :create]
+  resources :items, only: [:index,:new, :create]
 
 
   
