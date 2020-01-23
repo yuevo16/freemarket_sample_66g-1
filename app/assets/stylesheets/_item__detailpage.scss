@@ -42,7 +42,9 @@
           &__column{
             height: 60px;
             width: 60px;
+
             background-color: green;
+
           }
         }
       }
@@ -131,6 +133,7 @@
       text-align: center;
       background-color: #ea352d;
       line-height: 60px;
+      padding: 0px 40px 40px;
       a{
         color: #ffffff;
         font-size: 24px;
@@ -203,6 +206,15 @@
     font-size: 14px;
     margin-top: 10px;;
     background-color: #ffffff;
+    margin-top: 24px;;
+    background-color: #ffffff;
+    &__bot{
+      padding: 8px 16px 8px 16px;
+    }
+    &__7{
+      line-height:center;
+    }
+
     &__box{
       padding: 24px;
       &__1{
@@ -223,8 +235,13 @@
         text-align: center;
         padding: 15px 0;
       }
+
     }
   }
+
+     }
+   }
+
   &__next{
     padding-top: 24px;
     display: flex;
@@ -353,4 +370,47 @@
       }
     }
   }
+
+
+
+  .edit-btn{
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    -webkit-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    text-align: center;
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    margin: 16px 0 16px 0;
+  
+}
+
+
+
+
+  .item-stop{
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    -webkit-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    text-align: center;
+    background: #aaa;
+    border: 1px solid #aaa;
+    color: #fff;
+    margin: 16px 0 16px 0;
+}
+
+
+
+
+
 }

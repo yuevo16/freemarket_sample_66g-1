@@ -49,10 +49,10 @@
 |status|string|null: false|
 |delivery_charge|integer|null: false|
 |delivery_area|string|null: false|
+|delivery_method|string|null: false|
 |delivery_date|string|null: false|
 |price|integer|null: false|
 |brand|string|null: false|
-|deal|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |pay_id|integer|null: false, foreign_key: true|
 ### Association
