@@ -42,6 +42,9 @@
           &__column{
             height: 60px;
             width: 60px;
+
+            background-color: green;
+
           }
         }
       }
@@ -126,6 +129,10 @@
       }
     }
     &__purchase{
+      height: 60px;
+      text-align: center;
+      background-color: #ea352d;
+      line-height: 60px;
       padding: 0px 40px 40px;
       a{
         color: #ffffff;
@@ -197,6 +204,8 @@
   }
   &__comment{
     font-size: 14px;
+    margin-top: 10px;;
+    background-color: #ffffff;
     margin-top: 24px;;
     background-color: #ffffff;
     &__bot{
@@ -205,6 +214,7 @@
     &__7{
       line-height:center;
     }
+
     &__box{
       padding: 24px;
       &__1{
@@ -225,8 +235,13 @@
         text-align: center;
         padding: 15px 0;
       }
-     }
-   }
+
+    }
+  }
+
+ }
+   
+
   &__next{
     padding-top: 24px;
     display: flex;
@@ -357,6 +372,7 @@
   }
 
 
+
   .edit-btn{
     display: block;
     width: 100%;
@@ -392,6 +408,7 @@
     color: #fff;
     margin: 16px 0 16px 0;
 }
+
 
 
 

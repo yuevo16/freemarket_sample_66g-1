@@ -6,17 +6,31 @@ Rails.application.routes.draw do
   }
   root 'post#index'
 
+
   resources :items, only: [:index,:new, :create]
 
 
   
-  resources :sell do
-    resources :purchase do
+  resources :items ,only:[:index,:new,:create]
+
+
+
+
+    resources :purchase, only: [:index] do
       collection do
-        get 'show'
+        post 'pay', to: 'purchase#pay'
+        get 'done', to: 'purchase#done'
       end
     end
-  end
+
+  
+
+    resources :card , only: [:new, :show] do
+      collection do
+        post 'pay', to: 'card#pay'
+        post 'delete', to: 'card#delete'
+      end
+    end
 
 
   resources :signup do
