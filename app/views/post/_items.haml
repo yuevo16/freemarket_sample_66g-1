@@ -16,6 +16,7 @@
       .popular__top4__item__box
         .popular__top4__item__box__text
           おもちゃ・ホビー・グッズ
+
 .top__category
   .top__category__1
     .top__category__1__new
@@ -40,10 +41,10 @@
               = @items.each do |item|
 
       - @items.each do |item|
-        .top__category__1__main__item
-          .top__category__1__main__item__box   
+        .top__category__1__main__item 
+          .top__category__1__main__item__box
             .top__category__1__main__item__box__image
-              = image_tag item.images,size:"185x189"
+              = image_tag "#{item.images[0].image}",size:"185x189"
               .top__category__1__main__item__box__image__price
                 ¥ 
                 = item.price
@@ -51,89 +52,8 @@
               .top__category__1__main__item__box__text__content
 
                 = item.name
-                
-              .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
+                .top__category__1__main__item__box__text__hidden
+
 .top__category
   .top__category__1
     .top__category__1__new
@@ -142,96 +62,19 @@
       .top__category__1__new__detail
         もっと見る ＞
     .top__category__1__main
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
+      - @items.each do |item|
+        .top__category__1__main__item
+          .top__category__1__main__item__box   
+            .top__category__1__main__item__box__image
+              = image_tag "#{item.images[0].image}",size:"185x189"
+              .top__category__1__main__item__box__image__price
+                ¥ 
+                = item.price
+            .top__category__1__main__item__box__text
+              .top__category__1__main__item__box__text__content
+                = item.name
+                .top__category__1__main__item__box__text__hidden
+
 .top__category
   .top__category__1
     .top__category__1__new
@@ -240,96 +83,19 @@
       .top__category__1__new__detail
         もっと見る ＞
     .top__category__1__main
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
+      - @items.each do |item|
+        .top__category__1__main__item
+          .top__category__1__main__item__box   
+            .top__category__1__main__item__box__image
+              = image_tag "#{item.images[0].image}",size:"185x189"
+              .top__category__1__main__item__box__image__price
+                ¥ 
+                = item.price
+            .top__category__1__main__item__box__text
+              .top__category__1__main__item__box__text__content
+                = item.name
+                .top__category__1__main__item__box__text__hidden
+      
 .top__category
   .top__category__1
     .top__category__1__new
@@ -338,94 +104,17 @@
       .top__category__1__new__detail
         もっと見る ＞
     .top__category__1__main
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
-      .top__category__1__main__item
-        .top__category__1__main__item__box
-          .top__category__1__main__item__box__image
-            .top__category__1__main__item__box__image__price
-              ¥1,980
-          .top__category__1__main__item__box__text
-            .top__category__1__main__item__box__text__content
-              あああああああああああああああああああああああああああああああああああああああ
-            .top__category__1__main__item__box__text__hidden
+      - @items.each do |item|
+        .top__category__1__main__item
+          .top__category__1__main__item__box   
+            .top__category__1__main__item__box__image
+              = image_tag "#{item.images[0].image}",size:"185x189"
+              .top__category__1__main__item__box__image__price
+                ¥ 
+                = item.price
+            .top__category__1__main__item__box__text
+              .top__category__1__main__item__box__text__content
+                = item.name
+                .top__category__1__main__item__box__text__hidden
+      
 .popular__footer
