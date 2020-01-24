@@ -4,8 +4,8 @@
       = @item.name
     .item__detailpage__box__main
       .item__detailpage__box__main__image
-        -# .item__detailpage__box__main__image__top
-        -#   = image_tag image.image,size:"250x300",class:"syousai-image"
+        .item__detailpage__box__main__image__top
+          = image_tag @image,size:"240x300"
         .item__detailpage__box__main__image__bottom
           .item__detailpage__box__main__image__bottom__column
       .item__detailpage__box__main__text
@@ -64,8 +64,6 @@
               配送の方法
           .item__detailpage__box__main__text__box__content
             .item__detailpage__box__main__text__box__content__text
-              = @item.deal
-              %end
         .item__detailpage__box__main__text__box
           .item__detailpage__box__main__text__box__column
             .item__detailpage__box__main__text__box__column__box
@@ -84,6 +82,7 @@
               %end
     .item__detailpage__box__price
       .item__detailpage__box__price__main
+        ¥
         = @item.price
         %end
       .item__detailpage__box__price__tax
@@ -104,8 +103,8 @@
         = link_to '#', class: 'item-stop' do
           出品を一旦停止
       .item_desk
-        = link_to '#', class: 'item-stop' do
-          この商品を削除する
+        = link_to 'この商品を削除する',item_path, method: :delete,class: 'item-stop' 
+          
         
   .item__detailpage__comment
     .item__detailpage__comment__box
