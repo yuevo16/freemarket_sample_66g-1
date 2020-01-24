@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20200122074936) do
     t.string   "delivery_method"
     t.string   "delivery_date",                 null: false
     t.integer  "price",                         null: false
+    t.string   "deal"
     t.string   "saler"
     t.string   "buyer"
     t.integer  "user_id"

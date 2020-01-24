@@ -1,11 +1,7 @@
-= form_for @item, url: "/items", method: :post, do |f|
+= form_for @item do |f|
   .product
     .product-header
-<<<<<<< HEAD
       = link_to image_tag("fmarket_logo_red.svg", size:"185x49",class:"product-header__img"), "/"
-=======
-      = link_to image_tag("fmarket_logo_red.svg",size:"185x49"),root_path,class:"product-header__img"
->>>>>>> master
     %main.product-main
       %section.product-main__single-container
         #product-main__sell-container
@@ -19,36 +15,19 @@
                       出品画像
                       %span.product-single__form-require 必須
                     %p.product-single__max-upload 最大10枚までアップロードできます
-                    .post__drop__box__container
-                      .prev-content
-                      .label-content
-                        %label{for: "item_images_attributes_0_image", class: "abel-box", id: "label-box--0"}
-                          %pre.label-box__text-visible クリックしてファイルをアップロード
-                      .hidden-content
+                    .product-single__sell-dropbox-container.clearfix.state-image-number-10
+                      .product-single__sell-upload-items-container
+                        .product-single__sell-upload-items.product-single__have-item-0
+                          %ul.product-single__ul
+                      .product-single__sell-upload-drop-box.product-single__have-item-0
                         = f.fields_for :images do |i|
-                          = i.file_field :image, class: "hidden-field"
-                          %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
-                          %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
-                          %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
-                          %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
-                          %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_5_image" }
-                          %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_6_image" }
-                          %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_7_image" }
-                          %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_8_image" }
-                          %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_9_image" }
-                    -# .product-single__sell-dropbox-container.clearfix.state-image-number-10
-                    -#   .product-single__sell-upload-items-container
-                    -#     .product-single__sell-upload-items.product-single__have-item-0
-                    -#       %ul.product-single__ul
-                    -#   .product-single__sell-upload-drop-box.product-single__have-item-0
-                    -#     = f.fields_for :images do |i|
-                    -#       = i.file_field :image, class: 'product-single__sell-upload-drop-file'
-                          
-                    -#       %pre.product-single__visible-pc
-                    -#         :preserve
-                    -#           ドラッグアンドドロップ
-                    -#             またはクリックしてファイルをアップロード
-                    -#     end
+                          = i.file_field :image, class: 'product-single__sell-upload-drop-file'
+                          -# .{multiple: "multiple", name: "image1", type: "file"}
+                          %pre.product-single__visible-pc
+                            :preserve
+                              ドラッグアンドドロップ
+                                またはクリックしてファイルをアップロード
+                        end
 
                   .product-name
                     .product-name__sell-content
@@ -187,6 +166,6 @@
                 %li
                   = link_to "特定商取引に関する表記","#"
             .product-footer__center__logo
-              =link_to image_tag("logo_gray.svg", width:"80", height:"65",class:"footer__center__logo--red"),"#"
+              =link_to image_tag("/assets/logo_gray.svg", width:"80", height:"65",class:"footer__center__logo--red"),"#"
             %p.inc
               ©︎Mercari,Inc.
