@@ -1,11 +1,6 @@
-= form_for @item, url: "/items", method: :post, do |f|
+= form_for @item do |f|
   .product
     .product-header
-<<<<<<< HEAD
-      = link_to image_tag("fmarket_logo_red.svg", size:"185x49",class:"product-header__img"), "/"
-=======
-      = link_to image_tag("fmarket_logo_red.svg",size:"185x49"),root_path,class:"product-header__img"
->>>>>>> master
     %main.product-main
       %section.product-main__single-container
         #product-main__sell-container
