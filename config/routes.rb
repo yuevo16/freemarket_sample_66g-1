@@ -10,12 +10,6 @@ Rails.application.routes.draw do
   resources :items, only: [:index,:new, :create]
 
 
-  
-  resources :items ,only:[:index,:new,:create]
-
-
-
-
     resources :purchase, only: [:index] do
       collection do
         post 'pay', to: 'purchase#pay'
@@ -41,8 +35,8 @@ Rails.application.routes.draw do
       get 'step4'
       get 'step5'
       get 'step6'
-      post 'pay'
       get 'done'
+      post 'pay'
     end
   end
 
