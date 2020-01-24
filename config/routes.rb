@@ -6,17 +6,14 @@ Rails.application.routes.draw do
   }
   root 'post#index'
 
-  resources :items , only: [:index,:new, :create]
- 
-
-
-    resources :purchase, only: [:index] do
-      collection do
+  resources :items , excpt: [:index]  do
+    resources :purchase do
+      member do
         post 'pay', to: 'purchase#pay'
         get 'done', to: 'purchase#done'
+      end
     end
   end
-
   
 
 
