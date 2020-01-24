@@ -41,6 +41,7 @@ Rails.application.routes.draw do
       get 'step4'
       get 'step5'
       get 'step6'
+      post 'pay'
       get 'done'
     end
   end

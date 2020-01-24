@@ -1,4 +1,5 @@
 class SignupController < ApplicationController
+  require 'payjp'
 
   def step1
   end
@@ -51,7 +52,6 @@ class SignupController < ApplicationController
     session[:address_phone_number] = user_params[:address_attributes][:phone_number]
 
     @user = User.new
-    @user.build_card
   end
 
   def create
@@ -82,18 +82,31 @@ class SignupController < ApplicationController
         building: session[:building],
       )
       @address.save
-      @card = @user.build_card(
-        card_number: params[:user][:card_attributes][:card_number],
-        limit_month: params[:user][:card_attributes][:limit_month],
-        limit_year: params[:user][:card_attributes][:limit_year],
-        security_code: params[:user][:card_attributes][:security_code],
-      )
-      @card.save
-        # ログインするための情報を保管
-        session[:id] = @user.id
-        redirect_to done_signup_index_path
+      session[:id] = @user.id
+      redirect_to done_signup_index_path
     else
       render '/signup/step1'
+    end
+
+    def pay #payjpとCardのデータベース作成を実施します。
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      if params['payjp-token'].blank?
+        redirect_to new_card_path
+      else
+        # トークンが正常に発行されていたら、顧客情報をPAY.JPに登録します。
+        customer = Payjp::Customer.create(
+        card: params['payjp-token'],
+        ) # 直前のnewアクションで発行され、送られてくるトークンをここで顧客に紐付けて永久保存します。
+        
+        @card = Card.new(user_id: session[:id], customer_id: customer.id, card_id: customer.default_card)
+        
+        if @card.save
+          redirect_to action: 'done'
+        else
+          redirect_to action: 'pay'
+        end
+      end
+    
     end
 
     def done
@@ -133,16 +146,6 @@ class SignupController < ApplicationController
       :building,
       :phone_number
       ],
-      
-      card_attributes:[
-      :id,
-      :card_number,
-      :limit_month,
-      :limit_year,
-      :security_code
-      ]
     )
   end
-
-
 end
