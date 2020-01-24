@@ -1,12 +1,10 @@
 class ItemsController < ApplicationController
 
-
   def show
     @item = Item.find(params[:id])
     @user = current_user.nickname
     @image = @item.images[0].image
   end
-
 
 
   def new
@@ -24,10 +22,10 @@ class ItemsController < ApplicationController
     item.update(item_params)
   end
 
-  def item_detail
-    @item = Item.find(params[:id])
-    @user = current_user.nickname
-  end
+  # def item_detail
+  #   @item = Item.find(params[:id])
+  #   @user = current_user.nickname
+  # end
   
   def create
     @item = Item.new(item_params)
