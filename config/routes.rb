@@ -6,9 +6,8 @@ Rails.application.routes.draw do
   }
   root 'post#index'
 
-  resources :items, only: [:new, :create]
-
-
+  resources :items do
+  end
   
   resources :sell do
     resources :purchase do
@@ -31,16 +30,20 @@ Rails.application.routes.draw do
     end
   end
 
+
   resources :mypage do
-    collection  do
+    member  do
       get 'index'
       get 'identification'
       get 'credit_card'
       get 'user_profile'
       get 'logout'
       get 'item_detail'
+      get 'edit'
+      get 'sell_list'
     end
   end
+  
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,128 @@
+.item__detailpage
+  .item__detailpage__box
+    .item__detailpage__box__title
+      - @items.each do |item|
+        = item.name
+      %end
+    .item__detailpage__box__main
+      .item__detailpage__box__main__image
+        .item__detailpage__box__main__image__top
+          - @images.each do |image| 
+            = image_tag image.image,size:"250x300",class:"syousai-image"
+          %end
+        .item__detailpage__box__main__image__bottom
+          .item__detailpage__box__main__image__bottom__column
+      .item__detailpage__box__main__text
+        .item__detailpage__box__main__text__box 
+          .item__detailpage__box__main__text__box__column
+            .item__detailpage__box__main__text__box__column__seller
+              出品者
+          .item__detailpage__box__main__text__box__content
+            .item__detailpage__box__main__text__box__content__assessment
+              - @users.each do |user|
+                = link_to user.nickname
+              %end
+            .item__detailpage__box__main__text__box__content__icons
+              = icon('fas', 'smile', class: 'item__detailpage__box__main__text__box__content__icons__1')
+              .item__detailpage__box__main__text__box__content__icons__text
+                221
+              = icon('fas', 'meh', class: 'item__detailpage__box__main__text__box__content__icons__2')
+              .item__detailpage__box__main__text__box__content__icons__text
+                1
+              = icon('fas', 'frown', class: 'item__detailpage__box__main__text__box__content__icons__3')
+              .item__detailpage__box__main__text__box__content__icons__text
+                0
+        .item__detailpage__box__main__text__box
+          .item__detailpage__box__main__text__box__column
+            .item__detailpage__box__main__text__box__column__category
+              カテゴリー
+          .item__detailpage__box__main__text__box__content
+            .item__detailpage__box__main__text__box__content__genre
+              - @items.each do |item|
+                = item.category
+              %end
+        .item__detailpage__box__main__text__box
+          .item__detailpage__box__main__text__box__column
+            .item__detailpage__box__main__text__box__column__box
+              ブランド
+          .item__detailpage__box__main__text__box__content
+            .item__detailpage__box__main__text__box__content__text
+              - @items.each do |item|
+                = item.brand
+              %end
+        .item__detailpage__box__main__text__box
+          .item__detailpage__box__main__text__box__column
+            .item__detailpage__box__main__text__box__column__box
+              商品の状態
+          .item__detailpage__box__main__text__box__content
+            .item__detailpage__box__main__text__box__content__text
+              - @items.each do |item|
+                = item.status
+              %end
+        .item__detailpage__box__main__text__box
+          .item__detailpage__box__main__text__box__column
+            .item__detailpage__box__main__text__box__column__box
+              配送料の負担
+          .item__detailpage__box__main__text__box__content
+            .item__detailpage__box__main__text__box__content__text
+              送料込み(出品者負担)
+        .item__detailpage__box__main__text__box
+          .item__detailpage__box__main__text__box__column
+            .item__detailpage__box__main__text__box__column__box
+              配送の方法
+          .item__detailpage__box__main__text__box__content
+            .item__detailpage__box__main__text__box__content__text
+              - @items.each do |item|
+                = item.deal
+              %end
+        .item__detailpage__box__main__text__box
+          .item__detailpage__box__main__text__box__column
+            .item__detailpage__box__main__text__box__column__box
+              配送元地域
+          .item__detailpage__box__main__text__box__content
+            .item__detailpage__box__main__text__box__content__text
+              - @items.each do |item|
+                = link_to item.delivery_area
+              %end
+        .item__detailpage__box__main__text__box
+          .item__detailpage__box__main__text__box__column
+            .item__detailpage__box__main__text__box__column__box
+              配送日の目安
+          .item__detailpage__box__main__text__box__content
+            .item__detailpage__box__main__text__box__content__text
+              - @items.each do |item|
+                = item.delivery_date
+              %end
+    .item__detailpage__box__price
+      .item__detailpage__box__price__main
+        - @items.each do |item|
+          = item.price
+        %end
+      .item__detailpage__box__price__tax
+        (税込)
+      .item__detailpage__box__price__pastage
+        送料込み
+    .item__detailpage__box__purchase
+      - @items.each do |item|
+        = item.info
+        %end
+  .item__detailpage__comment
+    .item__detailpage__comment__bot
+      .item__detailpage__comment__bot__5
+        = link_to "/mypage/#{@item.id}/edit", class: 'edit-btn' do
+          商品の編集
+      .item__detailpage__comment__bot__7
+        or
+      .item_dess
+        = link_to '#', class: 'item-stop' do
+          出品を一旦停止
+      .item_desk
+        = link_to '#', class: 'item-stop' do
+          この商品を削除する
+        
+  .item__detailpage__comment
+    .item__detailpage__comment__box
+      .item__detailpage__comment__box__1
+        相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となる事があります。
+      = text_area :content, class: 'item__detailpage__comment__box__2'
+      = submit_tag 'コメントする', class: 'item__detailpage__comment__box__3'
