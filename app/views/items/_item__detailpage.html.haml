@@ -5,8 +5,8 @@
       %end
     .item__detailpage__box__main
       .item__detailpage__box__main__image
-        -# .item__detailpage__box__main__image__top
-        -#   = image_tag image.image,size:"250x300",class:"syousai-image"
+        .item__detailpage__box__main__image__top
+          = image_tag @image,size:"240x300"
           %end
         .item__detailpage__box__main__image__bottom
           .item__detailpage__box__main__image__bottom__column
@@ -84,6 +84,7 @@
               %end
     .item__detailpage__box__price
       .item__detailpage__box__price__main
+        ¥
         = @item.price
         %end
       .item__detailpage__box__price__tax

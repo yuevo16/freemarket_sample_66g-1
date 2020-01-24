@@ -29,7 +29,7 @@ class MypageController < ApplicationController
   def item_detail
     @item = Item.find(params[:id])
     @user = current_user.nickname
-    # @images = Item.include(:images)
+    @image = @item.images[0].image
   end
 
   def edit
