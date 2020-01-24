@@ -1,4 +1,4 @@
-.main {
+.card__main {
   height: 100vh;
   width: calc(100vw - 280px);
   position: absolute;
@@ -8,7 +8,7 @@
   margin-left: 80px;
   padding-top: 35px;
   width:700px;
-  &__container {
+  .maiun__container {
     background-color: white;
     height: 110%;
     width: 90%;
