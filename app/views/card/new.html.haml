@@ -1,7 +1,7 @@
 .wrapper
   =render "post/header"
   = render 'mypage/side_bar'
-  .main
+  .card__main
     = form_for pay_card_index_path, method: :post, html: {class: 'main__container'} do |f|
       .main__container__header
         クレジットカード情報入力
