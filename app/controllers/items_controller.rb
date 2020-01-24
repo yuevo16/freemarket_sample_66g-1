@@ -1,4 +1,11 @@
 class ItemsController < ApplicationController
+
+
+  def index
+  end
+
+
+
   def new
     @item = Item.new
     @item.images.new
@@ -39,9 +46,8 @@ class ItemsController < ApplicationController
       :delivery_chage, 
       :delivery_area, 
       :delivery_date, 
-      :user, 
       :price, 
       images_attributes: [:image]
-      ).merge(user_id: current_user.id)
+      ).merge(user_id: current_user.id,saler: current_user.id)
   end
 end

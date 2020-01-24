@@ -1,26 +1,8 @@
-.body-card
-  .header
-    .header__icon
-      = link_to image_tag("fmarket_logo_red.svg", class: "header__icon__image"), "/"
-    .header__status
-      .header__status__line
-        .header__status__line__menber
-          会員情報
-          .header__status__line__menber__box
-        .header__status__line__number
-          電話番号認証
-          .header__status__line__number__box
-        .header__status__line__address
-          お届け先住所入力
-          .header__status__line__address__box
-        .header__status__line__pay
-          支払い方法
-          .header__status__line__pay__box
-        .header__status__line__done
-          完了
-          .header__status__line__done__box
+.wrapper
+  =render "post/header"
+  = render 'mypage/side_bar'
   .main
-    = form_for model: @card, url: '/signup/pay', method: 'post', id: 'charge-form', name: 'inputForm', html: {class: 'main__container'} do |f|
+    = form_for pay_card_index_path, method: :post, html: {class: 'main__container'} do |f|
       .main__container__header
         クレジットカード情報入力
       .main__container__form
@@ -29,7 +11,7 @@
             カード番号
           .main__container__form__card__require
             必須
-          =f.text_field :card_number, maxlength: "16",type: "text", id: 'card_number', placeholder:"半角数字のみ", class: "main__container__form__card__number"
+          =f.text_field :card_number, maxlength: "16",type: "text", placeholder:"半角数字のみ", class: "main__container__form__card__number"
           .main__container__form__card__image
             = image_tag("credit-card_22@0.5.png", class: "main__container__form__card__image__icon")
             = image_tag("credit-card_9@0.5.png", class: "main__container__form__card__image__icon")
@@ -55,25 +37,14 @@
             セキュリティーコード
           .main__container__form__security__require
             必須
-          = f.text_field :cvc,  maxlength: "4",type: "text", id: "cvc",placeholder:"カードの背面4桁もしくは3桁の番号", class: "main__container__form__security__number"
+          = f.text_field :security_code,  maxlength: "4",type: "text", placeholder:"カードの背面4桁もしくは3桁の番号", class: "main__container__form__security__number"
         .main__container__form__question
           .main__container__form__question__mark
             %span ?
             カードの裏面の番号とは？
         .main__container__form__btn
-          = f.submit "追加する" ,id:"token_submit", class: "main__container__form__btn__red" 
-  .footer
-    .footer__center
-      %nav
-        %ul.menu
-          %li
-            = link_to "プライバシーポリシー","#"
-          %li
-            = link_to "メルカリ利用規約","#"
-          %li
-            = link_to "特定商取引に関する表記","#"
-      .footer__center__logo
-        =link_to image_tag("logo_gray.svg", width:"80", height:"65",class:"footer__center__logo--red"),"/"
-      %p.inc
-        ©︎Mercari,Inc.
-        
+          = f.submit "追加する" ,class: "main__container__form__btn__red" 
+  
+  = render 'post/footer_image'
+  = render 'post/footer'
+  = render 'post/sell-camera'

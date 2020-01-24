@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200118062002) do
+ActiveRecord::Schema.define(version: 20200122074936) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "first_name",      null: false
@@ -29,13 +29,11 @@ ActiveRecord::Schema.define(version: 20200118062002) do
   end
 
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "card_number",   null: false
-    t.integer  "limit_month",   null: false
-    t.integer  "limit_year",    null: false
-    t.integer  "security_code", null: false
-    t.integer  "user_id",       null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "user_id",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "customer_id"
+    t.string   "card_id"
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -50,14 +48,18 @@ ActiveRecord::Schema.define(version: 20200118062002) do
     t.string   "name",                          null: false
     t.text     "info",            limit: 65535, null: false
     t.string   "category",                      null: false
+    t.string   "category1"
+    t.string   "category2"
+    t.string   "brand"
     t.string   "status",                        null: false
     t.string   "delivery_chage",                null: false
     t.string   "delivery_area",                 null: false
     t.string   "delivery_method"
     t.string   "delivery_date",                 null: false
     t.integer  "price",                         null: false
-    t.string   "brand"
     t.string   "deal"
+    t.string   "saler"
+    t.string   "buyer"
     t.integer  "user_id"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false

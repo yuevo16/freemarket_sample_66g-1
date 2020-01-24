@@ -8,14 +8,25 @@ Rails.application.routes.draw do
 
   resources :items do
   end
+
   
-  resources :sell do
-    resources :purchase do
+  resources :items ,only:[:index,:new,:create]
+
+    resources :purchase, only: [:index] do
       collection do
-        get 'show'
+        post 'pay', to: 'purchase#pay'
+        get 'done', to: 'purchase#done'
       end
     end
-  end
+
+  
+
+    resources :card , only: [:new, :show] do
+      collection do
+        post 'pay', to: 'card#pay'
+        post 'delete', to: 'card#delete'
+      end
+    end
 
 
   resources :signup do
@@ -26,6 +37,7 @@ Rails.application.routes.draw do
       get 'step4'
       get 'step5'
       get 'step6'
+      post 'pay'
       get 'done'
     end
   end
