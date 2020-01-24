@@ -2,7 +2,7 @@
   %menu.left-content__menu
     %ul.left-content__list
       %li
-      = link_to "#", class: 'left-content__list-item' do
+      = link_to "/mypage/#{current_user.id}", class: 'left-content__list-item' do
         マイページ
       %li
       = link_to '#', class: 'left-content__list-item' do
@@ -14,10 +14,10 @@
       = link_to '#', class: 'left-content__list-item' do
         いいね！一覧
       %li
-      = link_to item_detail_mypage_index_path, class: 'left-content__list-item' do
+      = link_to new_item_path, class: 'left-content__list-item' do
         出品する
       %li
-      = link_to '#', class: 'left-content__list-item' do
+      = link_to "/mypage/#{current_user.id}/sell_list", class: 'left-content__list-item' do
         出品した商品 - 出品中
       %li
       = link_to  '#', class: 'left-content__list-item' do
@@ -56,23 +56,23 @@
     設定
     %ul.left-content__list
       %li
-      = link_to user_profile_mypage_index_path, class: 'left-content__list-item' do
+      = link_to "/mypage/#{current_user.id}/user_profile", class: 'left-content__list-item' do
         プロフィール
       %li
       = link_to '#', class: 'left-content__list-item' do
         発送先・お届け先住所変更
       %li
-      = link_to credit_card_mypage_index_path, class: 'left-content__list-item' do
+      = link_to "/mypage/#{current_user.id}/credit_card", class: 'left-content__list-item' do
         支払い方法
       %li
       = link_to '#', class: 'left-content__list-item' do
         メール/パスワード
       %li
-      = link_to identification_mypage_index_path, class: 'left-content__list-item' do
+      = link_to "/mypage/#{current_user.id}/identification", class: 'left-content__list-item' do
         本人情報
       %li
       = link_to '#', class: 'left-content__list-item' do
         電話番号の確認
       %li
-      = link_to logout_mypage_index_path, class: 'left-content__list-item' do
+      = link_to "/mypage/#{current_user.id}/logout", class: 'left-content__list-item' do
         ログアウト

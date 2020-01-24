@@ -1,15 +1,11 @@
 .item__detailpage
   .item__detailpage__box
     .item__detailpage__box__title
-      - @items.each do |item|
-        = item.name
-      %end
+      = @item.name
     .item__detailpage__box__main
       .item__detailpage__box__main__image
         .item__detailpage__box__main__image__top
-          - @images.each do |image| 
-            = image_tag image.image,size:"250x300",class:"syousai-image"
-          %end
+          = image_tag @image,size:"240x300"
         .item__detailpage__box__main__image__bottom
           .item__detailpage__box__main__image__bottom__column
       .item__detailpage__box__main__text
@@ -19,8 +15,7 @@
               出品者
           .item__detailpage__box__main__text__box__content
             .item__detailpage__box__main__text__box__content__assessment
-              - @users.each do |user|
-                = link_to user.nickname
+              = link_to @user, "/mypage/#{current_user.id}"
               %end
             .item__detailpage__box__main__text__box__content__icons
               = icon('fas', 'smile', class: 'item__detailpage__box__main__text__box__content__icons__1')
@@ -38,8 +33,7 @@
               カテゴリー
           .item__detailpage__box__main__text__box__content
             .item__detailpage__box__main__text__box__content__genre
-              - @items.each do |item|
-                = item.category
+              = @item.category
               %end
         .item__detailpage__box__main__text__box
           .item__detailpage__box__main__text__box__column
@@ -47,8 +41,7 @@
               ブランド
           .item__detailpage__box__main__text__box__content
             .item__detailpage__box__main__text__box__content__text
-              - @items.each do |item|
-                = item.brand
+              = @item.brand
               %end
         .item__detailpage__box__main__text__box
           .item__detailpage__box__main__text__box__column
@@ -56,8 +49,7 @@
               商品の状態
           .item__detailpage__box__main__text__box__content
             .item__detailpage__box__main__text__box__content__text
-              - @items.each do |item|
-                = item.status
+              = @item.status
               %end
         .item__detailpage__box__main__text__box
           .item__detailpage__box__main__text__box__column
@@ -72,17 +64,13 @@
               配送の方法
           .item__detailpage__box__main__text__box__content
             .item__detailpage__box__main__text__box__content__text
-              - @items.each do |item|
-                = item.deal
-              %end
         .item__detailpage__box__main__text__box
           .item__detailpage__box__main__text__box__column
             .item__detailpage__box__main__text__box__column__box
               配送元地域
           .item__detailpage__box__main__text__box__content
             .item__detailpage__box__main__text__box__content__text
-              - @items.each do |item|
-                = link_to item.delivery_area
+              = link_to @item.delivery_area
               %end
         .item__detailpage__box__main__text__box
           .item__detailpage__box__main__text__box__column
@@ -90,26 +78,24 @@
               配送日の目安
           .item__detailpage__box__main__text__box__content
             .item__detailpage__box__main__text__box__content__text
-              - @items.each do |item|
-                = item.delivery_date
+              = @item.delivery_date
               %end
     .item__detailpage__box__price
       .item__detailpage__box__price__main
-        - @items.each do |item|
-          = item.price
+        ¥
+        = @item.price
         %end
       .item__detailpage__box__price__tax
         (税込)
       .item__detailpage__box__price__pastage
         送料込み
     .item__detailpage__box__purchase
-      - @items.each do |item|
-        = item.info
-        %end
+      = @item.info
+      %end
   .item__detailpage__comment
     .item__detailpage__comment__bot
       .item__detailpage__comment__bot__5
-        = link_to '#', class: 'edit-btn' do
+        = link_to "/mypage/#{current_user.id}/edit", class: 'edit-btn' do
           商品の編集
       .item__detailpage__comment__bot__7
         or
@@ -117,8 +103,8 @@
         = link_to '#', class: 'item-stop' do
           出品を一旦停止
       .item_desk
-        = link_to '#', class: 'item-stop' do
-          この商品を削除する
+        = link_to 'この商品を削除する',item_path, method: :delete,class: 'item-stop' 
+          
         
   .item__detailpage__comment
     .item__detailpage__comment__box

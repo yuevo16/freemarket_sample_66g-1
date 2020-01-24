@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20200122074936) do
     t.string   "first_name_kana", null: false
     t.string   "last_name_kana",  null: false
     t.integer  "post_number",     null: false
-    t.string   "prefecture_id",   null: false
+    t.integer  "prefecture_id",   null: false
     t.string   "city",            null: false
     t.string   "address_number",  null: false
     t.string   "building"
@@ -47,18 +47,19 @@ ActiveRecord::Schema.define(version: 20200122074936) do
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                          null: false
     t.text     "info",            limit: 65535, null: false
-    t.string   "category",                      null: false
-    t.string   "category1"
-    t.string   "category2"
+    t.integer  "category",                      null: false
+    t.integer  "category1"
+    t.integer  "category2"
     t.string   "brand"
-    t.string   "status",                        null: false
-    t.string   "delivery_chage",                null: false
-    t.string   "delivery_area",                 null: false
-    t.string   "delivery_method"
-    t.string   "delivery_date",                 null: false
+    t.integer  "status",                        null: false
+    t.integer  "delivery_chage",                null: false
+    t.integer  "delivery_area",                 null: false
+    t.integer  "delivery_method"
+    t.integer  "delivery_date",                 null: false
     t.integer  "price",                         null: false
-    t.string   "saler"
-    t.string   "buyer"
+    t.integer  "deal"
+    t.integer  "saler"
+    t.integer  "buyer"
     t.integer  "user_id"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false

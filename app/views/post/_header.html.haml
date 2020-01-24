@@ -35,7 +35,7 @@
               %i.fas.fa-check
               %font{:size => "2"} やることリスト
           %li.header-main__search-bar2__auth-box__mypage
-            = link_to mypage_index_path,class: "mypage-image" do
+            = link_to "/mypage/#{current_user.id}" ,class: "mypage-image" do
               =icon('fas','smile')
               %font{:size => "2"} マイページ
       - else
