@@ -6,25 +6,24 @@ Rails.application.routes.draw do
   }
   root 'post#index'
 
-  resources :items do
-  end
+  resources :items , only: [:index,:new, :create]
+ 
 
-  
-  resources :items do
-    resources :purchase do
-      member do
-        post 'pay'
-        get 'done'
-      end
+
+    resources :purchase, only: [:index] do
+      collection do
+        post 'pay', to: 'purchase#pay'
+        get 'done', to: 'purchase#done'
     end
   end
 
   
 
-    resources :card , only: [:new, :show] do
-      member do
-        post 'pay'
-        post 'delete'
+
+    resources :card , only: [:new,:show] do
+      collection do
+        post 'pay', to: 'card#pay'
+        post 'delete', to: 'card#delete'
       end
     end
 
@@ -37,8 +36,9 @@ Rails.application.routes.draw do
       get 'step4'
       get 'step5'
       get 'step6'
-      post 'pay'
       get 'done'
+      get 'pay'
+      post 'pay'
     end
   end
 
