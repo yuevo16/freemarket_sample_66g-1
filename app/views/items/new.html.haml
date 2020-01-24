@@ -1,11 +1,7 @@
-= form_for @item, url: "/items", method: :post, do |f|
+= form_for @item do |f|
   .product
     .product-header
-<<<<<<< HEAD
       = link_to image_tag("fmarket_logo_red.svg", size:"185x49",class:"product-header__img"), "/"
-=======
-      = link_to image_tag("fmarket_logo_red.svg",size:"185x49"),root_path,class:"product-header__img"
->>>>>>> master
     %main.product-main
       %section.product-main__single-container
         #product-main__sell-container
@@ -49,7 +45,6 @@
                     -#           ドラッグアンドドロップ
                     -#             またはクリックしてファイルをアップロード
                     -#     end
-
                   .product-name
                     .product-name__sell-content
                       .product-name__form-group
@@ -65,9 +60,6 @@
                           %span.product-name__form-require 必須
                         = f.text_area :info, class: "product-name__textarea-default", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"
                         -# .product-name__textarea-default{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
-
-
-
                     .detaile
                       .detaile__sell-content.clearfix
                         %h3.detaile__sell-sub-head 商品の詳細
