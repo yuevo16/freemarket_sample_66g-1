@@ -2,7 +2,7 @@
   =render "post/header"
   = render 'mypage/side_bar'
   .card__main
-    = form_for pay_card_index_path, method: :post, html: {class: 'main__container'} do |f|
+    = form_for pay_card_path, method: :post, html: {class: 'main__container'} do |f|
       .main__container__header
         クレジットカード情報入力
       .main__container__form

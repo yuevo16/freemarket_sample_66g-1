@@ -1,7 +1,10 @@
 class ItemsController < ApplicationController
 
 
-  def index
+  def show
+    @item = Item.find(params[:id])
+    @user = current_user.nickname
+    @image = @item.images[0].image
   end
 
 
@@ -22,9 +25,8 @@ class ItemsController < ApplicationController
   end
 
   def item_detail
-    @users = User.find(params[:id])
-    @items = Item.find(params[:id])
-    @images = Image.find(params[:id])
+    @item = Item.find(params[:id])
+    @user = current_user.nickname
   end
   
   def create
