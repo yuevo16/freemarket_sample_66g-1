@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   }
   root 'post#index'
 
-  resources :items , excpt: [:index]  do
+  resources :items   do
     resources :purchase do
       member do
+        get 'index', to: 'purchase#index'
         post 'pay', to: 'purchase#pay'
         get 'done', to: 'purchase#done'
       end

@@ -4,6 +4,8 @@ class PurchaseController < ApplicationController
   before_action :set_card
 
   def index
+    @item = Item.find(params[:item_id])
+    binding.pry
     card = Card.where(user_id: current_user.id).first
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?
@@ -22,7 +24,7 @@ class PurchaseController < ApplicationController
     card = Card.where(user_id: current_user.id).first
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
-      :amount => 1000, #支払金額を入力（itemテーブル等に紐づけても良い）
+      :amount => @item.price, #支払金額を入力（itemテーブル等に紐づけても良い）
       :customer => card.customer_id, #顧客ID
       :currency => 'jpy', #日本円
     )
@@ -34,5 +36,19 @@ class PurchaseController < ApplicationController
   def set_card
     @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
   end
+
+  # def item_params
+  #   params.require(:item).permit(
+  #     :name,
+  #     :info,
+  #     :category,
+  #     :status, 
+  #     :delivery_chage, 
+  #     :delivery_area, 
+  #     :delivery_date, 
+  #     :price, 
+  #     images_attributes: [:image]
+  #     ).merge(user_id: current_user.id,buyer: current_user.id)
+  # end
 
 end
