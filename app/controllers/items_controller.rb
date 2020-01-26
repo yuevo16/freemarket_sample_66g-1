@@ -26,9 +26,9 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to "/mypage/#{current_user.id}"
-    else
       root_path
+    else
+      redirect_to "/mypage/#{current_user.id}"
     end
   end
 

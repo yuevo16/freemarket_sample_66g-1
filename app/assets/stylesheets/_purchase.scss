@@ -55,7 +55,7 @@
     }
     &__payment{
       padding: 32px 30% 0;
-      &__price{;
+      &__price{
         &__box{
           display: flex;
           justify-content: space-between;
@@ -106,9 +106,8 @@
           &__number{
             padding-top: 3px;
           }
-          &__limit{
-            padding-top: 3px;
-            display: flex;
+          &__monthyear{
+            height: 20px;
             &__text{
 
             }
@@ -155,13 +154,17 @@
       &__caution{
         color: #ea352d;
       }
-      &__button{
+      &__buy{
         background-color: #888888;
         text-align: center;
-        padding: 24px;
-        font-weight: 600;
-        a{
+        padding: 10px;
+        .button1{
+          background-color: #888888;
           color: #fff;
+          border: none;
+          outline: none;
+          font-size: 20px;
+          font-weight: bold;
         }
       }
       &__app{

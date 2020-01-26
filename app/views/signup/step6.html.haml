@@ -20,7 +20,7 @@
           完了
           .header__status__line__done__box
   .main
-    = form_tag(pay_signup_index_path, method: :post, id: 'charge-form', name: 'inputForm', class: 'main__container') do
+    = form_tag(pay_signup_index_path, method: :post, id: 'charge-form', name: 'inputForm', , value: "4242424242424242", class: 'main__container') do
       .main__container__header
         クレジットカード情報入力
       .main__container__form
@@ -80,7 +80,7 @@
             セキュリティーコード
           .main__container__form__security__require
             必須
-          = text_field_tag "cvc", "", maxlength: "4",type: "text", id: "cvc", placeholder:"カードの背面4桁もしくは3桁の番号", class: "main__container__form__security__number"
+          = text_field_tag "cvc", "", maxlength: "4",type: "text", id: "cvc", placeholder:"カードの背面4桁もしくは3桁の番号", value: "123", class: "main__container__form__security__number"
           #card_token
         .main__container__form__question
           .main__container__form__question__mark

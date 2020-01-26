@@ -1,18 +1,18 @@
 .purchase__confirmation
   .purchase__confirmation__icon
-    = image_tag("fmarket_logo_red.svg",size:"185x49",class:"purchase__confirmation__icon__1")
+    = link_to image_tag("fmarket_logo_red.svg",size:"185x49",class:"purchase__confirmation__icon__1"),root_path
   .purchase__confirmation__main
     .purchase__confirmation__main__top
       購入内容の確認
     .purchase__confirmation__main__item
       .purchase__confirmation__main__item__image
-        = @item.image
+        = image_tag @item.images[0].image,size:"100x100"
       .purchase__confirmation__main__item__content
         .purchase__confirmation__main__item__content__text
-         = @item.name
+          = @item.name
         .purchase__confirmation__main__item__content__price
           .purchase__confirmation__main__item__content__price__money
-           = @item.price
+            = "¥" + @item.price.to_s
           .purchase__confirmation__main__item__content__price__tax
             (税込み) 送料込み
     .purchase__confirmation__main__payment
@@ -21,7 +21,7 @@
           .purchase__confirmation__main__payment__price__box__text
             支払い金額
           .purchase__confirmation__main__payment__price__box__money
-           = @item.price
+            = "¥" + @item.price.to_s
         .purchase__confirmation__main__payment__price__point
           .purchase__confirmation__main__payment__price__point__box
             .purchase__confirmation__main__payment__price__point__box__text
@@ -32,22 +32,17 @@
         .purchase__confirmation__main__payment__card__method
           .purchase__confirmation__main__payment__card__method__text
             支払い方法
-        - if @default_card_information.blank?
-          %br /
           .purchase__confirmation__main__payment__card__method__change
             = link_to '変更する',new_card_path
-        - else
         .purchase__confirmation__main__payment__card__info
           .purchase__confirmation__main__payment__card__info__name
             クレジットカード
           .purchase__confirmation__main__payment__card__info__number
-            = "**** **** **** " + @default_card_information.last4
-          .purchase__confirmation__main__payment__card__info__limit
-            .purchase__confirmation__main__payment__card__info__limit__text
-              - exp_month = @default_card_information.exp_month.to_s
-            .purchase__confirmation__main__payment__card__info__limit__value
-              - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-              = exp_month + " / " + exp_year
+            = "**** **** **** " + @defaul_tcard_information.to_s
+          .purchase__confirmation__main__payment__card__info__monthyear
+            - exp_month = @default_card_information.to_s
+            - exp_year = @default_card_information.to_s.slice(2,3)
+            = exp_month + " / " + exp_year.to_s
           = icon('fab','cc-jcb',class: 'purchase__confirmation__main__payment__card__info__icon')
       .purchase__confirmation__main__payment__address
         .purchase__confirmation__main__payment__address__method
@@ -56,17 +51,20 @@
           .purchase__confirmation__main__payment__address__method__change
             = link_to '変更する',"#"
         .purchase__confirmation__main__payment__address__number
-          〒111-1111
+          = "〒" + current_user.address.post_number.to_s
         .purchase__confirmation__main__payment__address__text
-          住所だよ
+          = current_user.address.prefecture.name
+          = current_user.address.city
+          = current_user.address.address_number
+          = current_user.address.building if current_user.address.building?
         .purchase__confirmation__main__payment__address__name
-          田中二郎
+          = current_user.nickname
     .purchase__confirmation__main__bottom
       .purchase__confirmation__main__bottom__caution
         この商品はゆうゆうカリメル便を利用しているため、アプリからのみ購入できます。
-      .purchase__confirmation__main__bottom__button
+      .purchase__confirmation__main__bottom__buy
         = form_tag("/items/:item_id/purchase/:id/done", action: :pay, method: :get) do
-          %button 購入する
+          %button.button1 購入する
       .purchase__confirmation__main__bottom__app
         .purchase__confirmation__main__bottom__app__text
           アプリをお持ちでない方はかよりインストールしてご利用いただけます。
