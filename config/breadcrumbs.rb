@@ -41,3 +41,9 @@ crumb :sold do
   link "出品した商品-売却済み", "#"
   parent :mypage
 end
+
+#パンクずのリンク先を商品の名前にしたい
+# crumb :item_name do
+#   link :name, "/items/#{item.id}"
+#   parent :mypage
+# end
