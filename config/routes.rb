@@ -49,7 +49,6 @@ Rails.application.routes.draw do
       get 'user_profile'
       get 'logout'
       get 'item_detail'
-      get 'edit'
       get 'sell_list'
     end
   end

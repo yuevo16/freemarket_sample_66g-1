@@ -20,12 +20,8 @@ class ItemsController < ApplicationController
   def update
     item = Item.find(params[:id])
     item.update(item_params)
+    redirect_to item_detail_mypage_path(item)
   end
-
-  # def item_detail
-  #   @item = Item.find(params[:id])
-  #   @user = current_user.nickname
-  # end
   
   def create
     @item = Item.new(item_params)
@@ -52,6 +48,8 @@ class ItemsController < ApplicationController
       :delivery_chage, 
       :delivery_area, 
       :delivery_date, 
+      :delivery_method, 
+      :brand,
       :price, 
       images_attributes: [:image]
       ).merge(user_id: current_user.id,saler: current_user.id)
