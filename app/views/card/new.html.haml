@@ -1,7 +1,7 @@
 .wrapper
-  =render "post/header"
+  = render "post/header"
   = render 'mypage/side_bar'
-  .card_main
+  .card__main
     = form_tag(pay_signup_index_path, method: :post, id: 'charge-form', name: 'inputForm', class: 'main__container') do
       .main__container__header
         クレジットカード情報入力
@@ -41,7 +41,7 @@
                 %option{value: "10"}10
                 %option{value: "11"}11
                 %option{value: "12"}12
-              %span 月/
+              %span 月
             .main__container__form__limit__year
               %select#exp_year{name: "exp_year", type: "text"}
                 %option{value: ""} --
