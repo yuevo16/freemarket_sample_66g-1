@@ -1,4 +1,4 @@
-.product-new{
+.product-edit{
   background: #f5f5f5;
   font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
   font-size: 14px;
@@ -180,7 +180,7 @@
       justify-content: space-between;
     }
     &__sell-content{
-      height: 280px;
+      height: 480px;
       padding: 40px;
       border-top: 1px solid #eee;
     }
@@ -303,7 +303,7 @@
 
   //配送について
   .delivery{
-    height: 400px;
+    height: 480px;
     &__sell-content.clearfix{
       display: flex;
       justify-content:space-between ;

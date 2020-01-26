@@ -1,5 +1,5 @@
 = form_for @item do |f|
-  .product
+  .product-new
     .product-header
       = link_to image_tag("fmarket_logo_red.svg", size:"185x49",class:"product-header__img"), "/"
     %main.product-main
@@ -21,7 +21,7 @@
                         %label{for: "item_images_attributes_0_image", class: "abel-box", id: "label-box--0"}
                           %pre.label-box__text-visible クリックしてファイルをアップロード
                       .hidden-content
-                        = f.fields_for :images do |i|
+                        = f.fields_for :image do |i|
                           = i.file_field :image, class: "hidden-field"
                           %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
                           %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
@@ -47,15 +47,15 @@
                     -#     end
                   .product-name
                     .product-name__sell-content
-                      .product-name__form-group
+                      .product-name__form-name
                         %label.product-name__label
                           商品名
                           %span.product-name__form-require 必須
                         %div
-                          = f.text_area :name, class:"product-name__input-default",placeholder: "商品名（必須 40文字まで)", value: ""
+                          = f.text_area :name, class:"product-name__input-default",placeholder: "商品名（必須 40文字まで)"
                           -# %input.product-name__input-default{placeholder: "商品名（必須 40文字まで)", value: ""}/
-                      .product-name__form-group
-                        %label
+                      .product-name__form-info
+                        %label.product-name__label
                           商品の説明
                           %span.product-name__form-require 必須
                         = f.text_area :info, class: "product-name__textarea-default", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"
@@ -64,7 +64,7 @@
                       .detaile__sell-content.clearfix
                         %h3.detaile__sell-sub-head 商品の詳細
                         .detaile__sell-form-box
-                          .detaile__form-group
+                          .detaile__form-category
                             %label.detaile__label
                               カテゴリー
                               %span.detaile__form-require 必須
@@ -73,8 +73,7 @@
                                 %i.detaile__icon-arrow-bottom
                                   = icon('fas','chevron-down')
                                 = f.collection_select :category, Category.all, :id, :name
-
-                          .detaile__form-group
+                          .detaile__form-status
                             %label.detaile__label
                               商品の状態
                               %span.detaile__form-require 必須
@@ -82,14 +81,13 @@
                               %i.detaile__icon-arrow-bottom
                                 = icon('fas','chevron-down')
                               = f.collection_select :status, Status.all, :id, :name
-
                     .delivery
                       .delivery__sell-content.clearfix
                         .delivery__infobox
                           %h3.delivery__sell-sub-head 配送について
                           %a.delivery__form-question{href: "/jp/help_center/article/68/", target: "_blank"} ?
                         .delivery__sell-form-box
-                          .delivery__form-group
+                          .delivery__form-top
                             %label.delivery__label
                               配送料の負担
                               %span.delivery__form-require 必須
@@ -105,9 +103,8 @@
                               %i.delivery__icon-arrow-bottom
                                 = icon('fas','chevron-down')
                               = f.collection_select :delivery_area, Prefecture.all, :id, :name
-
                           .delivery__form-group
-                            %label
+                            %label.days
                               発送までの日数
                               %span.delivery__form-require 必須
                             .delivery__select-wrap
@@ -127,18 +124,20 @@
                                 %label.price__l-left
                                   価格
                                   %span.price__form-require 必須
+                                %label.price__mark ¥
                                 .price__l-right.price__sell-price-input
-                                  ¥
-                                  %div.price__div
+                                  %div.price__div 
                                     = f.text_area :price, class:"price__input-default",placeholder: "例）300"
 
                             %li.price__clearfix
                               .price__l-left
                                 販売手数料 (10%)
-                              .price__l-right -
+                              .price__l-right
+                                -
                             %li.price__clearfix.price__bold
                               .price__l-left 販売利益
-                              .price__l-right -
+                              .price__l-right__money
+                                -
                       .modal{role: "dialog", tabindex: "-1"}
                         .modal__inner
 
@@ -162,7 +161,7 @@
                         -# %button.price__btn-default.price__btn-red{type: "submit"}
                         -#   出品する
                         .price__btn 
-                          = link_to 'もどる','#',class:"price__btn-gray"
+                          = link_to 'もどる',"/mypage/#{current_user.id}/item_detail",class:"price__btn-gray"
               .overlay
 
 
