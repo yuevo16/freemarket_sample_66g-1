@@ -15,19 +15,22 @@
       .form__group__tagu
         お名前
       .form__group__name
-        山田　花子
+        =current_user.nickname
     
     .form__group
       .form__group__tagu
         お名前カナ
       .form__group__namekana
-        ヤマダ　ハナコ
+        =current_user.first_name
+        =current_user.last_name
     
     .form__group
       .form__group__tagu
         生年月日
       .form__group__birthday
-        1995/12/3
+        =current_user.birth_year
+        =current_user.birth_month
+        =current_user.birth_day
     .form__group
       .form__group__tagu
         郵便番号
