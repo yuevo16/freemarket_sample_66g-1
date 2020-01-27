@@ -82,6 +82,16 @@
               width: auto;
               background: rgba(0,0,0,.4);
             }
+            &__text{
+              position: absolute;
+              top: 30px;
+              font-size: 32px;
+              background-color: red;
+              color: white;
+              transform: rotate(-15deg);
+              -moz-transform: rotate(-15deg);
+              -webkit-transform: rotate(-15deg);
+            }
           }
           &__text{
             padding:8px 12px;
