@@ -53,7 +53,7 @@ class SignupController < ApplicationController
   end
 
   def pay #payjpとCardのデータベース作成を実施します。
-    binding.pry
+
     if params['payjp-token'].blank?
       redirect_to step6_signup_index_path
     else
@@ -101,7 +101,7 @@ class SignupController < ApplicationController
   end
 
   def done
-    # sign_in User.find(session[:id]) unless user_signed_in?
+    sign_in User.find(session[:id]) unless user_signed_in?
     @user = User.new(
         nickname: session[:nickname],
         email: session[:email],
