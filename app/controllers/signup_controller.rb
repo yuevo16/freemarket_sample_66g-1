@@ -102,38 +102,7 @@ class SignupController < ApplicationController
 
   def done
     sign_in User.find(session[:id]) unless user_signed_in?
-    @user = User.new(
-        nickname: session[:nickname],
-        email: session[:email],
-        password: session[:password],
-        birth_year: session[:birth_year],
-        birth_month: session[:birth_month],
-        birth_day: session[:birth_day],
-        first_name: session[:user_first_name],
-        last_name: session[:user_last_name],
-        first_name_kana: session[:user_first_name_kana],
-        last_name_kana: session[:user_last_name_kana],
-        phone_number: session[:phone_number]
-      )
-      if @user.save
-         @address = @user.build_address(
-          first_name: session[:address_first_name],
-          last_name: session[:address_last_name],
-          first_name_kana: session[:address_first_name_kana],
-          last_name_kana: session[:address_last_name_kana],
-          phone_number: session[:address_phone_number],
-          post_number: session[:post_number],
-          prefecture_id: session[:prefecture_id],
-          city: session[:city],
-          address_number: session[:address_number],
-          building: session[:building],
-        )
-        @address.save
-
-        session[:id] = @user.id
-      else
-        redirect_to step6_signup_index_path
-      end
+ 
   end
 
 
