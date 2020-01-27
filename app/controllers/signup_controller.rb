@@ -113,7 +113,7 @@ class SignupController < ApplicationController
       :nickname,
       :email,
       :password,
-      # :encrypted_password,
+      :encrypted_password,
       :birth_year,
       :birth_month,
       :birth_day,
