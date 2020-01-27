@@ -38,11 +38,14 @@
           .purchase__confirmation__main__payment__card__info__name
             クレジットカード
           .purchase__confirmation__main__payment__card__info__number
-            = "**** **** **** " + @defaul_tcard_information.to_s
+          - if @default_card_information.blank?
+            %br /
+          - else
+            = "**** **** **** " + @default_card_information.last4
           .purchase__confirmation__main__payment__card__info__monthyear
             - exp_month = @default_card_information.to_s
             - exp_year = @default_card_information.to_s.slice(2,3)
-            = exp_month + " / " + exp_year.to_s
+            = exp_month.to_s + " / " + exp_year.to_s
           = icon('fab','cc-jcb',class: 'purchase__confirmation__main__payment__card__info__icon')
       .purchase__confirmation__main__payment__address
         .purchase__confirmation__main__payment__address__method
@@ -63,7 +66,7 @@
       .purchase__confirmation__main__bottom__caution
         この商品はゆうゆうカリメル便を利用しているため、アプリからのみ購入できます。
       .purchase__confirmation__main__bottom__buy
-        = form_tag("/items/:item_id/purchase/:id/done", action: :pay, method: :get) do
+        = form_tag("/items/#{@item.id}/purchase/pay", action: :pay, method: :post) do
           %button.button1 購入する
       .purchase__confirmation__main__bottom__app
         .purchase__confirmation__main__bottom__app__text

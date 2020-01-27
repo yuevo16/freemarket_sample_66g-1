@@ -1,6 +1,6 @@
 class SignupController < ApplicationController
   require 'payjp'
-  Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+  Payjp.api_key = Rails.application.secrets.payjp_private_key
  
   def step1
   end
@@ -53,6 +53,7 @@ class SignupController < ApplicationController
   end
 
   def pay #payjpとCardのデータベース作成を実施します。
+    binding.pry
     if params['payjp-token'].blank?
       redirect_to step6_signup_index_path
     else
