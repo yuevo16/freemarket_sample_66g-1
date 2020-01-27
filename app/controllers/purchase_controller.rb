@@ -10,7 +10,7 @@ class PurchaseController < ApplicationController
   def pay
     @item = Item.find(params[:item_id])
     card = Card.where(user_id: current_user.id).first
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    Payjp.api_key = Rails.application.secrets.payjp_private_key
     Payjp::Charge.create(
       :amount => @item.price, #支払金額（itemテーブル等に紐づけても良い）
       :customer => card.customer_id, #顧客ID
