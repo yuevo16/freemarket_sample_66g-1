@@ -16,6 +16,8 @@ class PurchaseController < ApplicationController
       :customer => card.customer_id, #顧客ID
       :currency => 'jpy', #日本円
     )
+    @item.buyer = current_user.id
+    @item.save
     redirect_to action: 'done' #完了画面に移動
   end
 
@@ -24,6 +26,5 @@ class PurchaseController < ApplicationController
   def set_card
     @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
   end
-
 
 end
