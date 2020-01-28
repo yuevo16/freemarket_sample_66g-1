@@ -3,6 +3,9 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @image = @item.images[0].image
+    if current_user.id == @item.saler
+      redirect_to "/mypage/#{@item.id}/item_detail"
+    end
   end
 
 
