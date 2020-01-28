@@ -97,7 +97,7 @@
       .item__detailpage__box__purchase
         - if user_signed_in?
           = link_to '購入画面に進む',"/items/#{@item.id}/purchase"
-        - else current_user  ==  nil
+        - else 
           = link_to  '購入画面に進む',"/signup/step1"
       .item__detailpage__box__caution
         この商品はゆうゆうカリメル便を利用しているため、アプリからのみ購入できます。
