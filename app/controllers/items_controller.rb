@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @user = current_user.nickname
+    # @user = current_user.nickname
     @image = @item.images[0].image
   end
 
