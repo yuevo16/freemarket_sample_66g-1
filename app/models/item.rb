@@ -6,5 +6,10 @@ class Item < ApplicationRecord
   belongs_to :user
   accepts_nested_attributes_for :images, allow_destroy: true
   validates :user_id, :name, :info, :category, :status, :delivery_chage, :delivery_area, :delivery_date, :price, presence: true
-  # とりあえず商品出品機能を実装させるため
+
+  def show_soldout_item(item)
+    if (soldout_item = item.buyer).present?
+      'SOLD OUT!!'
+    end
+  end
 end
