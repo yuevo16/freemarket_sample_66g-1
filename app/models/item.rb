@@ -9,7 +9,7 @@ class Item < ApplicationRecord
 
   def show_soldout_item(item)
     if (soldout_item = item.buyer).present?
-      return 'SOLD OUT!!'
+      'SOLD OUT!!'
     end
   end
 end
