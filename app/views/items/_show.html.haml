@@ -19,7 +19,7 @@
                 出品者
             .item__detailpage__box__main__text__box__content
               .item__detailpage__box__main__text__box__content__assessment
-                = link_to @user, "/mypage/#{current_user.id}"
+
               .item__detailpage__box__main__text__box__content__icons
                 = icon('fas', 'smile', class: 'item__detailpage__box__main__text__box__content__icons__1')
                 .item__detailpage__box__main__text__box__content__icons__text
@@ -95,7 +95,10 @@
         .item__detailpage__box__price__pastage
           送料込み
       .item__detailpage__box__purchase
-        = link_to '購入画面に進む',"/items/#{@item.id}/purchase"
+        - if user_signed_in?
+          = link_to '購入画面に進む',"/items/#{@item.id}/purchase"
+        - else 
+          = link_to  '購入画面に進む',"/signup/step1"
       .item__detailpage__box__caution
         この商品はゆうゆうカリメル便を利用しているため、アプリからのみ購入できます。
       .item__detailpage__box__matter
@@ -322,3 +325,4 @@
           〉
       .item__detailpage__category__box__2
         パンくずで商品名が入ります
+   
