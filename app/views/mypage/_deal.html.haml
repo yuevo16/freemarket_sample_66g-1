@@ -1,12 +1,12 @@
 .sell_list
   .sell_list__header 
-    出品した商品
+    取引中の商品
   .sell_list__tab
     %input{id: "tab1", name: "tab-radio", type: "radio", checked:"checked"}/
-    %label{for:"tab1", class: "tab-radio"} 出品中
+    %label{for:"tab1", class: "tab-radio"} 
+      = link_to '出品中',sell_list_mypage_path(current_user.id)
     %input{id: "tab2", name: "tab-radio", type: "radio"}/
-    %label{for:"tab2", class: "tab-radio"}
-      = link_to '取引中',deal_mypage_path(current_user.id)
+    %label{for:"tab2", class: "tab-radio"} 取引中
     %input{id: "tab3", name: "tab-radio", type: "radio"}/
     %label{for:"tab3", class: "tab-radio"}
       = link_to '売却済み',sold_mypage_path(current_user.id)

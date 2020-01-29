@@ -48,6 +48,8 @@ Rails.application.routes.draw do
       get 'logout'
       get 'item_detail'
       get 'sell_list'
+      get 'deal'
+      get 'sold'
     end
   end
   
