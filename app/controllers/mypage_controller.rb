@@ -11,6 +11,19 @@ class MypageController < ApplicationController
   def sell_list
     user = User.find(params[:id])
     @item = user.items
+    @user_items = @item.where(buyer: nil).includes(:images).order("created_at DESC")
+  end
+
+  def deal
+    user = User.find(params[:id])
+    @item = user.items
+    @user_items = @item.where.not(buyer: nil).includes(:images).order("created_at DESC")
+  end
+
+  def sold
+    user = User.find(params[:id])
+    @item = user.items
+    @user_items = @item.where(saler: nil,buyer: nil).includes(:images).order("created_at DESC")
   end
 
   def identification
