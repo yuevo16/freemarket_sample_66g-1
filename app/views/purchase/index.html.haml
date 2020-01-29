@@ -66,7 +66,7 @@
       .purchase__confirmation__main__bottom__caution
         この商品はゆうゆうカリメル便を利用しているため、アプリからのみ購入できます。
       .purchase__confirmation__main__bottom__buy
-        = form_tag(pay_item_purchase_index_path(item), action: :pay, method: :post) do
+        = form_tag(pay_item_purchase_index_path(@item), action: :pay, method: :post) do
           %button.button1 購入する
       .purchase__confirmation__main__bottom__app
         .purchase__confirmation__main__bottom__app__text
