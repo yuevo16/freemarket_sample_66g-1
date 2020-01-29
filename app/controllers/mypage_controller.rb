@@ -23,8 +23,13 @@ class MypageController < ApplicationController
   #出品詳細画面のコントローラー
   def item_detail
     @item = Item.find(params[:id])
-    @user = current_user.nickname
+    @nickname = User.find(@item.user_id)
     @image = @item.images[0].image
+    @category = Category.find(@item.category)
+    @delivery_chage = Delivery_chage.find(@item.delivery_chage)
+    @status = Status.find(@item.status)
+    @prefecture = Prefecture.find(@item.delivery_area)
+    @delivery_date = Delivery_date.find(@item.delivery_date)
   end
 
   #編集画面のコントローラー
