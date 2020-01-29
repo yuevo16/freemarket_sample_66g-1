@@ -13,7 +13,7 @@
                 出品者
             .item__detailpage__box__main__text__box__content
               .item__detailpage__box__main__text__box__content__assessment
-                = link_to @nickname.nickname, '#'
+                = link_to @user.nickname, '#'
                 %end
               .item__detailpage__box__main__text__box__content__icons
                 = icon('fas', 'smile', class: 'item__detailpage__box__main__text__box__content__icons__1')
@@ -130,180 +130,27 @@
           = icon('fab', 'pinterest-square', class: 'item__detailpage__app__icons__3')
     .item__detailpage__other
       .item__detailpage__other__seller
-        = link_to '♡さんのその他の出品','#'
+        = link_to "#{@user.nickname}のその他商品",'#'
       .item__detailpage__other__items
-        .item__detailpage__other__items__box
-          .item__detailpage__other__items__box__image
-          .item__detailpage__other__items__box__content
-            .item__detailpage__other__items__box__content__text
-              商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-              .item__detailpage__other__items__box__content__text__hidden
-            .item__detailpage__other__items__box__content__sub
-              .item__detailpage__other__items__box__content__sub__price
-                ¥3,800
-              .item__detailpage__other__items__box__content__sub__like
-                .item__detailpage__other__items__box__content__sub__like__icon
-                  ♡
-                .item__detailpage__other__items__box__content__sub__like__value
-                  11
-        .item__detailpage__other__items__box
-          .item__detailpage__other__items__box__image
-          .item__detailpage__other__items__box__content
-            .item__detailpage__other__items__box__content__text
-              商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-              .item__detailpage__other__items__box__content__text__hidden
-            .item__detailpage__other__items__box__content__sub
-              .item__detailpage__other__items__box__content__sub__price
-                ¥3,800
-              .item__detailpage__other__items__box__content__sub__like
-                .item__detailpage__other__items__box__content__sub__like__icon
-                  ♡
-                .item__detailpage__other__items__box__content__sub__like__value
-                  11
-        .item__detailpage__other__items__box
-          .item__detailpage__other__items__box__image
-          .item__detailpage__other__items__box__content
-            .item__detailpage__other__items__box__content__text
-              商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-              .item__detailpage__other__items__box__content__text__hidden
-            .item__detailpage__other__items__box__content__sub
-              .item__detailpage__other__items__box__content__sub__price
-                ¥3,800
-              .item__detailpage__other__items__box__content__sub__like
-                .item__detailpage__other__items__box__content__sub__like__icon
-                  ♡
-                .item__detailpage__other__items__box__content__sub__like__value
-                  11
-        .item__detailpage__other__items__box
-          .item__detailpage__other__items__box__image
-          .item__detailpage__other__items__box__content
-            .item__detailpage__other__items__box__content__text
-              商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-              .item__detailpage__other__items__box__content__text__hidden
-            .item__detailpage__other__items__box__content__sub
-              .item__detailpage__other__items__box__content__sub__price
-                ¥3,800
-              .item__detailpage__other__items__box__content__sub__like
-                .item__detailpage__other__items__box__content__sub__like__icon
-                  ♡
-                .item__detailpage__other__items__box__content__sub__like__value
-                  11
-        .item__detailpage__other__items__box
-          .item__detailpage__other__items__box__image
-          .item__detailpage__other__items__box__content
-            .item__detailpage__other__items__box__content__text
-              商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-              .item__detailpage__other__items__box__content__text__hidden
-            .item__detailpage__other__items__box__content__sub
-              .item__detailpage__other__items__box__content__sub__price
-                ¥3,800
-              .item__detailpage__other__items__box__content__sub__like
-                .item__detailpage__other__items__box__content__sub__like__icon
-                  ♡
-                .item__detailpage__other__items__box__content__sub__like__value
-                  11
-        .item__detailpage__other__items__box
-          .item__detailpage__other__items__box__image
-          .item__detailpage__other__items__box__content
-            .item__detailpage__other__items__box__content__text
-              商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-              .item__detailpage__other__items__box__content__text__hidden
-            .item__detailpage__other__items__box__content__sub
-              .item__detailpage__other__items__box__content__sub__price
-                ¥3,800
-              .item__detailpage__other__items__box__content__sub__like
-                .item__detailpage__other__items__box__content__sub__like__icon
-                  ♡
-                .item__detailpage__other__items__box__content__sub__like__value
-                  11
-    .item__detailpage__other
-      .item__detailpage__other__brand
-        = link_to 'スナイデルのロングワンピース その他の商品'
-      .item__detailpage__other__items
-        .item__detailpage__other__items__box
-          .item__detailpage__other__items__box__image
-          .item__detailpage__other__items__box__content
-            .item__detailpage__other__items__box__content__text
-              商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-              .item__detailpage__other__items__box__content__text__hidden
-            .item__detailpage__other__items__box__content__sub
-              .item__detailpage__other__items__box__content__sub__price
-                ¥3,800
-              .item__detailpage__other__items__box__content__sub__like
-                .item__detailpage__other__items__box__content__sub__like__icon
-                  ♡
-                .item__detailpage__other__items__box__content__sub__like__value
-                  11
-        .item__detailpage__other__items__box
-          .item__detailpage__other__items__box__image
-          .item__detailpage__other__items__box__content
-            .item__detailpage__other__items__box__content__text
-              商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-              .item__detailpage__other__items__box__content__text__hidden
-            .item__detailpage__other__items__box__content__sub
-              .item__detailpage__other__items__box__content__sub__price
-                ¥3,800
-              .item__detailpage__other__items__box__content__sub__like
-                .item__detailpage__other__items__box__content__sub__like__icon
-                  ♡
-                .item__detailpage__other__items__box__content__sub__like__value
-                  11
-        .item__detailpage__other__items__box
-          .item__detailpage__other__items__box__image
-          .item__detailpage__other__items__box__content
-            .item__detailpage__other__items__box__content__text
-              商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-              .item__detailpage__other__items__box__content__text__hidden
-            .item__detailpage__other__items__box__content__sub
-              .item__detailpage__other__items__box__content__sub__price
-                ¥3,800
-              .item__detailpage__other__items__box__content__sub__like
-                .item__detailpage__other__items__box__content__sub__like__icon
-                  ♡
-                .item__detailpage__other__items__box__content__sub__like__value
-                  11
-        .item__detailpage__other__items__box
-          .item__detailpage__other__items__box__image
-          .item__detailpage__other__items__box__content
-            .item__detailpage__other__items__box__content__text
-              商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-              .item__detailpage__other__items__box__content__text__hidden
-            .item__detailpage__other__items__box__content__sub
-              .item__detailpage__other__items__box__content__sub__price
-                ¥3,800
-              .item__detailpage__other__items__box__content__sub__like
-                .item__detailpage__other__items__box__content__sub__like__icon
-                  ♡
-                .item__detailpage__other__items__box__content__sub__like__value
-                  11
-        .item__detailpage__other__items__box
-          .item__detailpage__other__items__box__image
-          .item__detailpage__other__items__box__content
-            .item__detailpage__other__items__box__content__text
-              商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-              .item__detailpage__other__items__box__content__text__hidden
-            .item__detailpage__other__items__box__content__sub
-              .item__detailpage__other__items__box__content__sub__price
-                ¥3,800
-              .item__detailpage__other__items__box__content__sub__like
-                .item__detailpage__other__items__box__content__sub__like__icon
-                  ♡
-                .item__detailpage__other__items__box__content__sub__like__value
-                  11
-        .item__detailpage__other__items__box
-          .item__detailpage__other__items__box__image
-          .item__detailpage__other__items__box__content
-            .item__detailpage__other__items__box__content__text
-              商品説明だよおおおおおおおおおおおおおおおおおおおおおおおおおお
-              .item__detailpage__other__items__box__content__text__hidden
-            .item__detailpage__other__items__box__content__sub
-              .item__detailpage__other__items__box__content__sub__price
-                ¥3,800
-              .item__detailpage__other__items__box__content__sub__like
-                .item__detailpage__other__items__box__content__sub__like__icon
-                  ♡
-                .item__detailpage__other__items__box__content__sub__like__value
-                  11
+        - @user_items.each do |item|
+          .item__detailpage__other__items__box
+            = link_to item_path(item) do
+              .item__detailpage__other__items__box__image
+                = image_tag "#{item.images[0].image}",size:"200x220"
+              .item__detailpage__other__items__box__content
+                .item__detailpage__other__items__box__content__text
+                  = item.name
+                  .item__detailpage__other__items__box__content__text__hidden
+                .item__detailpage__other__items__box__content__sub
+                  .item__detailpage__other__items__box__content__sub__price
+                    ¥
+                    = item.price
+                  .item__detailpage__other__items__box__content__sub__like
+                    .item__detailpage__other__items__box__content__sub__like__icon
+                      ♡
+                    .item__detailpage__other__items__box__content__sub__like__value
+                      11
+        
   .item__detailpage__category
     .item__detailpage__category__box
       .item__detailpage__category__box__1

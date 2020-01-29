@@ -23,7 +23,7 @@ class MypageController < ApplicationController
   #出品詳細画面のコントローラー
   def item_detail
     @item = Item.find(params[:id])
-    @nickname = User.find(@item.user_id)
+    @user = User.find(@item.user_id)
     @image = @item.images[0].image
     @category = Category.find(@item.category)
     @delivery_chage = Delivery_chage.find(@item.delivery_chage)

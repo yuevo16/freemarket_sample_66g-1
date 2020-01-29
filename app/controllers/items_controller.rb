@@ -2,13 +2,14 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @nickname = User.find(@item.user_id)
+    @user = User.find(@item.user_id)
     @image = @item.images[0].image
     @category = Category.find(@item.category)
     @delivery_chage = Delivery_chage.find(@item.delivery_chage)
     @status = Status.find(@item.status)
     @prefecture = Prefecture.find(@item.delivery_area)
     @delivery_date = Delivery_date.find(@item.delivery_date)
+    @user_items = Item.where(saler: @user).includes(:images).order("created_at DESC")
     if user_signed_in? && current_user.id == @item.saler
       redirect_to item_detail_mypage_path(@item)
     end
