@@ -1,5 +1,10 @@
-%h2 購入が完了しました！
-%p 商品名
-%p 値段
-%br
+.done__confirmative
+  .done__confirmative_icon
+    = link_to image_tag("fmarket_logo_red.svg",size:"185x49",class:"purchase__confirmation__icon__1"),root_path
+  .done_confirmative_mation
+    .purchase__confirmatife
+      購入内容の確認
+    .purchase__confirmation__main__item
+      .purchase__confirmation__main__item__image
+        -# = image_tag @item.images[0].image,size:"100x100"
   =link_to "TOPへ",root_path
