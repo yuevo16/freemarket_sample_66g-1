@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @nickname = @item.user_id
     @image = @item.images[0].image
   end
 
@@ -27,7 +28,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      redirect_to "/mypage/#{current_user.id}"
+      redirect_to mypage(current_user.id)
     end
   end
 

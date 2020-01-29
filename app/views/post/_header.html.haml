@@ -35,13 +35,13 @@
               %i.fas.fa-check
               %font{:size => "2"} やることリスト
           %li.header-main__search-bar2__auth-box__mypage
-            = link_to "/mypage/#{current_user.id}" ,class: "mypage-image" do
+            = link_to mypage_path(current_user.id) ,class: "mypage-image" do
               =icon('fas','smile')
               %font{:size => "2"} マイページ
       - else
         .header-main__search-bar2__new
           .header-main__search-bar2__new__singin
-            = link_to "新規会員登録", "/signup/step1", class: "header-main__search-bar2__new__signin__btn" 
+            = link_to "新規会員登録", step1_signup_index_path, class: "header-main__search-bar2__new__signin__btn" 
           .header-main__search-bar2__new__login
-            = link_to "ログイン", "/users/sign_in", class: "header-main__search-bar2__new__login__btn"
+            = link_to "ログイン", new_user_session_path, class: "header-main__search-bar2__new__login__btn"
 

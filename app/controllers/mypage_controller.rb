@@ -5,13 +5,6 @@ class MypageController < ApplicationController
   def show
   end
 
-
-  def index
-    user = User.find(params[:id])
-    @nickname = user.nickname
-    @tweets = user.tweets.page(params[:page]).per(5).order("created_at DESC")
-  end
-
   def user_profile
   end
 
@@ -58,7 +51,7 @@ class MypageController < ApplicationController
       :delivery_date,
       :delivery_method,
       :price, 
-      # images_attributes: [:image]
+      images_attributes: [:image, :_destroy, :id]
       ).merge(user_id: current_user.id,saler: current_user.id)
   end
 
