@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
     @nickname = @item.user_id
     @image = @item.images[0].image
     if user_signed_in? && current_user.id == @item.saler
-      redirect_to mypage_item_detail_path(@item.id)
+      redirect_to item_detail_mypage_path(@item)
     end
   end
 
