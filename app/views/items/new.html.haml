@@ -20,31 +20,66 @@
                       .label-content
                         %label{for: "item_images_attributes_0_image", class: "abel-box", id: "label-box--0"}
                           %pre.label-box__text-visible クリックしてファイルをアップロード
-                      .hidden-content
-                        = f.fields_for :images do |i|
-                          = i.file_field :image, class: "hidden-field"
-                          %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
-                          %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
-                          %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
-                          %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
-                          %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_5_image" }
-                          %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_6_image" }
-                          %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_7_image" }
-                          %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_8_image" }
-                          %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_9_image" }
-                    -# .product-single__sell-dropbox-container.clearfix.state-image-number-10
-                    -#   .product-single__sell-upload-items-container
-                    -#     .product-single__sell-upload-items.product-single__have-item-0
-                    -#       %ul.product-single__ul
-                    -#   .product-single__sell-upload-drop-box.product-single__have-item-0
-                    -#     = f.fields_for :images do |i|
-                    -#       = i.file_field :image, class: 'product-single__sell-upload-drop-file'
+                      #image-box
+                        #previews
+                          - if @item.persisted?
+                            - @item.images.each_with_index do |image, i|
+                              = image_tag image.image.url, data: { index: i }, width: "100", height: '100' 
+                        = f.fields_for :images do |image|
+                          .js-file_group{"data-index" => image.index}
+                            = image.file_field :image, class:'js-file'
+                            .js-remove
+                              削除
+                          - if @item.persisted?
+                            = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+                        - if @item.persisted?
+                          .js-file_group{"data-index" => @item.images.count}
+                            = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
+                            .js-remove
+                              削除
+
+
+
+                              
+                      -# %label.label-name{:for => "icon"} icon
+                      -# .user-icon-dnd-wrapper
+                      -#   %input#input_file{:accept => "image/*", :name => "icon", :type => "file"}/
+                      -#   #preview_field
+                      -#   #drop_area
+                      -#     drag and drop
+                      -#     %br>/
+                      -#     or
+                      -#     %br>/
+                      -#     click here.
+                      -#   #icon_clear_button X
+
+
+
+
+                        -# = f.fields_for :images do |i|
+                        -#   = i.file_field :image, class: "hidden-field"
+                    -#       %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
+                    -#       %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
+                    -#       %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
+                    -#       %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
+                    -#       %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_5_image" }
+                    -#       %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_6_image" }
+                    -#       %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_7_image" }
+                    -#       %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_8_image" }
+                    -#       %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_9_image" }
+                    -# -# .product-single__sell-dropbox-container.clearfix.state-image-number-10
+                    -# -#   .product-single__sell-upload-items-container
+                    -# -#     .product-single__sell-upload-items.product-single__have-item-0
+                    -# -#       %ul.product-single__ul
+                    -# -#   .product-single__sell-upload-drop-box.product-single__have-item-0
+                    -# -#     = f.fields_for :images do |i|
+                    -# -#       = i.file_field :image, class: 'product-single__sell-upload-drop-file'
                           
-                    -#       %pre.product-single__visible-pc
-                    -#         :preserve
-                    -#           ドラッグアンドドロップ
-                    -#             またはクリックしてファイルをアップロード
-                    -#     end
+                    -# -#       %pre.product-single__visible-pc
+                    -# -#         :preserve
+                    -# -#           ドラッグアンドドロップ
+                    -# -#             またはクリックしてファイルをアップロード
+                    -# -#     end
                   .product-name
                     .product-name__sell-content
                       .product-name__form-name

@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
       :delivery_method, 
       :brand,
       :price, 
-      images_attributes: [:image]
+      images_attributes: [:image, :_destroy, :id]
       ).merge(user_id: current_user.id,saler: current_user.id)
   end
 end
