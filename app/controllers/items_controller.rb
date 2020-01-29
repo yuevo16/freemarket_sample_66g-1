@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @nickname = @item.user_id
     @image = @item.images[0].image
     if user_signed_in? && current_user.id == @item.saler
       redirect_to mypage_item_detail_path(@item.id)
@@ -30,7 +31,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      redirect_to "/mypage/#{current_user.id}"
+      redirect_to mypage(current_user.id)
     end
   end
 
@@ -53,7 +54,7 @@ class ItemsController < ApplicationController
       :delivery_method, 
       :brand,
       :price, 
-      images_attributes: [:image]
+      images_attributes: [:image, :_destroy, :id]
       ).merge(user_id: current_user.id,saler: current_user.id)
   end
 end

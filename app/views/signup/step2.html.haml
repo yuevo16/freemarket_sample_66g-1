@@ -23,7 +23,7 @@
     .main__container
       .main__container__header
         会員情報入力
-      = form_for @user, url: "/signup/step3", method: :get, html: {class: 'main__container__form'} do |f|
+      = form_for @user, url: step3_signup_index_path, method: :get, html: {class: 'main__container__form'} do |f|
         .main__container__form__content-top
           .main__container__form__content-top__nickname
             .main__container__form__content-top__nickname__label

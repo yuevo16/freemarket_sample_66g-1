@@ -42,7 +42,6 @@ Rails.application.routes.draw do
 
   resources :mypage do
     member  do
-      get 'index'
       get 'identification'
       get 'credit_card'
       get 'user_profile'
