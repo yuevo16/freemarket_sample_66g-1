@@ -4,7 +4,7 @@
       = image_tag("download-1.jpg",size: "700x206", class:"content-all__right__image-images")
       = image_tag("653a11825b09240a0504a431f26dc061_s-1.jpg",size: "60x60", class: "content-all__right__image__profile__image")
       = link_to '#', class: 'content-all__right__image__profile__image__profile__name' do
-        name
+        = current_user.nickname
         .value-items 評価 8   出品数 30
 
   .tabs

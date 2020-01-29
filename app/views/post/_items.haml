@@ -48,15 +48,16 @@
     .top__category__1__main
       - @mens_items.each do |item|
         .top__category__1__main__item
-          .top__category__1__main__item__box   
-            .top__category__1__main__item__box__image
-              = image_tag "#{item.images[0].image}",size:"185x189"
-              .top__category__1__main__item__box__image__price
-                ¥ 
-                = item.price
-            .top__category__1__main__item__box__text
-              .top__category__1__main__item__box__text__content
-                = item.name
+          = link_to item_path(item) do
+            .top__category__1__main__item__box   
+              .top__category__1__main__item__box__image
+                = image_tag "#{item.images[0].image}",size:"185x189"
+                .top__category__1__main__item__box__image__price
+                  ¥ 
+                  = item.price
+              .top__category__1__main__item__box__text
+                .top__category__1__main__item__box__text__content
+                  = item.name
                 .top__category__1__main__item__box__text__hidden
 
 .top__category
@@ -69,16 +70,17 @@
     .top__category__1__main
       - @electro_items.each do |item|
         .top__category__1__main__item
-          .top__category__1__main__item__box   
-            .top__category__1__main__item__box__image
-              = image_tag "#{item.images[0].image}",size:"185x189"
-              .top__category__1__main__item__box__image__price
-                ¥ 
-                = item.price
-            .top__category__1__main__item__box__text
-              .top__category__1__main__item__box__text__content
-                = item.name
-                .top__category__1__main__item__box__text__hidden
+          = link_to item_path(item) do
+            .top__category__1__main__item__box   
+              .top__category__1__main__item__box__image
+                = image_tag "#{item.images[0].image}",size:"185x189"
+                .top__category__1__main__item__box__image__price
+                  ¥ 
+                  = item.price
+              .top__category__1__main__item__box__text
+                .top__category__1__main__item__box__text__content
+                  = item.name
+                  .top__category__1__main__item__box__text__hidden
       
 .top__category
   .top__category__1
@@ -90,15 +92,16 @@
     .top__category__1__main
       - @hobby_items.each do |item|
         .top__category__1__main__item
-          .top__category__1__main__item__box   
-            .top__category__1__main__item__box__image
-              = image_tag "#{item.images[0].image}",size:"185x189"
-              .top__category__1__main__item__box__image__price
-                ¥ 
-                = item.price
-            .top__category__1__main__item__box__text
-              .top__category__1__main__item__box__text__content
-                = item.name
-                .top__category__1__main__item__box__text__hidden
+          = link_to item_path(item) do
+            .top__category__1__main__item__box   
+              .top__category__1__main__item__box__image
+                = image_tag "#{item.images[0].image}",size:"185x189"
+                .top__category__1__main__item__box__image__price
+                  ¥ 
+                  = item.price
+              .top__category__1__main__item__box__text
+                .top__category__1__main__item__box__text__content
+                  = item.name
+                  .top__category__1__main__item__box__text__hidden
       
 .popular__footer
