@@ -13,7 +13,7 @@
                 出品者
             .item__detailpage__box__main__text__box__content
               .item__detailpage__box__main__text__box__content__assessment
-                = link_to @nickname, mypage_path(current_user.id)
+                = link_to @nickname.nickname, '#'
                 %end
               .item__detailpage__box__main__text__box__content__icons
                 = icon('fas', 'smile', class: 'item__detailpage__box__main__text__box__content__icons__1')
@@ -31,7 +31,7 @@
                 カテゴリー
             .item__detailpage__box__main__text__box__content
               .item__detailpage__box__main__text__box__content__genre
-                = @item.category
+                = @category.name
           .item__detailpage__box__main__text__box
             .item__detailpage__box__main__text__box__column
               .item__detailpage__box__main__text__box__column__box
@@ -45,14 +45,14 @@
                 商品の状態
             .item__detailpage__box__main__text__box__content
               .item__detailpage__box__main__text__box__content__text
-                = @item.status
+                = @status.name
           .item__detailpage__box__main__text__box
             .item__detailpage__box__main__text__box__column
               .item__detailpage__box__main__text__box__column__box
                 配送料の負担
             .item__detailpage__box__main__text__box__content
               .item__detailpage__box__main__text__box__content__text
-                送料込み(出品者負担)
+                = @delivery_chage.name
           .item__detailpage__box__main__text__box
             .item__detailpage__box__main__text__box__column
               .item__detailpage__box__main__text__box__column__box
@@ -66,14 +66,14 @@
                 配送元地域
             .item__detailpage__box__main__text__box__content
               .item__detailpage__box__main__text__box__content__text
-                = link_to @item.delivery_area
+                = link_to @prefecture.name
           .item__detailpage__box__main__text__box
             .item__detailpage__box__main__text__box__column
               .item__detailpage__box__main__text__box__column__box
                 配送日の目安
             .item__detailpage__box__main__text__box__content
               .item__detailpage__box__main__text__box__content__text
-                = @item.delivery_date
+                = @delivery_date.name
       .item__detailpage__box__price
         .item__detailpage__box__price__main
           ¥
