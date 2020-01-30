@@ -4,12 +4,11 @@
       .header-main__search-bar1__logo-button
         = link_to image_tag("fmarket_logo_red.svg", class: 'header-main__search-bar1__logo-button__image'),root_path
       .header-main__search-bar1__text
-        = form_for "#" do |f|
-          = f.text_field :text, class: 'header-main__search-bar1__text__form', placeholder: '何かお探しですか？'
-        .header-main__search-bar1__text__box
-          %label{class: "input-box__image"}
-            = icon('fas', 'search', class: 'header-main__search-bar1__text__box__icon')
-            %button.header-main__search-bar1__text__box__button
+        = form_tag searches_index_path, method: :get , class: 'header-main__search-bar1__text__form' do
+          = text_field_tag :search, '', placeholder: '何かお探しですか？'
+          = label_tag '', class: 'header-main__search-bar1__text__box' do
+            = icon('fas', 'search', class: 'header-main__search-bar1__text__box__image')
+            = submit_tag 'Search', class: 'header-main__search-bar1__text__box__hidden'
     .header-main__search-bar2
       .header-main__search-bar2__genre-search
         .header-main__search-bar2__genre-search__category-search
