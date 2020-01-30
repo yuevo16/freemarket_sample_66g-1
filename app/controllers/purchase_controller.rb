@@ -1,7 +1,15 @@
 class PurchaseController < ApplicationController
   
   require 'payjp'
-  before_action :set_card
+  before_action :byebye
+
+  def byebye
+    if user_signed_in?
+      set_card
+    else
+      redirect_to step1_signup_index_path
+    end
+  end
 
   def index
     @item = Item.find(params[:item_id])

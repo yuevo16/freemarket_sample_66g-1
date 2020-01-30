@@ -5,14 +5,11 @@
         人気のカテゴリー
     .popular__top4__item
       .popular__top4__item__box
-        .popular__top4__item__box__text
-          レディース
+        レディース
       .popular__top4__item__box
-        .popular__top4__item__box__text
-          メンズ
+        メンズ
       .popular__top4__item__box
-        .popular__top4__item__box__text
-          家電・スマホ・カメラ
+        家電・スマホ・カメラ
       .popular__top4__item__box
         .popular__top4__item__box__text
           おもちゃ・ホビー・グッズ
@@ -25,7 +22,7 @@
       .top__category__1__new__detail
         もっと見る ＞
     .top__category__1__main
-      - @items.each do |item|
+      - @ladies_items.each do |item|
         .top__category__1__main__item 
           = link_to item_path(item) do
             .top__category__1__main__item__box
@@ -49,18 +46,22 @@
       .top__category__1__new__detail
         もっと見る ＞
     .top__category__1__main
-      - @items.each do |item|
+      - @mens_items.each do |item|
         .top__category__1__main__item
-          .top__category__1__main__item__box   
-            .top__category__1__main__item__box__image
-              = image_tag "#{item.images[0].image}",size:"185x189"
-              .top__category__1__main__item__box__image__price
-                ¥ 
-                = item.price
-            .top__category__1__main__item__box__text
-              .top__category__1__main__item__box__text__content
-                = item.name
-                .top__category__1__main__item__box__text__hidden
+          = link_to item_path(item) do
+            .top__category__1__main__item__box   
+              .top__category__1__main__item__box__image
+                = image_tag "#{item.images[0].image}",size:"185x189"
+                .top__category__1__main__item__box__image__price
+                  ¥ 
+                  = item.price
+                .top__category__1__main__item__box__image__text
+                  = item.show_soldout_item(item)
+              .top__category__1__main__item__box__text
+                .top__category__1__main__item__box__text__content
+                  = item.name
+                  .top__category__1__main__item__box__text__hidden
+
 
 .top__category
   .top__category__1
@@ -70,18 +71,22 @@
       .top__category__1__new__detail
         もっと見る ＞
     .top__category__1__main
-      - @items.each do |item|
+      - @electro_items.each do |item|
         .top__category__1__main__item
-          .top__category__1__main__item__box   
-            .top__category__1__main__item__box__image
-              = image_tag "#{item.images[0].image}",size:"185x189"
-              .top__category__1__main__item__box__image__price
-                ¥ 
-                = item.price
-            .top__category__1__main__item__box__text
-              .top__category__1__main__item__box__text__content
-                = item.name
-                .top__category__1__main__item__box__text__hidden
+          = link_to item_path(item) do
+            .top__category__1__main__item__box   
+              .top__category__1__main__item__box__image
+                = image_tag "#{item.images[0].image}",size:"185x189"
+                .top__category__1__main__item__box__image__price
+                  ¥ 
+                  = item.price
+                .top__category__1__main__item__box__image__text
+                  = item.show_soldout_item(item)
+              .top__category__1__main__item__box__text
+                .top__category__1__main__item__box__text__content
+                  = item.name
+                  .top__category__1__main__item__box__text__hidden
+
       
 .top__category
   .top__category__1
@@ -91,17 +96,21 @@
       .top__category__1__new__detail
         もっと見る ＞
     .top__category__1__main
-      - @items.each do |item|
+      - @hobby_items.each do |item|
         .top__category__1__main__item
-          .top__category__1__main__item__box   
-            .top__category__1__main__item__box__image
-              = image_tag "#{item.images[0].image}",size:"185x189"
-              .top__category__1__main__item__box__image__price
-                ¥ 
-                = item.price
-            .top__category__1__main__item__box__text
-              .top__category__1__main__item__box__text__content
-                = item.name
-                .top__category__1__main__item__box__text__hidden
+          = link_to item_path(item) do
+            .top__category__1__main__item__box   
+              .top__category__1__main__item__box__image
+                = image_tag "#{item.images[0].image}",size:"185x189"
+                .top__category__1__main__item__box__image__price
+                  ¥ 
+                  = item.price
+                .top__category__1__main__item__box__image__text
+                  = item.show_soldout_item(item)
+              .top__category__1__main__item__box__text
+                .top__category__1__main__item__box__text__content
+                  = item.name
+                  .top__category__1__main__item__box__text__hidden
+
       
 .popular__footer
