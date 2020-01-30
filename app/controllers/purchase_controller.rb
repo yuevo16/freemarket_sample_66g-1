@@ -15,6 +15,10 @@ class PurchaseController < ApplicationController
     @item = Item.find(params[:item_id])
   end
 
+  def done
+    @item = Item.find(params[:item_id])
+  end
+
   def pay
     @item = Item.find(params[:item_id])
     card = Card.where(user_id: current_user.id).first
