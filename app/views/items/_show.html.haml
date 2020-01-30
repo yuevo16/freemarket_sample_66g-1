@@ -83,7 +83,10 @@
         .item__detailpage__box__price__pastage
           送料込み
       .item__detailpage__box__purchase
-        = link_to '購入画面に進む',item_purchase_index_path(@item)
+        - if (@item.buyer == nil)
+          = link_to '購入画面に進む',item_purchase_index_path(@item)
+        - else
+          SOLD OUT
       .item__detailpage__box__caution
         この商品はゆうゆうカリメル便を利用しているため、アプリからのみ購入できます。
       .item__detailpage__box__matter
