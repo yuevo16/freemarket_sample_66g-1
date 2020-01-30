@@ -1,0 +1,17 @@
+.search_container
+  .search
+    - @items.each do |item|
+      .search__results
+        = link_to item_path(item) do
+          .search__results__list
+            .search__results__list__image
+              = image_tag "#{item.images[0].image}",size:"185x189"
+              .search__results__list__image__price
+                ¥
+                = item.price
+              .search__results__list__image__text
+                = item.show_soldout_item(item)
+            .search__results__list__text
+              .search__results__list__content
+                = item.name
+                .search__results__list__content__hidden

@@ -12,4 +12,12 @@ class Item < ApplicationRecord
       'SOLD OUT!!'
     end
   end
+
+  def search
+    if 
+      Item.where(['name LIKE ?', "%#{search}%"])
+    else
+      Item.all
+    end
+  end
 end
